@@ -1,0 +1,1033 @@
+import { useRef, useState, useEffect } from 'react';
+import { useOutletContext, Link } from 'react-router-dom';
+import PageHero from '../components/ui/PageHero';
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
+import {
+  ArrowRight,
+  TrendingUp,
+  Shield,
+  Activity,
+  Award,
+  Clock,
+  Compass,
+  MapPin,
+  CheckCircle,
+  Zap,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
+  TreePine,
+  CloudLightning,
+  Share2
+} from 'lucide-react';
+import SEO from '../components/common/SEO';
+import { pageSeo } from '../data/seo';
+import { projects, projectCategories } from '../data/projects';
+import { images } from '../data/images';
+import { useCounter } from '../hooks/useCounter';
+
+// ----------------------------------------------------
+// Reusable Sub-components
+// ----------------------------------------------------
+
+function ProjectsStatCard({ value, prefix = "", suffix = "", label, icon: Icon }) {
+  const { count, ref } = useCounter(value, 2000);
+  return (
+    <div
+      ref={ref}
+      className="glass-card-2026 rounded-3xl p-6 sm:p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 shadow-xl border border-white/5 bg-slate-900/60 backdrop-blur-md"
+    >
+      <div className="p-3 bg-white/5 rounded-2xl mb-4 text-cyan-400">
+        <Icon className="h-6 w-6" />
+      </div>
+      <span className="text-3xl sm:text-4xl font-extrabold text-white font-display mb-1 flex items-baseline">
+        <span>{prefix}</span>
+        <span>{count}</span>
+        <span className="text-cyan-400 font-extrabold">{suffix}</span>
+      </span>
+      <span className="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-widest">{label}</span>
+    </div>
+  );
+}
+
+function ProjectCTAButton({ children, onClick, to, variant = "primary" }) {
+  const prefersReducedMotion = useReducedMotion();
+  const isPrimary = variant === "primary";
+
+  const content = (
+    <span className="flex items-center justify-center gap-2">
+      {children}
+      <motion.span
+        className="inline-block"
+        animate={prefersReducedMotion ? {} : { x: [0, 4, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+      >
+        <ArrowRight className="h-4 w-4" />
+      </motion.span>
+    </span>
+  );
+
+  const baseClass = "px-6 py-3.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 inline-flex items-center justify-center text-center cursor-pointer";
+  const styling = isPrimary
+    ? "bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-bold shadow-xl shadow-yellow-500/20 hover:shadow-yellow-500/40 hover:scale-[1.03]"
+    : "border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-900 bg-transparent";
+
+  if (to) {
+    if (to.startsWith("#")) {
+      return (
+        <a href={to} className={`${baseClass} ${styling}`}>
+          {content}
+        </a>
+      );
+    }
+    return (
+      <Link to={to} className={`${baseClass} ${styling}`}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button type="button" onClick={onClick} className={`${baseClass} ${styling}`}>
+      {content}
+    </button>
+  );
+}
+
+// ----------------------------------------------------
+// Main Projects Page Component
+// ----------------------------------------------------
+
+
+const slideInLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+};
+export default function ProjectsPage() {
+  const openQuote = useOutletContext()?.openQuote;
+  const prefersReducedMotion = useReducedMotion();
+
+  // State Management
+  const [filter, setFilter] = useState('All');
+  const [selectedCity, setSelectedCity] = useState("Ahmedabad");
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  // Before/After Slider Coordinates
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+  const sliderRef = useRef(null);
+
+  // Timeline Progress Scroll Tracking
+  const timelineSectionRef = useRef(null);
+  const { scrollYProgress: timelineScroll } = useScroll({
+    target: timelineSectionRef,
+    offset: ["start end", "end end"]
+  });
+  const timelineScaleX = useSpring(timelineScroll, { stiffness: 100, damping: 30 });
+
+  // Handle Drag Move for Before & After
+  const handleSliderMove = (clientX) => {
+    if (!sliderRef.current) return;
+    const rect = sliderRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const position = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPosition(position);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    handleSliderMove(e.clientX);
+  };
+  const handleMouseLeave = () => {
+  setIsDragging(false);
+};
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    if (e.touches[0]) {
+      handleSliderMove(e.touches[0].clientX);
+    }
+  };
+
+  // Filtered project list
+  const filteredProjects =
+    filter === 'All' ? projects : projects.filter((p) => p.category === filter);
+
+  // Testimonials Array
+  const testimonials = [
+    {
+      name: "Rajesh Singhania",
+      role: "Managing Director, Singhania Textiles",
+      review: "ZENCO's 1.2 MW Industrial Solar array completely transformed our operating costs. Our monthly electricity invoice fell by 40% starting from month one. The telemetry dashboards and PM-Surya Ghar subsidy approval support were outstanding.",
+      logo: "Singhania Group",
+      savings: "₹8 Lakhs / month",
+      roi: "3.8 Years achieved",
+      image: images.Residential_Solar_Systems
+    },
+    {
+      name: "Dr. Ananya Reddy",
+      role: "Director of Operations, Apollo Hospitals Blr",
+      review: "In healthcare, constant power reliability is a matter of life and death. ZENCO engineered an On-Grid 250 kW solution that integrated seamlessly with our backup microgrid generators. ROI was achieved in exactly 4 years.",
+      logo: "Apollo Health",
+      savings: "₹2.2 Lakhs / month",
+      roi: "4.0 Years achieved",
+      image: images.OnGrid2
+    },
+    {
+      name: "Vikram Malhotra",
+      role: "Estate Architect, Eco-Luxury Villas Hyd",
+      review: "For premium residences, design and visual integration are critical. ZENCO custom-engineered sleek integrated solar roof shingles that matched the home's aesthetics while supplying 100% of our daily power requirements.",
+      logo: "Malhotra Estates",
+      savings: "₹15,000 / month",
+      roi: "4.5 Years achieved",
+      image: images.OnGrid1
+    }
+  ];
+
+  // Map Cities coordinates
+  const mapCities = [
+  {
+    name: "Adilabad",
+    x: "50%",
+    y: "50%",
+    capacity: "Main Hub",
+    projects: 25,
+    co2: "Active Operations",
+  },
+  {
+    name: "Nirmal",
+    x: "60%",
+    y: "35%",
+    capacity: "Expansion Zone",
+    projects: 10,
+    co2: "Growing Demand",
+  },
+  {
+    name: "Mancherial",
+    x: "40%",
+    y: "30%",
+    capacity: "Service Area",
+    projects: 8,
+    co2: "Ongoing Work",
+  },
+  {
+    name: "Komaram Bheem",
+    x: "55%",
+    y: "65%",
+    capacity: "Coverage Zone",
+    projects: 6,
+    co2: "Upcoming Installations",
+  },
+  {
+    name: "Asifabad",
+    x: "35%",
+    y: "55%",
+    capacity: "Field Operations",
+    projects: 5,
+    co2: "Early Stage",
+  },
+  {
+    name: "Boath",
+    x: "45%",
+    y: "40%",
+    capacity: "Support Zone",
+    projects: 4,
+    co2: "Small Projects",
+  },
+  {
+    name: "Utnoor",
+    x: "52%",
+    y: "72%",
+    capacity: "Rural Reach",
+    projects: 7,
+    co2: "Rural Electrification",
+  },
+];
+
+  const currentCityData = mapCities.find(c => c.name === selectedCity) || mapCities[0];
+
+  return (
+    <>
+      <SEO {...pageSeo.projects} />
+      <PageHero
+        title="Project"
+        subtitle="ZENCO Solar Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
+        image={images.office}
+        breadcrumb="Home / project"
+      />
+
+      {/* =========================================
+         SECTION 1: HERO
+         ========================================= */}
+      {/* <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-slate-950">
+        
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src={images.industrial_solar}
+            alt="ZENCO Industrial Solar Grid"
+            className="w-full h-full object-cover opacity-35 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/80" />
+          <div className="absolute inset-0 futuristic-grid opacity-30" />
+          <div className="absolute inset-0 particles-container opacity-20" />
+        </div>
+
+        <div className="container-custom relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center px-4">
+       
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 px-4 py-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest"
+            >
+              <Sparkles className="h-3.5 w-3.5 fill-amber-400/10" />
+              Success Stories
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.06] font-display"
+            >
+              Powering India's <br />
+              <span className="text-liquid-gradient font-extrabold">Clean Energy Future</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed"
+            >
+              Explore our successful residential, commercial, and industrial solar projects delivering measurable savings and sustainable growth.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            >
+              <ProjectCTAButton to="#case-study">View Projects</ProjectCTAButton>
+              <ProjectCTAButton onClick={openQuote} variant="outline">Get Free Consultation</ProjectCTAButton>
+            </motion.div>
+          </div>
+
+        
+          <div className="lg:col-span-5 grid grid-cols-2 gap-4 relative">
+            {[
+              { label: "Projects Completed", value: "500+", desc: "PAN India installations" },
+              { label: "Installed Capacity", value: "25 MW+", desc: "Clean power generated" },
+              { label: "Rooftop Panels", value: "10,000+", desc: "Premium Tier-1 arrays" },
+              { label: "Satisfaction", value: "95%", desc: "Direct consumer rating" }
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 + idx * 0.1 }}
+                className="glass-card-2026 rounded-3xl p-5 border border-white/10 hover:border-amber-400/40 hover:-translate-y-1 transition-all duration-300"
+              >
+                <p className="text-2xl sm:text-3xl font-extrabold text-white font-display tracking-tight leading-none mb-1">{stat.value}</p>
+                <p className="text-xs font-bold text-amber-400 mb-0.5">{stat.label}</p>
+                <p className="text-[10px] text-slate-400 leading-none">{stat.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
+      // <section className="section-padding bg-slate-900 border-t border-b border-white/5 relative overflow-hidden">
+      //   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] bg-emerald-500/5 blur-[120px] pointer-events-none" />
+        
+      //   <div className="container-custom relative z-10 px-4">
+      //     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
+      //       <ProjectsStatCard value={500} suffix="+" label="Projects Completed" icon={CheckCircle} />
+      //       <ProjectsStatCard value={25} suffix=" MW+" label="Installed Capacity" icon={Zap} />
+      //       <ProjectsStatCard value={10} prefix="₹" suffix=" Cr+" label="Annual Savings Generated" icon={TrendingUp} />
+      //       <ProjectsStatCard value={15} suffix="+" label="Cities Served" icon={MapPin} />
+      //       <ProjectsStatCard value={98} suffix="%" label="System Uptime Guarantee" icon={Activity} />
+      //     </div>
+      //   </div>
+      // </section> */}
+
+      {/* =========================================
+         SECTION 3: FEATURED PROJECT SHOWCASE (Case study)
+         ========================================= */}
+      <section id="case-study" className="section-padding bg-white overflow-hidden">
+        <div className="container-custom px-4">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Flagship Success</span>
+            <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900">Featured Case Study</h2>
+          </div>
+
+          <div className="row-split items-center lg:gap-16">
+            {/* Case Study Image with hover zoom */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideInLeft}
+              className="row-split-media relative"
+            >
+              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[32rem] bg-slate-200">
+                <img
+                  src={images.industrial_solar}
+                  alt="ZENCO 1.2 MW Flagship Grid"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-300" />
+              </div>
+
+              {/* Floating metrics labels */}
+              <div className="absolute top-[8%] left-[-4%] glass-card-2026 rounded-2xl p-4 shadow-xl border border-white/10 pointer-events-none card-float-y-1">
+                <p className="text-xs text-slate-400 font-bold uppercase">Savings Achieved</p>
+                <p className="text-2xl font-extrabold text-emerald-400 font-display">₹95 Lakhs / yr</p>
+              </div>
+
+              <div className="absolute bottom-[10%] right-[-4%] glass-card-2026 rounded-2xl p-4 shadow-xl border border-white/10 pointer-events-none card-float-y-2">
+                <p className="text-xs text-slate-400 font-bold uppercase">Project Timeline</p>
+                <p className="text-lg font-bold text-white">45 Days Execution</p>
+              </div>
+            </motion.div>
+
+            {/* Case Study Content */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideInRight}
+              className="row-split-content text-left"
+            >
+              <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">Industrial Excellence</span>
+              <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">1.2 MW Industrial Solar Microgrid</h3>
+              <p className="mt-4 text-slate-600 leading-relaxed text-base">
+                ZENCO designed, engineered and connected this flagship solar installation for a leading automotive components manufacturer in Gujarat. Spread over 80,000 square feet of standing seam metal roofs, the project drives high day-load stamping operations directly.
+              </p>
+
+              {/* Grid of details */}
+              <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-slate-100 pt-6">
+                <div>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Capacity</p>
+                  <p className="text-lg font-extrabold text-slate-800 font-display">1.2 MWp</p>
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Annual Generation</p>
+                  <p className="text-lg font-extrabold text-slate-800 font-display">1,800 MWh</p>
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Investment ROI</p>
+                  <p className="text-lg font-extrabold text-emerald-600 font-display">3.8 Years</p>
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Client Sector</p>
+                  <p className="text-sm font-bold text-slate-700 mt-0.5">Automotive Mfg</p>
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Location</p>
+                  <p className="text-sm font-bold text-slate-700 mt-0.5">Ahmedabad, GJ</p>
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Installation Year</p>
+                  <p className="text-sm font-bold text-slate-700 mt-0.5">2024</p>
+                </div>
+              </div>
+
+              <div className="mt-10 flex items-center gap-4">
+                <ProjectCTAButton to= '/solar-calculator'>Calculate Savings</ProjectCTAButton>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 4: INTERACTIVE PROJECT FILTER
+         ========================================= */}
+      <section className="py-12 bg-slate-50 border-t border-b border-slate-100">
+        <div className="container-custom px-4 text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Our Portfolio</span>
+          <h2 className="mt-2 text-3xl font-bold font-display text-slate-900 mb-8">Completed Projects</h2>
+
+          {/* Filters List */}
+          <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+            {projectCategories.map((cat) => (
+              <motion.button
+                key={cat}
+                type="button"
+                onClick={() => setFilter(cat)}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all ${
+                  filter === cat
+                    ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 font-bold shadow-lg shadow-amber-500/25'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:border-amber-400 hover:text-slate-900 shadow-sm'
+                }`}
+              >
+                {cat === 'All' ? 'All Projects' : `${cat} Systems`}
+              </motion.button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 5: PROJECT GALLERY
+         ========================================= */}
+      <section className="section-padding bg-slate-50/50">
+        <div className="container-custom px-4">
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  whileHover={{ y: -8 }}
+                  className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-lg relative group aspect-[4/3] cursor-pointer"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Glass overlay with details reveal */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span className="text-amber-400 text-[10px] font-bold uppercase tracking-wider">{project.category} Solar</span>
+                    <h3 className="text-white font-bold text-lg sm:text-xl font-display mt-0.5">{project.title}</h3>
+                    
+                    {/* Hover items details */}
+                    <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div>
+                        <p className="text-[9px] text-slate-400 font-bold uppercase">Capacity</p>
+                        <p className="text-white text-xs font-bold">{project.capacity}</p>
+                      </div>
+                      <div>
+                        <p className="text-[9px] text-slate-400 font-bold uppercase">Savings</p>
+                        <p className="text-emerald-400 text-xs font-bold">{project.savings}</p>
+                      </div>
+                      <div className="p-1.5 bg-amber-400/20 text-amber-400 rounded-full shrink-0">
+                        <ArrowRight className="h-4 w-4" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {filteredProjects.length === 0 && (
+            <p className="text-center text-slate-500 py-12">No success stories in this category yet.</p>
+          )}
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 6: BEFORE & AFTER SLIDER
+         ========================================= */}
+      <section className="section-padding bg-white">
+        <div className="container-custom px-4 text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Visual Transformation</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Before & After Solar</h2>
+          <p className="mt-4 text-slate-600 max-w-xl mx-auto text-sm sm:text-base mb-12">
+            Drag the slider divider left or right to view the architectural impact and roofing transformation of a premium rooftop solar installation.
+          </p>
+
+          {/* Interactive Slider */}
+          <div
+            ref={sliderRef}
+            onMouseMove={handleMouseMove}
+            onTouchMove={handleTouchMove}
+            onMouseLeave={handleMouseLeave}
+            onMouseDown={() => setIsDragging(true)}
+            onMouseUp={() => setIsDragging(false)}
+            onTouchStart={() => setIsDragging(true)}
+            onTouchEnd={() => setIsDragging(false)}
+            className="relative w-full max-w-4xl mx-auto aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl border border-slate-100 select-none cursor-ew-resize"
+          >
+            {/* Image Before (underneath) */}
+            <div className="absolute inset-0">
+              <img
+                src={images.old}
+                alt="Before Solar Installation"
+                className="w-full h-full object-cover pointer-events-none"
+              />
+              <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase px-3 py-1.5 rounded-full">
+                Before Solar Setup
+              </div>
+            </div>
+
+            
+            <div
+              className="absolute inset-0 z-10 overflow-hidden"
+              style={{ width: `${sliderPosition}%` }}
+            >
+              
+              <div className="absolute inset-0 w-[calc(100%)] h-full min-w-[896px]">
+                <img
+                  src={images.commercial_solar}
+                  alt="After Solar Installation"
+                  className="w-full h-full object-cover pointer-events-none"
+                  style={{ width: sliderRef.current?.getBoundingClientRect().width }}
+                />
+              </div>
+              <div className="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-bold uppercase px-3 py-1.5 rounded-full">
+                After Solar Setup
+              </div>
+            </div>
+
+            {/* Drag Handle Divider Line */}
+            <div
+              className="absolute top-0 bottom-0 z-20 w-[2.5px] bg-white shadow-xl cursor-ew-resize flex items-center justify-center"
+              style={{ left: `${sliderPosition}%` }}
+            >
+              <div className="h-10 w-10 bg-slate-900 border-2 border-white rounded-full flex items-center justify-center shadow-2xl shrink-0 pointer-events-none">
+                <Compass className="h-4 w-4 text-amber-400" />
+              </div>
+            </div>
+          </div>
+
+          {/* Quick slider metrics */}
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Electricity Bills</p>
+              <p className="text-xl font-extrabold text-red-500 font-display mt-1">-90% Reduction</p>
+            </div>
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">CO2 Emissions</p>
+              <p className="text-xl font-extrabold text-emerald-500 font-display mt-1">-450 Tons / yr</p>
+            </div>
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Building Value</p>
+              <p className="text-xl font-extrabold text-cyan-600 font-display mt-1">+15% Appreciation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 7: CUSTOMER SUCCESS STORIES (Testimonials)
+         ========================================= */}
+      <section className="section-padding bg-slate-50 overflow-hidden">
+        <div className="container-custom px-4 text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Endorsements</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-12">Client Testimonials</h2>
+
+          <div className="max-w-4xl mx-auto relative px-4">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={testimonialIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl text-left"
+              >
+                {/* Client profile */}
+                <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
+                  <div className="h-24 w-24 rounded-full border-2 border-emerald-400 overflow-hidden mb-4 shadow-md bg-slate-100">
+                    <img
+                      src={testimonials[testimonialIndex].image}
+                      alt={testimonials[testimonialIndex].name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-base font-bold text-slate-900 leading-tight">{testimonials[testimonialIndex].name}</h4>
+                  <p className="text-xs text-slate-400 leading-tight mt-0.5">{testimonials[testimonialIndex].role}</p>
+                  <p className="mt-2.5 inline-block text-[10px] font-bold text-emerald-600 bg-emerald-50 rounded-full px-2.5 py-0.5 border border-emerald-100 uppercase tracking-wide">
+                    {testimonials[testimonialIndex].logo}
+                  </p>
+                </div>
+
+                {/* Review details */}
+                <div className="md:col-span-8 flex flex-col justify-between h-full">
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed italic mb-6">
+                    "{testimonials[testimonialIndex].review}"
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-4">
+                    <div>
+                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Operational Savings</p>
+                      <p className="text-lg font-extrabold text-emerald-500 font-display leading-none mt-1">{testimonials[testimonialIndex].savings}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Investment Return</p>
+                      <p className="text-lg font-extrabold text-cyan-500 font-display leading-none mt-1">{testimonials[testimonialIndex].roi}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Testimonials controls */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <button
+                type="button"
+                onClick={() => setTestimonialIndex(prev => (prev - 1 + testimonials.length) % testimonials.length)}
+                className="p-2 border border-slate-200 text-slate-600 hover:border-amber-400 hover:text-slate-900 rounded-full bg-white transition-colors"
+                aria-label="Previous story"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              
+              <div className="flex gap-2">
+                {testimonials.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setTestimonialIndex(idx)}
+                    className={`h-2.5 rounded-full transition-all ${idx === testimonialIndex ? 'w-8 bg-amber-400' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`}
+                    aria-label={`Slide to review ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setTestimonialIndex(prev => (prev + 1) % testimonials.length)}
+                className="p-2 border border-slate-200 text-slate-600 hover:border-amber-400 hover:text-slate-900 rounded-full bg-white transition-colors"
+                aria-label="Next story"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 8: INSTALLATION PROCESS (Timeline)
+         ========================================= */}
+      <section ref={timelineSectionRef} className="section-padding bg-white overflow-hidden">
+        <div className="container-custom px-4 text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Execution</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Rooftop Project Timeline</h2>
+          <p className="mt-4 text-slate-600 max-w-xl mx-auto text-sm sm:text-base mb-16">
+            From initial structural consultation to grid synchronization, we guarantee systematic planning at every stage.
+          </p>
+
+          <div className="relative w-full max-w-6xl mx-auto">
+            {/* Scroll-Linked Progress Line (horizontal layout) */}
+            <div className="hidden md:block absolute top-[44px] left-8 right-8 h-[3px] bg-slate-100 rounded-full overflow-hidden z-0">
+              <motion.div
+                style={{ scaleX: timelineScaleX, originX: 0 }}
+                className="h-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-6 relative z-10">
+              {[
+                { step: "01", title: "Consultation", desc: "Energy load profiling & rooftop capacity estimate.", color: "border-emerald-400 text-emerald-500 bg-emerald-50" },
+                { step: "02", title: "Site Survey", desc: "Digital drone scans & structural shadow checks.", color: "border-teal-400 text-teal-500 bg-teal-50" },
+                { step: "03", title: "Design & Proposal", desc: "Electrical layouts, blueprints and financial estimates.", color: "border-cyan-400 text-cyan-500 bg-cyan-50" },
+                { step: "04", title: "Installation", desc: "Tier-1 array structural execution & wiring.", color: "border-blue-400 text-blue-500 bg-blue-50" },
+                { step: "05", title: "Testing", desc: "Electrical grounding checks & safety audits.", color: "border-indigo-400 text-indigo-500 bg-indigo-50" },
+                { step: "06", title: "Handover", desc: "Net metering launch and digital dashboard app setup.", color: "border-purple-400 text-purple-500 bg-purple-50" },
+              ].map((proc, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -6 }}
+                  className="flex flex-col items-center md:items-start text-center md:text-left group bg-white border border-slate-100 p-5 rounded-3xl shadow-sm md:shadow-none"
+                >
+                  <div className={`h-[56px] w-[56px] rounded-full border-2 ${proc.color} flex items-center justify-center font-bold text-lg mb-4 shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                    {proc.step}
+                  </div>
+                  <h3 className="text-sm font-bold font-display text-slate-900 leading-tight mb-2 min-[1150px]:text-lg">
+                    {proc.title}
+                  </h3>
+                  <p className="text-slate-500 text-xs leading-relaxed px-4 md:px-0">
+                    {proc.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 9: PROJECT MAP
+         ========================================= */}
+      <section className="section-padding bg-slate-950 border-t border-b border-white/5 relative overflow-hidden">
+        {/* Soft background light mesh glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] bg-cyan-500/5 blur-[120px] pointer-events-none" />
+
+        <div className="container-custom relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center px-4">
+          
+          {/* Interactive Map Side details */}
+          <div className="lg:col-span-5 text-left flex flex-col items-start">
+            <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 font-sans">Interactive Dashboard</span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white">PAN India Presence</h2>
+            <p className="mt-4 text-slate-300 leading-relaxed text-sm sm:text-base mb-8">
+              Click on the glowing interactive solar markers on the dashboard map to track localized statistics, completed capacity, and total carbon offsets by region.
+            </p>
+
+            {/* Selected City Telemetry Card */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedCity}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="w-full glass-card-2026 rounded-3xl p-6 border border-white/10"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <MapPin className="h-5 w-5 text-amber-400" />
+                  <h4 className="text-lg font-bold text-white font-display leading-tight">{selectedCity} Hub</h4>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
+                  <div>
+                    <p className="text-[9px] text-slate-400 font-bold uppercase">Solar Installed</p>
+                    <p className="text-base font-extrabold text-white font-display mt-0.5">{currentCityData.capacity}</p>
+                  </div>
+                  <div>
+                    <p className="text-[9px] text-slate-400 font-bold uppercase">Projects Done</p>
+                    <p className="text-base font-extrabold text-white font-display mt-0.5">{currentCityData.projects}+</p>
+                  </div>
+                  <div>
+                    <p className="text-[9px] text-slate-400 font-bold uppercase">CO2 Offset</p>
+                    <p className="text-base font-extrabold text-emerald-400 font-display mt-0.5">{currentCityData.co2}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* SVG Map of India Layer */}
+          <div className="lg:col-span-7 flex items-center justify-center relative max-w-lg mx-auto w-full aspect-square border border-white/5 rounded-3xl bg-slate-900/40 backdrop-blur-sm p-4 overflow-hidden">
+            
+            {/* Abstract high-tech map visual (abstract outline nodes representing India) */}
+            <svg viewBox="0 0 400 450" className="w-full h-full fill-none" xmlns="http://www.w3.org/2000/svg">
+              {/* Map grid network coordinates lines */}
+              <path d="M 100 200 L 170 100 L 250 250 L 180 300 Z" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+              <path d="M 170 100 L 190 280 L 100 200" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+              <path d="M 180 300 L 190 380 L 250 250" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+
+              {/* Dots representing abstract land coordinates */}
+              <circle cx="170" cy="100" r="1.5" fill="rgba(255,255,255,0.15)" />
+              <circle cx="100" cy="200" r="1.5" fill="rgba(255,255,255,0.15)" />
+              <circle cx="250" cy="250" r="1.5" fill="rgba(255,255,255,0.15)" />
+              <circle cx="180" cy="300" r="1.5" fill="rgba(255,255,255,0.15)" />
+              <circle cx="190" cy="380" r="1.5" fill="rgba(255,255,255,0.15)" />
+              <circle cx="190" cy="280" r="1.5" fill="rgba(255,255,255,0.15)" />
+            </svg>
+
+            {/* Dynamic Map Pulsing City Markers */}
+            {mapCities.map((city) => (
+              <button
+                key={city.name}
+                type="button"
+                onClick={() => setSelectedCity(city.name)}
+                className="absolute z-10 flex h-6 w-6 items-center justify-center -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform duration-300"
+                style={{ left: city.x, top: city.y }}
+              >
+                <span className="relative flex h-3 w-3">
+                  <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${selectedCity === city.name ? 'bg-amber-400' : 'bg-cyan-400'}`} />
+                  <span className={`relative inline-flex h-3 w-3 rounded-full ${selectedCity === city.name ? 'bg-amber-400 border border-white' : 'bg-cyan-400'}`} />
+                </span>
+                
+                {/* Micro tooltip bubble on map */}
+                <span className="absolute bottom-6 bg-slate-900 border border-white/10 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow-xl uppercase opacity-0 hover:opacity-100 min-[980px]:opacity-100 transition-opacity">
+                  {city.name}
+                </span>
+              </button>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 10: TECHNOLOGY PARTNERS
+         ========================================= */}
+      <section className="py-16 bg-white overflow-hidden border-b border-slate-100">
+        <div className="container-custom px-4">
+          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-10">
+            Our Certified Engineering & Technology Partners
+          </p>
+
+          {/* Scrolling logo ticker wrapper (infinite loop) */}
+          <div className="relative w-full overflow-hidden">
+            <div className="flex gap-16 items-center w-max animate-[hero-marquee-scroll_20s_linear_infinite] hover:[animation-play-state:paused] cursor-pointer">
+              {[
+                "Waaree", "Adani Solar", "Tata Power Solar", "Sungrow", "Growatt", "Havells", "Polycab",
+                "Waaree", "Adani Solar", "Tata Power Solar", "Sungrow", "Growatt", "Havells", "Polycab"
+              ].map((partner, index) => (
+                <div
+                  key={index}
+                  className="text-lg sm:text-xl font-black font-display text-slate-400/70 hover:text-slate-800 tracking-wider transition-colors duration-300 select-none uppercase"
+                >
+                  ⚡ {partner}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 11: PROJECT PERFORMANCE DASHBOARD (Analytics charts)
+         ========================================= */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom px-4">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Clean Energy Dashboard</span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">ZENCO Performance Analytics</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            {/* Live Chart Visual Overlay */}
+            <div className="lg:col-span-7 rounded-3xl bg-slate-950 p-6 flex flex-col justify-between border border-white/5 shadow-2xl relative overflow-hidden text-left min-h-[350px]">
+              
+              {/* Abs mesh back glow */}
+              <div className="absolute top-[-20%] left-[-20%] h-[300px] w-[300px] rounded-full bg-emerald-500/10 blur-[80px] pointer-events-none" />
+              
+              <div className="flex justify-between items-center mb-6 relative z-10">
+                <div>
+                  <p className="text-xs text-slate-400 font-bold uppercase leading-none mb-1">Energy Production Curve</p>
+                  <h4 className="text-2xl font-extrabold text-white font-display tracking-tight">Active Real-Time Array Output</h4>
+                </div>
+                <div className="flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-500/30 rounded-full px-3 py-1">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="text-[10px] text-emerald-400 font-bold uppercase">Telemetry Active</span>
+                </div>
+              </div>
+
+              {/* Power curve Bell SVG path */}
+              <div className="w-full h-48 relative z-10 flex items-end">
+                <svg className="w-full h-full" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Grid lines */}
+                  <line x1="0" y1="120" x2="500" y2="120" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+                  <line x1="0" y1="80" x2="500" y2="80" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+                  <line x1="0" y1="40" x2="500" y2="40" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+
+                  {/* Bell Curve line */}
+                  <path
+                    d="M 10 140 C 100 140, 150 10, 250 10 C 350 10, 400 140, 490 140"
+                    stroke="url(#chart-grad)"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    className="svg-energy-glow"
+                  />
+
+                  {/* Active dot tracer */}
+                  <circle cx="250" cy="10" r="5" fill="#10B981" className="animate-pulse" />
+
+                  <defs>
+                    <linearGradient id="chart-grad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#06B6D4" />
+                      <stop offset="50%" stopColor="#10B981" />
+                      <stop offset="100%" stopColor="#FBBF24" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                {/* Curve legend timelines */}
+                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-[8px] text-slate-500 font-bold uppercase tracking-wider px-2">
+                  <span>06:00 AM</span>
+                  <span>12:00 PM (Peak)</span>
+                  <span>06:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Performance Stats Overlay cards */}
+            <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+              {[
+                { title: "CO₂ Emissions Saved", value: "14,250 Tons", desc: "Lifetime green offsets", icon: CloudLightning, color: "text-emerald-400" },
+                { title: "Equivalent Trees Saved", value: "57,000 Trees", desc: "Afforestation offset", icon: TreePine, color: "text-emerald-500" },
+                { title: "Savings Generated", value: "₹10,24,50,000", desc: "Total consumer gains", icon: TrendingUp, color: "text-cyan-400" },
+                { title: "System Efficiency", value: "99.8%", desc: "Direct uptime rating", icon: Activity, color: "text-amber-400" }
+              ].map((dash, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-3xl bg-white border border-slate-100 shadow-xl p-5 flex flex-col justify-between text-left group hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                >
+                  <div className={`p-2 bg-slate-50 rounded-2xl w-max ${dash.color}`}>
+                    <dash.icon className="h-5 w-5" />
+                  </div>
+
+                  <div className="mt-4">
+                    <p className="text-[10px] text-slate-400 font-bold uppercase leading-none mb-1.5">{dash.title}</p>
+                    <p className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display tracking-tight leading-none">{dash.value}</p>
+                    <p className="text-[10px] text-slate-400 font-medium leading-none mt-2">{dash.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================
+         SECTION 12: FINAL CTA
+         ========================================= */}
+      <section className="py-20 bg-white px-4 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto rounded-[32px] bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 text-white shadow-2xl relative overflow-hidden py-16 px-6 sm:px-12 md:py-24 text-center border border-white/5"
+        >
+          {/* Back mesh glowing animation */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <div className="absolute top-[-20%] left-[-20%] h-[400px] w-[400px] rounded-full bg-emerald-500/15 blur-[100px] animate-pulse" style={{ animationDuration: '6s' }} />
+            <div className="absolute bottom-[-20%] right-[-20%] h-[350px] w-[350px] rounded-full bg-cyan-500/10 blur-[90px] animate-pulse" style={{ animationDuration: '8s' }} />
+            <div className="absolute inset-0 particles-container opacity-20" />
+            <div className="absolute inset-0 futuristic-grid opacity-10" />
+          </div>
+
+          <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+            <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold text-emerald-400 uppercase tracking-widest">
+              Success Begins Here
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-white leading-tight">
+              Ready To Become Our Next Success Story?
+            </h2>
+
+            <p className="mt-6 text-slate-300 text-sm sm:text-base leading-relaxed">
+              Get a customized solar solution designed for maximum savings and long-term performance. Book your site survey today.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <ProjectCTAButton to ='/contact'>
+                Book Site Survey
+              </ProjectCTAButton>
+              <ProjectCTAButton to="/solar-calculator" variant="outline">
+                Calculate Savings
+              </ProjectCTAButton>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+    </>
+  );
+}
