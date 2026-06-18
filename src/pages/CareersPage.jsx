@@ -137,7 +137,7 @@ export default function CareersPage() {
       <PageHero
         title="Careers"
         subtitle="Build your future in solar energy"
-        image={images.building}
+        image="https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&w=1000&q=80"
         breadcrumb="Home / Careers"
       />
 

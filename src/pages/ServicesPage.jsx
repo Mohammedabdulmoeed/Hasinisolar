@@ -156,14 +156,14 @@ export default function ServicesPage() {
     <PageHero
       title="Our Solar Services"
       subtitle="Comprehensive solar energy solutions for residential, commercial, and industrial customers."
-      image={images.office}
+      image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80"
       breadcrumb="Home / Services"
     />
 
       {/* =========================================
          SECTION 1: SERVICES HERO
          ========================================= */}
-      <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden py-24 bg-white">
+      <section className="relative min-h-[15vh] flex items-center justify-center overflow-hidden py-24 bg-white">
         {/* Soft background light mesh glow & particles */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-1/4 left-1/4 h-[500px] w-[500px] rounded-full bg-emerald-500/5 blur-3xl" />

@@ -4,8 +4,8 @@ import { images } from '../../data/images';
 import { staggerContainer, fadeInUp } from '../../animations/variants';
 
 const stats = [
-  { value: 200, suffix: '+', label: 'Projects Completed' },
-  { value: 10, suffix: 'MV+', label: 'Solar Capacity Delivered' },
+  { value: 100, suffix: '+', label: 'Projects Completed' },
+  { value: 200, suffix: 'kw+', label: 'Solar Capacity Delivered' },
   { value: 2, suffix: '+', label: 'Years Panel Performance' },
   { value: 100, suffix: '%', label: 'Customer Satisfaction' },
 ];

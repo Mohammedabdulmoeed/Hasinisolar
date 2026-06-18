@@ -15,8 +15,8 @@ const trustItems = [
 ];
 
 const stats = [
-  { value: 200, suffix: '+', label: 'Projects Completed' },
-  { value: 10, suffix: ' MW+', label: 'Installed Capacity' },
+  { value: 100, suffix: '+', label: 'Projects Completed' },
+  { value: 200, suffix: ' kW+', label: 'Installed Capacity' },
   { value: 100, suffix: '%', label: 'Customer Satisfaction' },
   { value: 25, suffix: '+', label: 'Years Performance Warranty' },
 ];
@@ -123,7 +123,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="hero-aurora-bg min-h-screen relative flex flex-col justify-between overflow-hidden pt-24 md:pt-28 pb-12"
+      className="hero-aurora-bg min-h-fit lg:min-h-screen relative flex flex-col justify-between overflow-hidden pt-24 md:pt-28 pb-12"
     >
       {/* 2026 Background Layer */}
       <motion.div
@@ -223,10 +223,10 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Subtext explaining core value props */}
+          {/* Subtext explaining core value props (Updated mt-6 to mt-10 sm:mt-12) */}
           <motion.p
             variants={itemVariants}
-            className="mt-6 text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-sans"
+            className="mt-10 sm:mt-12 text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-sans"
           >
             Reduce electricity bills by up to <strong className="text-white">90%</strong>. Get government subsidies of up to <strong className="text-white">₹78,000</strong>. Optimize performance in real-time with AI-driven energy monitoring. Invest in clean, sustainable energy independence backed by a <strong className="text-white">25-year warranty</strong>.
           </motion.p>
@@ -252,17 +252,17 @@ export default function Hero() {
             </motion.div>
 
             {/* Secondary CTA */}
-           <motion.div
-  whileHover={prefersReducedMotion ? {} : { scale: 1.02, y: -1 }}
-  whileTap={prefersReducedMotion ? {} : { scale: 0.99 }}
->
-  <Link
-    to="/contact#contact-form"
-    className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-slate-300 hover:text-white uppercase tracking-wider rounded-full border border-white/10 hover:border-cyan-400 bg-white/5 backdrop-blur-xl transition-all duration-300 w-full sm:w-auto"
-  >
-    Book Free Consultation
-  </Link>
-</motion.div>
+            <motion.div
+              whileHover={prefersReducedMotion ? {} : { scale: 1.02, y: -1 }}
+              whileTap={prefersReducedMotion ? {} : { scale: 0.99 }}
+            >
+              <Link
+                to="/contact#contact-form"
+                className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-slate-300 hover:text-white uppercase tracking-wider rounded-full border border-white/10 hover:border-cyan-400 bg-white/5 backdrop-blur-xl transition-all duration-300 w-full sm:w-auto"
+              >
+                Book Free Consultation
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Desktop Statistics Stack */}

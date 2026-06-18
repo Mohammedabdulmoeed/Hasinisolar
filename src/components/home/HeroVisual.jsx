@@ -44,7 +44,7 @@ export default function HeroVisual() {
 
   return (
     <div
-      className="relative w-full aspect-[4/3] min-[980px]:aspect-square lg:aspect-[4/3] rounded-3xl overflow-visible cursor-pointer select-none group perspective-[1000px]"
+      className="relative w-full aspect-[4/3] min-[980px]:aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden min-[980px]:overflow-visible cursor-pointer select-none group perspective-[1000px]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       aria-hidden="true"
@@ -132,7 +132,6 @@ export default function HeroVisual() {
           />
 
           {/* Glowing Energy Network lines from Solar Panels to Battery/Grid */}
-          {/* Main battery feed line */}
           <path
             d="M 280 145 C 310 180, 320 220, 360 250"
             stroke="url(#energy-flow-grad)"
@@ -141,7 +140,6 @@ export default function HeroVisual() {
             strokeDasharray="6 8"
             className="hero-wire-a svg-energy-glow"
           />
-          {/* Grid upload path */}
           <path
             d="M 290 135 C 360 140, 420 180, 450 210"
             stroke="url(#energy-flow-grad)"
@@ -150,7 +148,6 @@ export default function HeroVisual() {
             strokeDasharray="8 6"
             className="hero-wire-b svg-energy-glow"
           />
-          {/* Smart home distribution */}
           <path
             d="M 270 155 C 220 190, 180 230, 140 280"
             stroke="url(#energy-flow-grad)"
@@ -176,7 +173,7 @@ export default function HeroVisual() {
 
       {/* 1. Live Savings Widget (Top Left) */}
       <div
-        className="absolute top-[8%] left-[-4%] z-20 w-[170px] min-[480px]:w-[190px] card-float-y-1"
+        className="absolute top-[8%] left-0 min-[480px]:left-[-2%] z-20 w-[170px] min-[480px]:w-[190px] card-float-y-1"
         style={getLayerStyle(0.65)}
       >
         <div className="glass-card-2026 rounded-2xl p-4 transition-all duration-300">
@@ -207,7 +204,7 @@ export default function HeroVisual() {
 
       {/* 2. AI Energy Card (Bottom Right) */}
       <div
-        className="absolute bottom-[6%] right-[-4%] z-20 w-[180px] min-[480px]:w-[210px] card-float-y-2"
+        className="absolute bottom-[6%] right-0 min-[480px]:right-[-2%] z-20 w-[180px] min-[480px]:w-[210px] card-float-y-2"
         style={getLayerStyle(0.8)}
       >
         <div className="glass-card-2026 rounded-2xl p-4 transition-all duration-300">
@@ -255,7 +252,7 @@ export default function HeroVisual() {
 
       {/* 3. Subsidy Card (Top Right) */}
       <div
-        className="absolute top-[20%] right-[-6%] z-20 w-[150px] min-[480px]:w-[170px] card-float-y-3"
+        className="absolute top-[20%] right-0 min-[480px]:right-[-3%] z-20 w-[150px] min-[480px]:w-[170px] card-float-y-3"
         style={getLayerStyle(0.7)}
       >
         <div className="glass-card-2026 rounded-2xl p-3.5 transition-all duration-300">

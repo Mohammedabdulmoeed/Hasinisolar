@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Building2, Mail, Phone, MapPin, Share2, Globe, Link2, AtSign } from 'lucide-react';
+import { Mail, Phone, MapPin, Share2, Globe, Link2, AtSign } from 'lucide-react';
 import { company } from '../../data/company';
 import { servicesOverview } from '../../data/services';
 import logos from '../../assets/hero/logos.jpeg';
@@ -15,20 +15,26 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-300">
-      <div className="container-custom section-padding pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-[980px]:grid-cols-4 lg:grid-cols-4 gap-12 lg:gap-8">
-          <div>
+    <footer className="bg-slate-950 text-slate-300 w-full text-left">
+      <div className="max-w-7xl mx-auto px-2 py-8 pb-5">
+        
+        {/* Force absolutely everything into a single row line using flex-nowrap 
+          with micro-gaps to keep space at an absolute minimum.
+        */}
+        <div className="flex flex-row flex-nowrap items-start justify-between gap-2">
+          
+          {/* Column 1: Brand Profile / Logo */}
+          <div className="basis-[30%] shrink-0">
             <img
-  src={logos}
-  alt="ZENCO Solar Energies" 
-  className="h-16 w-auto object-contain mb-4"
-/>
-            <p className="text-sm leading-relaxed text-slate-400">
+              src={logos}
+              alt="ZENCO Solar Energies" 
+              className="h-10 w-auto object-contain mb-2"
+            />
+            <p className="text-[10px] leading-relaxed text-slate-400 max-w-[220px]">
               Premium facility management and maintenance services delivering reliable solutions
               for residential, commercial, and industrial clients across India.
             </p>
-            <div className="mt-6 flex gap-3">
+            <div className="mt-3 flex gap-1.5">
               {[
                 { Icon: Share2, href: company.social.facebook, label: 'Facebook' },
                 { Icon: Link2, href: company.social.linkedin, label: 'LinkedIn' },
@@ -41,20 +47,21 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"
+                  className="flex h-6 w-6 items-center justify-center rounded bg-slate-800 text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-3 w-3" />
                 </a>
               ))}
             </div>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+          {/* Column 2: Quick Links */}
+          <div className="basis-[20%] shrink-0 pl-1">
+            <h4 className="font-bold text-white mb-2 text-xs tracking-tight">Quick Links</h4>
+            <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.to}>
-                  <Link to={link.to} className="text-sm hover:text-brand-400 transition-colors">
+                  <Link to={link.to} className="text-[10px] text-slate-400 hover:text-white transition-colors block whitespace-nowrap">
                     {link.label}
                   </Link>
                 </li>
@@ -62,12 +69,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-white mb-4">Our Services</h4>
-            <ul className="space-y-2">
+          {/* Column 3: Our Services */}
+          <div className="basis-[20%] shrink-0 pl-1">
+            <h4 className="font-bold text-white mb-2 text-xs tracking-tight">Our Services</h4>
+            <ul className="space-y-1">
               {servicesOverview.map((s) => (
                 <li key={s.id}>
-                  <Link to="/services" className="text-sm hover:text-brand-400 transition-colors">
+                  <Link to="/services" className="text-[10px] text-slate-400 hover:text-white transition-colors block whitespace-nowrap">
                     {s.title}
                   </Link>
                 </li>
@@ -75,52 +83,55 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-white mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex gap-3">
-                <MapPin className="h-5 w-5 shrink-0 text-brand-400" />
-                <span>{company.address}</span>
+          {/* Column 4: Contact Us */}
+          <div className="basis-[30%] shrink-0 pl-1">
+            <h4 className="font-bold text-white mb-2 text-xs tracking-tight">Contact Us</h4>
+            <ul className="space-y-2 text-[10px] text-slate-400">
+              <li className="flex gap-1 items-start">
+                <MapPin className="h-3 w-3 shrink-0 text-blue-400 mt-0.5" />
+                <span className="leading-tight">{company.address}</span>
               </li>
-              <li className="flex gap-3">
-  <Phone className="h-5 w-5 shrink-0 text-brand-400 mt-1" />
+              
+              <li className="flex gap-1 items-start">
+                <Phone className="h-3 w-3 shrink-0 text-blue-400 mt-0.5" />
+                <div className="flex flex-col space-y-0.5">
+                  {company.phoneDisplay.map((phone, index) => (
+                    <a
+                      key={index}
+                      href={`tel:${phone.replace(/\s/g, '')}`}
+                      className="hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      {phone}
+                    </a>
+                  ))}
+                </div>
+              </li>
 
-  <div className="flex flex-col">
-    {company.phoneDisplay.map((phone, index) => (
-      <a
-        key={index}
-        href={`tel:${phone.replace(/\s/g, '')}`}
-        className="hover:text-white transition-colors"
-      >
-        {phone}
-      </a>
-    ))}
-  </div>
-</li>
-              <li className="flex gap-3">
-  <Mail className="h-5 w-5 shrink-0 text-brand-400 mt-1" />
-
-  <div className="flex flex-col">
-    {company.email.map((email, index) => (
-      <a
-        key={index}
-        href={`mailto:${email}`}
-        className="hover:text-white transition-colors"
-      >
-        {email}
-      </a>
-    ))}
-  </div>
-</li>
+              <li className="flex gap-1 items-start">
+                <Mail className="h-3 w-3 shrink-0 text-blue-400 mt-0.5" />
+                <div className="flex flex-col space-y-0.5">
+                  {company.email.map((email, index) => (
+                    <a
+                      key={index}
+                      href={`mailto:${email}`}
+                      className="hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      {email}
+                    </a>
+                  ))}
+                </div>
+              </li>
             </ul>
-            
           </div>
+
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        {/* Bottom copyright segment */}
+        <div className="mt-8 pt-4 border-t border-slate-800/60 flex flex-row justify-between items-center text-[10px] text-slate-500">
           <p>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</p>
           <p>Reliable Facility & Maintenance Solutions</p>
         </div>
+
       </div>
     </footer>
   );

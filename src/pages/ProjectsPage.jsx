@@ -265,7 +265,7 @@ export default function ProjectsPage() {
       <PageHero
         title="Project"
         subtitle="ZENCO Solar Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
-        image={images.office}
+        image="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=80"
         breadcrumb="Home / project"
       />
 
@@ -766,100 +766,119 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* =========================================
-         SECTION 9: PROJECT MAP
-         ========================================= */}
+     {/* =========================================
+          SECTION 9: PROJECT MAP
+          ========================================= */}
       <section className="section-padding bg-slate-950 border-t border-b border-white/5 relative overflow-hidden">
         {/* Soft background light mesh glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] bg-cyan-500/5 blur-[120px] pointer-events-none" />
 
-        <div className="container-custom relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center px-4">
+        <div className="container-custom relative z-10 w-full px-2 sm:px-4">
           
-          {/* Interactive Map Side details */}
-          <div className="lg:col-span-5 text-left flex flex-col items-start">
-            <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 font-sans">Interactive Dashboard</span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white">PAN India Presence</h2>
-            <p className="mt-4 text-slate-300 leading-relaxed text-sm sm:text-base mb-8">
-              Click on the glowing interactive solar markers on the dashboard map to track localized statistics, completed capacity, and total carbon offsets by region.
-            </p>
-
-            {/* Selected City Telemetry Card */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedCity}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="w-full glass-card-2026 rounded-3xl p-6 border border-white/10"
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <MapPin className="h-5 w-5 text-amber-400" />
-                  <h4 className="text-lg font-bold text-white font-display leading-tight">{selectedCity} Hub</h4>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
-                  <div>
-                    <p className="text-[9px] text-slate-400 font-bold uppercase">Solar Installed</p>
-                    <p className="text-base font-extrabold text-white font-display mt-0.5">{currentCityData.capacity}</p>
-                  </div>
-                  <div>
-                    <p className="text-[9px] text-slate-400 font-bold uppercase">Projects Done</p>
-                    <p className="text-base font-extrabold text-white font-display mt-0.5">{currentCityData.projects}+</p>
-                  </div>
-                  <div>
-                    <p className="text-[9px] text-slate-400 font-bold uppercase">CO2 Offset</p>
-                    <p className="text-base font-extrabold text-emerald-400 font-display mt-0.5">{currentCityData.co2}</p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+          {/* Main Section Header */}
+          <div className="w-full text-center mb-10 md:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full">
+              Enterprise Footprint
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-black tracking-tight font-display text-white">
+              Our Operational Network
+            </h2>
           </div>
 
-          {/* SVG Map of India Layer */}
-          <div className="lg:col-span-7 flex items-center justify-center relative max-w-lg mx-auto w-full aspect-square border border-white/5 rounded-3xl bg-slate-900/40 backdrop-blur-sm p-4 overflow-hidden">
+          {/* Grid Layout: Stays left and right across all modes including simulated mobile */}
+          <div className="grid grid-cols-12 gap-4 sm:gap-6 lg:gap-12 items-center">
             
-            {/* Abstract high-tech map visual (abstract outline nodes representing India) */}
-            <svg viewBox="0 0 400 450" className="w-full h-full fill-none" xmlns="http://www.w3.org/2000/svg">
-              {/* Map grid network coordinates lines */}
-              <path d="M 100 200 L 170 100 L 250 250 L 180 300 Z" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-              <path d="M 170 100 L 190 280 L 100 200" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-              <path d="M 180 300 L 190 380 L 250 250" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-
-              {/* Dots representing abstract land coordinates */}
-              <circle cx="170" cy="100" r="1.5" fill="rgba(255,255,255,0.15)" />
-              <circle cx="100" cy="200" r="1.5" fill="rgba(255,255,255,0.15)" />
-              <circle cx="250" cy="250" r="1.5" fill="rgba(255,255,255,0.15)" />
-              <circle cx="180" cy="300" r="1.5" fill="rgba(255,255,255,0.15)" />
-              <circle cx="190" cy="380" r="1.5" fill="rgba(255,255,255,0.15)" />
-              <circle cx="190" cy="280" r="1.5" fill="rgba(255,255,255,0.15)" />
-            </svg>
-
-            {/* Dynamic Map Pulsing City Markers */}
-            {mapCities.map((city) => (
-              <button
-                key={city.name}
-                type="button"
-                onClick={() => setSelectedCity(city.name)}
-                className="absolute z-10 flex h-6 w-6 items-center justify-center -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform duration-300"
-                style={{ left: city.x, top: city.y }}
-              >
-                <span className="relative flex h-3 w-3">
-                  <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${selectedCity === city.name ? 'bg-amber-400' : 'bg-cyan-400'}`} />
-                  <span className={`relative inline-flex h-3 w-3 rounded-full ${selectedCity === city.name ? 'bg-amber-400 border border-white' : 'bg-cyan-400'}`} />
-                </span>
+           {/* Left Side: Interactive Map Side details */}
+            <div className="col-span-5 text-left flex flex-col items-start space-y-4">
+              <div>
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-cyan-400 font-sans">Interactive Dashboard</span>
                 
-                {/* Micro tooltip bubble on map */}
-                <span className="absolute bottom-6 bg-slate-900 border border-white/10 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow-xl uppercase opacity-0 hover:opacity-100 min-[980px]:opacity-100 transition-opacity">
-                  {city.name}
-                </span>
-              </button>
-            ))}
-          </div>
+                {/* Margin bottom added to create breathing room beneath the main heading */}
+                <h3 className="mt-1 sm:mt-2 mb-4 lg:mb-6 text-base sm:text-2xl lg:text-4xl font-black font-display text-white tracking-tight">
+                  PAN India Presence
+                </h3>
+              </div>
+              
+              <p className="mt-2 text-slate-400 leading-relaxed text-[10px] sm:text-sm lg:text-base hidden xs:block">
+                Click on the glowing interactive solar markers on the dashboard map to track localized statistics.
+              </p>
 
+              {/* Selected City Telemetry Card (Pushed down slightly for structural clarity) */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedCity}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full mt-4 glass-card-2026 rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-white/10 bg-slate-900/80 backdrop-blur-md"
+                >
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4">
+                    <MapPin className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-amber-400 shrink-0" />
+                    <h4 className="text-xs sm:text-lg font-bold text-white font-display leading-none">{selectedCity} Hub</h4>
+                  </div>
+
+                  {/* Grid layout within the telemetry card */}
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-4 border-t border-white/5 pt-2 sm:pt-4">
+                    <div>
+                      <p className="text-[7px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-tight">Capacity</p>
+                      <p className="text-[10px] sm:text-base font-extrabold text-white font-display mt-0.5">{currentCityData.capacity}</p>
+                    </div>
+                    <div>
+                      <p className="text-[7px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-tight">Projects</p>
+                      <p className="text-[10px] sm:text-base font-extrabold text-white font-display mt-0.5">{currentCityData.projects}+</p>
+                    </div>
+                    <div>
+                      <p className="text-[7px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-tight">CO₂ Offset</p>
+                      <p className="text-[10px] sm:text-base font-extrabold text-emerald-400 font-display mt-0.5">{currentCityData.co2}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right Side: SVG Map of India Layer (With New Contrast Background) */}
+            <div className="col-span-7 flex items-center justify-center relative w-full aspect-square border border-slate-800 rounded-2xl sm:rounded-3xl bg-slate-900/90 shadow-2xl p-2 sm:p-4 overflow-hidden">
+              
+              {/* Abstract map visual layout background */}
+              <svg viewBox="0 0 400 450" className="w-full h-full fill-none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 100 200 L 170 100 L 250 250 L 180 300 Z" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+                <path d="M 170 100 L 190 280 L 100 200" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+                <path d="M 180 300 L 190 380 L 250 250" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+
+                <circle cx="170" cy="100" r="1.5" fill="rgba(255,255,255,0.15)" />
+                <circle cx="100" cy="200" r="1.5" fill="rgba(255,255,255,0.15)" />
+                <circle cx="250" cy="250" r="1.5" fill="rgba(255,255,255,0.15)" />
+                <circle cx="180" cy="300" r="1.5" fill="rgba(255,255,255,0.15)" />
+                <circle cx="190" cy="380" r="1.5" fill="rgba(255,255,255,0.15)" />
+                <circle cx="190" cy="280" r="1.5" fill="rgba(255,255,255,0.15)" />
+              </svg>
+
+              {/* Map Pulsing City Markers */}
+              {mapCities.map((city) => (
+                <button
+                  key={city.name}
+                  type="button"
+                  onClick={() => setSelectedCity(city.name)}
+                  className="absolute z-10 flex h-4 w-4 sm:h-6 sm:w-6 items-center justify-center -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform duration-300"
+                  style={{ left: city.x, top: city.y }}
+                >
+                  <span className="relative flex h-2 w-2 sm:h-3 sm:w-3">
+                    <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${selectedCity === city.name ? 'bg-amber-400' : 'bg-cyan-400'}`} />
+                    <span className={`relative inline-flex h-2 w-2 sm:h-3 sm:w-3 rounded-full ${selectedCity === city.name ? 'bg-amber-400 border border-white' : 'bg-cyan-400'}`} />
+                  </span>
+                  
+                  {/* Tooltip text elements optimized for micro screen heights */}
+                  <span className="absolute bottom-4 sm:bottom-6 bg-slate-950 border border-white/10 text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded shadow-xl uppercase whitespace-nowrap pointer-events-none">
+                    {city.name}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+          </div>
         </div>
       </section>
-
       {/* =========================================
          SECTION 10: TECHNOLOGY PARTNERS
          ========================================= */}
@@ -888,37 +907,39 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* =========================================
-         SECTION 11: PROJECT PERFORMANCE DASHBOARD (Analytics charts)
-         ========================================= */}
+     {/* =========================================
+          SECTION 11: PROJECT PERFORMANCE DASHBOARD (Analytics charts)
+          ========================================= */}
       <section className="section-padding bg-slate-50">
-        <div className="container-custom px-4">
-          <div className="text-center mb-16">
+        <div className="container-custom px-2 sm:px-4">
+          
+          <div className="text-center mb-8 md:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Clean Energy Dashboard</span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">ZENCO Performance Analytics</h2>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-bold font-display text-slate-900">ZENCO Performance Analytics</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          {/* Forced Grid: Stays side-by-side left and right across all screens including simulated desktop-mode mobile */}
+          <div className="grid grid-cols-12 gap-3 sm:gap-6 lg:gap-8 items-stretch">
             
-            {/* Live Chart Visual Overlay */}
-            <div className="lg:col-span-7 rounded-3xl bg-slate-950 p-6 flex flex-col justify-between border border-white/5 shadow-2xl relative overflow-hidden text-left min-h-[350px]">
+            {/* Left Side: Live Chart Visual Overlay */}
+            <div className="col-span-7 rounded-2xl sm:rounded-3xl bg-slate-950 p-3 sm:p-6 flex flex-col justify-between border border-white/5 shadow-2xl relative overflow-hidden text-left min-h-[220px] sm:min-h-[350px]">
               
-              {/* Abs mesh back glow */}
-              <div className="absolute top-[-20%] left-[-20%] h-[300px] w-[300px] rounded-full bg-emerald-500/10 blur-[80px] pointer-events-none" />
+              {/* Ambient back glow */}
+              <div className="absolute top-[-20%] left-[-20%] h-[150px] w-[150px] sm:h-[300px] sm:w-[300px] rounded-full bg-emerald-500/10 blur-[40px] sm:blur-[80px] pointer-events-none" />
               
-              <div className="flex justify-between items-center mb-6 relative z-10">
+              <div className="flex justify-between items-start mb-3 sm:mb-6 relative z-10 gap-2">
                 <div>
-                  <p className="text-xs text-slate-400 font-bold uppercase leading-none mb-1">Energy Production Curve</p>
-                  <h4 className="text-2xl font-extrabold text-white font-display tracking-tight">Active Real-Time Array Output</h4>
+                  <p className="text-[7px] sm:text-xs text-slate-400 font-bold uppercase leading-none mb-1">Energy Production Curve</p>
+                  <h4 className="text-xs sm:text-2xl font-extrabold text-white font-display tracking-tight leading-tight">Active Real-Time Array Output</h4>
                 </div>
-                <div className="flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-500/30 rounded-full px-3 py-1">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span className="text-[10px] text-emerald-400 font-bold uppercase">Telemetry Active</span>
+                <div className="flex items-center gap-1 bg-emerald-500/15 border border-emerald-500/30 rounded-full px-1.5 py-0.5 sm:px-3 sm:py-1 shrink-0">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="text-[6px] sm:text-[10px] text-emerald-400 font-bold uppercase tracking-tight">Live</span>
                 </div>
               </div>
 
               {/* Power curve Bell SVG path */}
-              <div className="w-full h-48 relative z-10 flex items-end">
+              <div className="w-full h-24 sm:h-48 relative z-10 flex items-end">
                 <svg className="w-full h-full" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
                   {/* Grid lines */}
                   <line x1="0" y1="120" x2="500" y2="120" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
@@ -928,17 +949,16 @@ export default function ProjectsPage() {
                   {/* Bell Curve line */}
                   <path
                     d="M 10 140 C 100 140, 150 10, 250 10 C 350 10, 400 140, 490 140"
-                    stroke="url(#chart-grad)"
+                    stroke="url(#chart-grad-dashboard)"
                     strokeWidth="4"
                     strokeLinecap="round"
-                    className="svg-energy-glow"
                   />
 
                   {/* Active dot tracer */}
                   <circle cx="250" cy="10" r="5" fill="#10B981" className="animate-pulse" />
 
                   <defs>
-                    <linearGradient id="chart-grad" x1="0" y1="0" x2="1" y2="0">
+                    <linearGradient id="chart-grad-dashboard" x1="0" y1="0" x2="1" y2="0">
                       <stop offset="0%" stopColor="#06B6D4" />
                       <stop offset="50%" stopColor="#10B981" />
                       <stop offset="100%" stopColor="#FBBF24" />
@@ -947,7 +967,7 @@ export default function ProjectsPage() {
                 </svg>
 
                 {/* Curve legend timelines */}
-                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-[8px] text-slate-500 font-bold uppercase tracking-wider px-2">
+                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-[6px] sm:text-[8px] text-slate-500 font-bold uppercase tracking-wider px-1">
                   <span>06:00 AM</span>
                   <span>12:00 PM (Peak)</span>
                   <span>06:00 PM</span>
@@ -955,29 +975,32 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* Performance Stats Overlay cards */}
-            <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+            {/* Right Side: Performance Stats Overlay cards */}
+            <div className="col-span-5 grid grid-cols-2 gap-2 sm:gap-4">
               {[
-                { title: "CO₂ Emissions Saved", value: "14,250 Tons", desc: "Lifetime green offsets", icon: CloudLightning, color: "text-emerald-400" },
-                { title: "Equivalent Trees Saved", value: "57,000 Trees", desc: "Afforestation offset", icon: TreePine, color: "text-emerald-500" },
-                { title: "Savings Generated", value: "₹10,24,50,000", desc: "Total consumer gains", icon: TrendingUp, color: "text-cyan-400" },
-                { title: "System Efficiency", value: "99.8%", desc: "Direct uptime rating", icon: Activity, color: "text-amber-400" }
-              ].map((dash, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-3xl bg-white border border-slate-100 shadow-xl p-5 flex flex-col justify-between text-left group hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                >
-                  <div className={`p-2 bg-slate-50 rounded-2xl w-max ${dash.color}`}>
-                    <dash.icon className="h-5 w-5" />
-                  </div>
+                { title: "CO₂ Saved", value: "14,250 T", desc: "Lifetime offsets", icon: CloudLightning, color: "text-emerald-400" },
+                { title: "Trees Saved", value: "57,000", desc: "Afforestation value", icon: TreePine, color: "text-emerald-500" },
+                { title: "Gains", value: "₹10.24 Cr", desc: "Consumer savings", icon: TrendingUp, color: "text-cyan-400" },
+                { title: "Uptime", value: "99.8%", desc: "Direct rating", icon: Activity, color: "text-amber-400" }
+              ].map((dash, idx) => {
+                const Icon = dash.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="rounded-xl sm:rounded-3xl bg-white border border-slate-100 shadow-lg p-2.5 sm:p-5 flex flex-col justify-between text-left group hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                  >
+                    <div className={`p-1.5 bg-slate-50 rounded-lg sm:rounded-2xl w-max ${dash.color}`}>
+                      <Icon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+                    </div>
 
-                  <div className="mt-4">
-                    <p className="text-[10px] text-slate-400 font-bold uppercase leading-none mb-1.5">{dash.title}</p>
-                    <p className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display tracking-tight leading-none">{dash.value}</p>
-                    <p className="text-[10px] text-slate-400 font-medium leading-none mt-2">{dash.desc}</p>
+                    <div className="mt-2 sm:mt-4">
+                      <p className="text-[7px] sm:text-[10px] text-slate-400 font-bold uppercase leading-none mb-1">{dash.title}</p>
+                      <p className="text-xs sm:text-2xl font-extrabold text-slate-900 font-display tracking-tight leading-none">{dash.value}</p>
+                      <p className="text-[6px] sm:text-[10px] text-slate-400 font-medium leading-none mt-1 sm:mt-2 opacity-0 xs:opacity-100">{dash.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
           </div>
