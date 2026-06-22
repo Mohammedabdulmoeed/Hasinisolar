@@ -6,7 +6,7 @@ export const testimonials = [
     rating: 5,
     review:
       "ZENCO Solar installed a rooftop solar system for our home. Our electricity bills have dropped significantly and the installation process was smooth from start to finish.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "https://images.unsplash.com/photo-1629301085299-a0b879255825?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with local asset like "/images/testimonials/rajesh.jpg"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const testimonials = [
     rating: 5,
     review:
       "The team provided excellent consultation and helped us choose the perfect solar solution for our office. The return on investment has been outstanding.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "https://images.unsplash.com/photo-1764740128390-4196892b3f61?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with local asset like "/images/testimonials/priya.jpg"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const testimonials = [
     rating: 5,
     review:
       "Our industrial solar installation was completed on schedule and has reduced operational energy costs substantially.",
-    image: "https://randomuser.me/api/portraits/men/67.jpg",
+    image: "https://randomuser.me/api/portraits/men/67.jpg?txt=Indian-Man-2", // Replace with local asset like "/images/testimonials/arif.jpg"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const testimonials = [
     rating: 5,
     review:
       "Professional installation, premium products, and excellent after-sales support. Highly recommended.",
-    image: "https://randomuser.me/api/portraits/women/52.jpg",
+    image: "https://images.unsplash.com/photo-1725033489648-a819750348eb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with local asset like "/images/testimonials/anjali.jpg"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const testimonials = [
     rating: 5,
     review:
       "The solar system is performing exactly as promised. We are seeing consistent savings every month.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    image: "https://images.unsplash.com/photo-1610767541061-cc2cf8121199?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with local asset like "/images/testimonials/suresh.jpg"
   },
   {
     id: 6,
@@ -51,6 +51,6 @@ export const testimonials = [
     rating: 5,
     review:
       "Excellent workmanship and transparent pricing. The entire team was responsive and supportive.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    image: "https://images.unsplash.com/photo-1770748034186-6d6e5738cddf?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D,"
   },
 ];

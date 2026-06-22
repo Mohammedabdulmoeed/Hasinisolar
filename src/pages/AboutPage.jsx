@@ -905,8 +905,8 @@ export default function AboutPage() {
 
             {[
               { year: "2024", title: "Company Founded", desc: "Established with a vision to build decentralized clean energy networks across southern India." },
-              { year: "2024", title: "First 1MW Project", desc: "Successfully completed our first high-capacity industrial rooftop array in Adilabad." },
-              { year: "2025", title: "200+ Installations", desc: "Deployed modular hybrid systems and corporate net offsets PAN India." },
+              { year: "2024", title: "First 1kW Project", desc: "Successfully completed our first high-capacity industrial rooftop array in Adilabad." },
+              { year: "2025", title: "100+ Installations", desc: "Deployed modular hybrid systems and corporate net offsets PAN India." },
               { year: "2026", title: "PAN India Expansion", desc: "Actively expanding clean tech distribution and operations nodes to 15+ major metros." }
             ].map((mile, i) => (
               <motion.div
@@ -983,7 +983,7 @@ export default function AboutPage() {
           <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white mb-12">Why Choose ZENCO</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <AboutStatCard value={10} suffix=" MW+" label="Total Installed" icon={Zap} />
+            <AboutStatCard value={100} suffix=" kW+" label="Total Installed" icon={Zap} />
             <AboutStatCard value={14} suffix="K+Tons" label="CO₂ Saved" icon={Leaf} />
             <AboutStatCard value={100} suffix="%" label="Satisfaction" icon={Heart} />
             <AboutStatCard value={30} suffix="%" label="ROI Improvement" icon={TrendingUp} />

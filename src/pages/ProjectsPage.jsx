@@ -168,33 +168,33 @@ export default function ProjectsPage() {
 
   // Testimonials Array
   const testimonials = [
-    {
-      name: "Rajesh Singhania",
-      role: "Managing Director, Singhania Textiles",
-      review: "ZENCO's 1.2 MW Industrial Solar array completely transformed our operating costs. Our monthly electricity invoice fell by 40% starting from month one. The telemetry dashboards and PM-Surya Ghar subsidy approval support were outstanding.",
-      logo: "Singhania Group",
-      savings: "₹8 Lakhs / month",
-      roi: "3.8 Years achieved",
-      image: images.Residential_Solar_Systems
-    },
-    {
-      name: "Dr. Ananya Reddy",
-      role: "Director of Operations, Apollo Hospitals Blr",
-      review: "In healthcare, constant power reliability is a matter of life and death. ZENCO engineered an On-Grid 250 kW solution that integrated seamlessly with our backup microgrid generators. ROI was achieved in exactly 4 years.",
-      logo: "Apollo Health",
-      savings: "₹2.2 Lakhs / month",
-      roi: "4.0 Years achieved",
-      image: images.OnGrid2
-    },
-    {
-      name: "Vikram Malhotra",
-      role: "Estate Architect, Eco-Luxury Villas Hyd",
-      review: "For premium residences, design and visual integration are critical. ZENCO custom-engineered sleek integrated solar roof shingles that matched the home's aesthetics while supplying 100% of our daily power requirements.",
-      logo: "Malhotra Estates",
-      savings: "₹15,000 / month",
-      roi: "4.5 Years achieved",
-      image: images.OnGrid1
-    }
+  {
+    name: "Rajesh Kumar",
+    role: "Textile Mill Owner",
+    review: "ZENCO's solar setup completely transformed our operating costs. Our monthly electricity bills fell by 40% starting from month one. The online monitoring dashboard and net-metering support were outstanding.",
+    logo: "Kumar Textiles",
+    savings: "₹8 Lakhs / month",
+    roi: "3.8 Years achieved",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    name: "A. Srinivasa Rao",
+    role: "Hospital Administrator",
+    review: "Power reliability is critical for us. ZENCO engineered an On-Grid 250 kW solution that integrated seamlessly with our existing setup. Our electricity overheads have reduced significantly, hitting ROI target in exactly 4 years.",
+    logo: "City Hospital",
+    savings: "₹2.2 Lakhs / month",
+    roi: "4.0 Years achieved",
+    image: "https://images.unsplash.com/photo-1733348137468-90b917d2ebf1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    name: "Vikram Malhotra",
+    role: "Homeowner",
+    review: "For our new house, keeping the rooftop neat was very important. ZENCO custom-engineered a sleek solar panel installation that matched the home's design while easily supplying 100% of our daily power requirements.",
+    logo: "Residential",
+    savings: "₹15,000 / month",
+    roi: "4.5 Years achieved",
+    image: "https://images.unsplash.com/photo-1720805752653-10ddccea4c94?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
   ];
 
   // Map Cities coordinates
@@ -270,109 +270,12 @@ export default function ProjectsPage() {
       />
 
       {/* =========================================
-         SECTION 1: HERO
-         ========================================= */}
-      {/* <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-slate-950">
-        
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src={images.industrial_solar}
-            alt="ZENCO Industrial Solar Grid"
-            className="w-full h-full object-cover opacity-35 scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/80" />
-          <div className="absolute inset-0 futuristic-grid opacity-30" />
-          <div className="absolute inset-0 particles-container opacity-20" />
-        </div>
-
-        <div className="container-custom relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center px-4">
-       
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
-            <motion.span
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 px-4 py-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest"
-            >
-              <Sparkles className="h-3.5 w-3.5 fill-amber-400/10" />
-              Success Stories
-            </motion.span>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.06] font-display"
-            >
-              Powering India's <br />
-              <span className="text-liquid-gradient font-extrabold">Clean Energy Future</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed"
-            >
-              Explore our successful residential, commercial, and industrial solar projects delivering measurable savings and sustainable growth.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-            >
-              <ProjectCTAButton to="#case-study">View Projects</ProjectCTAButton>
-              <ProjectCTAButton onClick={openQuote} variant="outline">Get Free Consultation</ProjectCTAButton>
-            </motion.div>
-          </div>
-
-        
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4 relative">
-            {[
-              { label: "Projects Completed", value: "500+", desc: "PAN India installations" },
-              { label: "Installed Capacity", value: "25 MW+", desc: "Clean power generated" },
-              { label: "Rooftop Panels", value: "10,000+", desc: "Premium Tier-1 arrays" },
-              { label: "Satisfaction", value: "95%", desc: "Direct consumer rating" }
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 + idx * 0.1 }}
-                className="glass-card-2026 rounded-3xl p-5 border border-white/10 hover:border-amber-400/40 hover:-translate-y-1 transition-all duration-300"
-              >
-                <p className="text-2xl sm:text-3xl font-extrabold text-white font-display tracking-tight leading-none mb-1">{stat.value}</p>
-                <p className="text-xs font-bold text-amber-400 mb-0.5">{stat.label}</p>
-                <p className="text-[10px] text-slate-400 leading-none">{stat.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      
-      // <section className="section-padding bg-slate-900 border-t border-b border-white/5 relative overflow-hidden">
-      //   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] bg-emerald-500/5 blur-[120px] pointer-events-none" />
-        
-      //   <div className="container-custom relative z-10 px-4">
-      //     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
-      //       <ProjectsStatCard value={500} suffix="+" label="Projects Completed" icon={CheckCircle} />
-      //       <ProjectsStatCard value={25} suffix=" MW+" label="Installed Capacity" icon={Zap} />
-      //       <ProjectsStatCard value={10} prefix="₹" suffix=" Cr+" label="Annual Savings Generated" icon={TrendingUp} />
-      //       <ProjectsStatCard value={15} suffix="+" label="Cities Served" icon={MapPin} />
-      //       <ProjectsStatCard value={98} suffix="%" label="System Uptime Guarantee" icon={Activity} />
-      //     </div>
-      //   </div>
-      // </section> */}
-
-      {/* =========================================
-         SECTION 3: FEATURED PROJECT SHOWCASE (Case study)
-         ========================================= */}
+       SECTION 3: FEATURED PROJECT SHOWCASE (Case study)
+       ========================================= */}
       <section id="case-study" className="section-padding bg-white overflow-hidden">
         <div className="container-custom px-4">
           <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Flagship Success</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Residential Success</span>
             <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900">Featured Case Study</h2>
           </div>
 
@@ -387,8 +290,8 @@ export default function ProjectsPage() {
             >
               <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[32rem] bg-slate-200">
                 <img
-                  src={images.industrial_solar}
-                  alt="ZENCO 1.2 MW Flagship Grid"
+                  src={images.industrial_solar} // Ensure this points to a residential roof image in your assets
+                  alt="ZENCO 15 kWp Residential Grid"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-300" />
@@ -397,12 +300,12 @@ export default function ProjectsPage() {
               {/* Floating metrics labels */}
               <div className="absolute top-[8%] left-[-4%] glass-card-2026 rounded-2xl p-4 shadow-xl border border-white/10 pointer-events-none card-float-y-1">
                 <p className="text-xs text-slate-400 font-bold uppercase">Savings Achieved</p>
-                <p className="text-2xl font-extrabold text-emerald-400 font-display">₹95 Lakhs / yr</p>
+                <p className="text-2xl font-extrabold text-emerald-600 font-display">₹1.8 Lakhs / yr</p>
               </div>
 
               <div className="absolute bottom-[10%] right-[-4%] glass-card-2026 rounded-2xl p-4 shadow-xl border border-white/10 pointer-events-none card-float-y-2">
                 <p className="text-xs text-slate-400 font-bold uppercase">Project Timeline</p>
-                <p className="text-lg font-bold text-white">45 Days Execution</p>
+                <p className="text-lg font-bold text-slate-800">3 Days Execution</p>
               </div>
             </motion.div>
 
@@ -414,134 +317,149 @@ export default function ProjectsPage() {
               variants={slideInRight}
               className="row-split-content text-left"
             >
-              <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">Industrial Excellence</span>
-              <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">1.2 MW Industrial Solar Microgrid</h3>
+              <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">Premium Housing</span>
+              <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">15 kWp Luxury Villa Solar System</h3>
               <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                ZENCO designed, engineered and connected this flagship solar installation for a leading automotive components manufacturer in Gujarat. Spread over 80,000 square feet of standing seam metal roofs, the project drives high day-load stamping operations directly.
+                ZENCO designed and commissioned a luxury net-metered rooftop solar solution for a multi-story premium residence. Engineered seamlessly into the villa's modern architecture, this grid-tied setup fully powers heavy domestic loads, including centralized air conditioning and electric vehicle charging infrastructure.
               </p>
 
               {/* Grid of details */}
               <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-slate-100 pt-6">
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Capacity</p>
-                  <p className="text-lg font-extrabold text-slate-800 font-display">1.2 MWp</p>
+                  <p className="text-lg font-extrabold text-slate-800 font-display">15 kWp</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Annual Generation</p>
-                  <p className="text-lg font-extrabold text-slate-800 font-display">1,800 MWh</p>
+                  <p className="text-lg font-extrabold text-slate-800 font-display">22,500 kWh</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Investment ROI</p>
-                  <p className="text-lg font-extrabold text-emerald-600 font-display">3.8 Years</p>
+                  <p className="text-lg font-extrabold text-emerald-600 font-display">4.2 Years</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Client Sector</p>
-                  <p className="text-sm font-bold text-slate-700 mt-0.5">Automotive Mfg</p>
+                  <p className="text-sm font-bold text-slate-700 mt-0.5">Residential / Villa</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Location</p>
-                  <p className="text-sm font-bold text-slate-700 mt-0.5">Ahmedabad, GJ</p>
+                  <p className="text-sm font-bold text-slate-700 mt-0.5">Hyderabad, TS</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Installation Year</p>
-                  <p className="text-sm font-bold text-slate-700 mt-0.5">2024</p>
+                  <p className="text-sm font-bold text-slate-700 mt-0.5">2025</p>
                 </div>
               </div>
 
               <div className="mt-10 flex items-center gap-4">
-                <ProjectCTAButton to= '/solar-calculator'>Calculate Savings</ProjectCTAButton>
+                <ProjectCTAButton to='/solar-calculator'>Calculate Savings</ProjectCTAButton>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-
       {/* =========================================
-         SECTION 4: INTERACTIVE PROJECT FILTER
-         ========================================= */}
-      <section className="py-12 bg-slate-50 border-t border-b border-slate-100">
-        <div className="container-custom px-4 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Our Portfolio</span>
-          <h2 className="mt-2 text-3xl font-bold font-display text-slate-900 mb-8">Completed Projects</h2>
+    SECTION 4: PREMIUM EDITORIAL PORTFOLIO HEADER
+    ========================================= */}
+<section className="relative pt-20 pb-12 bg-gradient-to-b from-slate-50 via-white to-white overflow-hidden border-b border-slate-100">
+  {/* Ambient Geometric Glow Accents */}
+  <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none" />
+  <div className="absolute top-12 right-1/4 w-64 h-64 bg-blue-500/5 blur-[80px] rounded-full pointer-events-none" />
 
-          {/* Filters List */}
-          <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
-            {projectCategories.map((cat) => (
-              <motion.button
-                key={cat}
-                type="button"
-                onClick={() => setFilter(cat)}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all ${
-                  filter === cat
-                    ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 font-bold shadow-lg shadow-amber-500/25'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:border-amber-400 hover:text-slate-900 shadow-sm'
-                }`}
-              >
-                {cat === 'All' ? 'All Projects' : `${cat} Systems`}
-              </motion.button>
-            ))}
-          </div>
+  <div className="container-custom px-4 max-w-7xl mx-auto">
+    <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 pb-8 border-b border-slate-100">
+      
+      {/* Left Column: Authoritative Editorial Heading */}
+      <div className="text-left max-w-2xl">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="w-8 h-[2px] bg-emerald-500 rounded-full"></span>
+          <span className="text-[11px] font-black uppercase tracking-widest text-emerald-600 font-sans">
+            Case Studies
+          </span>
         </div>
-      </section>
+        
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight leading-none">
+          Our Residential <br className="hidden sm:inline" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-emerald-800 to-emerald-600">
+            Success Stories
+          </span>
+        </h2>
+        
+        <p className="mt-4 text-sm sm:text-base text-slate-500 font-medium max-w-lg leading-relaxed">
+          Real-world execution of clean energy transition. Explore live, high-performance residential rooftop engineering deployed across premium neighborhoods.
+        </p>
+      </div>
 
-      {/* =========================================
-         SECTION 5: PROJECT GALLERY
-         ========================================= */}
-      <section className="section-padding bg-slate-50/50">
-        <div className="container-custom px-4">
-          <motion.div
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      {/* Right Column: High-End Minimal Tag Filtering System */}
+      <div className="w-full lg:w-auto flex flex-wrap gap-2 justify-start lg:justify-end">
+        {[
+          { label: "All Installations", count: "9" },
+          { label: "Rooftop On-Grid", count: "5" },
+          { label: "Premium Hybrid", count: "4" }
+        ].map((tab, idx) => (
+          <button
+            key={idx}
+            className={`px-4 py-2.5 rounded-2xl text-xs font-bold tracking-wide transition-all duration-300 flex items-center gap-2 ${
+              idx === 0
+                ? "bg-slate-900 text-white shadow-xl shadow-slate-900/10 scale-105"
+                : "bg-white text-slate-600 border border-slate-200/80 hover:border-slate-300 hover:text-slate-900"
+            }`}
           >
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
-                  whileHover={{ y: -8 }}
-                  className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-lg relative group aspect-[4/3] cursor-pointer"
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {/* Glass overlay with details reveal */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span className="text-amber-400 text-[10px] font-bold uppercase tracking-wider">{project.category} Solar</span>
-                    <h3 className="text-white font-bold text-lg sm:text-xl font-display mt-0.5">{project.title}</h3>
-                    
-                    {/* Hover items details */}
-                    <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div>
-                        <p className="text-[9px] text-slate-400 font-bold uppercase">Capacity</p>
-                        <p className="text-white text-xs font-bold">{project.capacity}</p>
-                      </div>
-                      <div>
-                        <p className="text-[9px] text-slate-400 font-bold uppercase">Savings</p>
-                        <p className="text-emerald-400 text-xs font-bold">{project.savings}</p>
-                      </div>
-                      <div className="p-1.5 bg-amber-400/20 text-amber-400 rounded-full shrink-0">
-                        <ArrowRight className="h-4 w-4" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+            <span>{tab.label}</span>
+            <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-black ${
+              idx === 0 ? "bg-emerald-500 text-white" : "bg-slate-100 text-slate-500"
+            }`}>
+              {tab.count}
+            </span>
+          </button>
+        ))}
+      </div>
 
-          {filteredProjects.length === 0 && (
-            <p className="text-center text-slate-500 py-12">No success stories in this category yet.</p>
-          )}
-        </div>
-      </section>
+    </div>
+  </div>
+</section>
+
+    
+
+{/* =========================================
+    SECTION 5: 9-IMAGE MINIMALIST GALLERY
+    ========================================= */}
+<section className="section-padding bg-slate-50/50">
+  <div className="container-custom px-4 max-w-7xl mx-auto">
+    <motion.div
+      layout
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      <AnimatePresence mode="popLayout">
+        {projects.map((project) => (
+          <motion.div
+            key={project.id}
+            layout
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.4 }}
+            whileHover={{ y: -6 }}
+            className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md relative group aspect-[4/3] cursor-pointer"
+          >
+            <img
+              src={project.image}
+              alt="Zenco Solar Residential Installation"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            
+            {/* Soft, minimal darkening vignette overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="p-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full transition-transform duration-300 transform scale-90 group-hover:scale-100">
+                <ArrowRight className="h-5 w-5" />
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </motion.div>
+  </div>
+</section>
 
       {/* =========================================
          SECTION 6: BEFORE & AFTER SLIDER

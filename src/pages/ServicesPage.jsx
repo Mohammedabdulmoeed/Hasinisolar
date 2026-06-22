@@ -255,7 +255,7 @@ export default function ServicesPage() {
                 iconColor="text-emerald-400"
               />
               <FloatingCard
-                text="25+ Years Performance"
+                text="30+ Years Performance"
                 subtext="Manufacturer Warranty"
                 positionClass="bottom-[12%] right-[-4%]"
                 floatClass="card-float-y-2"
@@ -284,7 +284,7 @@ export default function ServicesPage() {
                   "Lower Electricity Bills",
                   "Government Subsidy Support",
                   "Net Metering Benefits",
-                  "25-Year Performance Warranty"
+                  "30-Year Performance Warranty"
                 ].map((feat) => (
                   <motion.li
                     key={feat}

@@ -100,7 +100,7 @@ export default function SubsidySection() {
                 <div className="flex gap-4">
                   <CheckCircle2 className="text-emerald-500 mt-1 shrink-0" />
                   <div>
-                    <h4 className="font-bold">25+ Years Performance</h4>
+                    <h4 className="font-bold">30+ Years Performance</h4>
                     <p className="text-slate-600">
                       Reliable energy generation for decades.
                     </p>

@@ -16,6 +16,17 @@ import logos from '../assets/hero/logos.jpeg';
 import logob from '../assets/hero/logob.png';
 import solar from "../assets/hero/solar.jpeg";
 import Hybrid from "../assets/hero/Hybrid.jpg";
+import project1 from "../assets/hero/project1.jpg";
+import project2 from "../assets/hero/project2.jpeg";
+import project3 from "../assets/hero/project3.jpeg";
+import project4 from "../assets/hero/project4.jpeg";
+import project5 from "../assets/hero/project5.jpg";
+import project6 from "../assets/hero/project6.jpg";
+import project7 from "../assets/hero/project7.jpg";
+import project8 from "../assets/hero/project8.jpg";
+import project9 from "../assets/hero/project9.jpg";
+
+
 
 export const images = {
   
@@ -36,6 +47,15 @@ export const images = {
   On,
   Hybrid,
 old,
+project1,
+project2,
+project3,
+project4,
+project5,
+project6,
+project7,
+project8,
+project9,
   // fallback
   placeholder: office,
 };

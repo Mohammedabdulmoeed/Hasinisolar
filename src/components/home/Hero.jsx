@@ -10,7 +10,7 @@ const trustItems = [
   "✓ MNRE Compliant",
   "✓ Tier-1 Solar Panels",
   "✓ Net Metering Support",
-  "✓ 25-Year Performance Warranty",
+  "✓ 30-Year Performance Warranty",
   "✓ End-To-End Installation"
 ];
 
@@ -18,7 +18,7 @@ const stats = [
   { value: 100, suffix: '+', label: 'Projects Completed' },
   { value: 200, suffix: ' kW+', label: 'Installed Capacity' },
   { value: 100, suffix: '%', label: 'Customer Satisfaction' },
-  { value: 25, suffix: '+', label: 'Years Performance Warranty' },
+  { value: 30, suffix: '+', label: 'Years Performance Warranty' },
 ];
 
 const solarSolutions = [
@@ -228,7 +228,7 @@ export default function Hero() {
             variants={itemVariants}
             className="mt-10 sm:mt-12 text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-sans"
           >
-            Reduce electricity bills by up to <strong className="text-white">90%</strong>. Get government subsidies of up to <strong className="text-white">₹78,000</strong>. Optimize performance in real-time with AI-driven energy monitoring. Invest in clean, sustainable energy independence backed by a <strong className="text-white">25-year warranty</strong>.
+            Reduce electricity bills by up to <strong className="text-white">90%</strong>. Get government subsidies of up to <strong className="text-white">₹78,000</strong>. Optimize performance in real-time with AI-driven energy monitoring. Invest in clean, sustainable energy independence backed by a <strong className="text-white">30-year warranty</strong>.
           </motion.p>
 
           {/* CTA Section */}
