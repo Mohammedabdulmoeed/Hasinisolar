@@ -14,9 +14,8 @@ export const company = {
   hours: 'Mon – Sat: 8:00 AM – 8:00 PM | Sun: Emergency Support Only',
   founded: 2024,
   social: {
-    facebook: 'https://www.facebook.com/people/Zenco-Solar-Energies/61590639532314/?rdid=2M4NNPZ0GrFid3PE&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1KiuVamnLJ%2F',
-    linkedin: 'https://linkedin.com',
-    instagram: 'https://www.instagram.com/zenco.solar?igsh=MzZ1Y3p6N2Vrczhq',
+  
+    instagram: 'https://www.instagram.com/sunv0ltsolar?utm_source=qr&igsh=MW92ZDVjcWRtazBzcg==',
    
   },
 mapEmbed:
