@@ -1,0 +1,274 @@
+:root {
+  --ceo-gold: #F5B400;
+  --ceo-gold-glow: rgba(245, 180, 0, 0.35);
+  --ceo-teal: #2DD4BF;
+  --ceo-space-dark: #020617;
+  --ceo-space-navy: #0F172A;
+  --ceo-glass-bg: rgba(255, 255, 255, 0.04);
+  --ceo-glass-border: rgba(255, 255, 255, 0.12);
+  --ceo-glass-blur: 20px;
+}
+
+/* 1. Section Root Container */
+.ceo-section-root {
+  position: relative;
+  width: 100%;
+  background-color: var(--ceo-space-dark);
+  overflow: hidden;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', Roboto, sans-serif;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  box-sizing: border-box;
+}
+
+/* 2. Atmospheric Ambient Light & Noise */
+.ceo-space-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 15% 30%, rgba(245, 180, 0, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(45, 212, 191, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(15, 23, 42, 0.95) 0%, #020617 100%);
+}
+
+.ceo-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+  opacity: 0.5;
+}
+
+/* 3. Glassmorphism Card Base */
+.glass-card-ceo {
+  background: var(--ceo-glass-bg);
+  backdrop-filter: blur(var(--ceo-glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--ceo-glass-blur)) saturate(180%);
+  border: 1px solid var(--ceo-glass-border);
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 60px -10px rgba(0, 0, 0, 0.65),
+    0 0 25px rgba(245, 180, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-ceo:hover {
+  border-color: rgba(245, 180, 0, 0.45);
+  box-shadow: 
+    0 30px 70px -12px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(245, 180, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* 4. Left Column Portrait Frame */
+.ceo-portrait-frame {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 180, 0, 0.25);
+  box-shadow: 
+    0 30px 70px -15px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(245, 180, 0, 0.15);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ceo-portrait-frame:hover {
+  border-color: rgba(245, 180, 0, 0.6);
+  box-shadow: 
+    0 35px 80px -15px rgba(0, 0, 0, 0.9),
+    0 0 45px rgba(245, 180, 0, 0.35);
+  transform: translateY(-6px) scale(1.01);
+}
+
+.ceo-portrait-img {
+  width: 100%;
+  height: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ceo-portrait-frame:hover .ceo-portrait-img {
+  transform: scale(1.04);
+}
+
+/* Floating Animation Keyframe */
+.float-portrait-anim {
+  animation: portraitFloat 7s ease-in-out infinite alternate;
+}
+
+@keyframes portraitFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Decorative Glow Aura Behind Image */
+.ceo-image-glow-aura {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(245, 180, 0, 0.22) 0%, rgba(45, 212, 191, 0.1) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 5. Small Badge Glow */
+.ceo-glass-badge {
+  position: relative;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 180, 0, 0.35);
+  border-radius: 9999px;
+  box-shadow: 0 0 20px rgba(245, 180, 0, 0.2);
+}
+
+/* 6. Text Animated Gradient */
+.text-ceo-gold-gradient {
+  background: linear-gradient(120deg, #FFFFFF 0%, #F5B400 60%, #FFD043 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 7. Achievement Cards */
+.ceo-achievement-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ceo-achievement-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(45, 212, 191, 0.5);
+  box-shadow: 
+    0 15px 35px -5px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(45, 212, 191, 0.2);
+  transform: translateY(-5px);
+}
+
+/* 8. Responsive Adjustments */
+@media (max-width: 1024px) {
+  .ceo-section-root {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ceo-portrait-img {
+    max-height: 420px;
+  }
+}
+
+/* 9. Dedicated 2-Column Split Layout for Laptop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .ceo-main-grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 3rem !important;
+  }
+
+  .ceo-left-col {
+    grid-column: span 5 / span 5 !important;
+  }
+
+  .ceo-right-col {
+    grid-column: span 7 / span 7 !important;
+  }
+}
+
+/* 10. Dedicated Layout ONLY for Android Chrome Desktop Site Mode (isAndroidDesktopSite) */
+.ceo-section-root.android-desktop-site-ceo {
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+.android-desktop-site-ceo .ceo-main-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 40px !important;
+  width: 100% !important;
+}
+
+.android-desktop-site-ceo .ceo-left-col {
+  flex-shrink: 0 !important;
+  width: 250px !important;
+  max-width: 250px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.android-desktop-site-ceo .ceo-portrait-frame {
+  width: 250px !important;
+  max-width: 250px !important;
+}
+
+.android-desktop-site-ceo .ceo-portrait-img {
+  height: 355px !important;
+  max-height: 355px !important;
+  object-fit: cover !important;
+}
+
+.android-desktop-site-ceo .ceo-right-col {
+  flex: 1 !important;
+  width: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.android-desktop-site-ceo .ceo-right-col h2 {
+  font-size: 2.2rem !important;
+  line-height: 1.15 !important;
+}
+
+.android-desktop-site-ceo .ceo-right-col p {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.android-desktop-site-ceo .ceo-achievement-cards-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin-top: 2.5rem !important;
+}
+
+.android-desktop-site-ceo .ceo-achievement-card {
+  flex: 1 !important;
+  min-width: 0 !important;
+  padding: 1rem 1.2rem !important;
+}
+
+.android-desktop-site-ceo .ceo-achievement-card h4 {
+  font-size: 0.85rem !important;
+}
+
+.android-desktop-site-ceo .ceo-achievement-card p {
+  font-size: 0.72rem !important;
+}

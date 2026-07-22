@@ -37,7 +37,7 @@ export default function AboutSection() {
             >
               <SafeImage
                 src={images.office}
-                alt="ZENCO Solar Energy Solutions"
+                alt="Sun Volt Solar"
                 className="w-full object-cover aspect-[4/3] max-h-[clamp(16rem,42vw,30rem)] transition-transform duration-700 group-hover:scale-105"
               />
 
@@ -71,7 +71,7 @@ export default function AboutSection() {
             className="row-split-content"
           >
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-yellow-600">
-              About ZENCO Solar
+              About Sun Volt Solar
             </span>
 
             <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
@@ -82,12 +82,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="mt-6 text-slate-600 leading-relaxed text-lg">
-              ZENCO Solar Energies is committed to accelerating the transition
-              toward a sustainable future through innovative solar technology.
-              We design, install, and maintain high-performance solar power
-              systems for residential, commercial, and industrial customers,
-              helping them reduce electricity costs and achieve long-term energy
-              independence.
+              Sun Volt Solar accelerates the shift to clean energy with cutting-edge solar technology. We design, install, and manage high-efficiency power systems that help homeowners and businesses slash energy costs and secure complete power independence.
             </p>
 
             <motion.ul

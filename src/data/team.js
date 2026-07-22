@@ -61,7 +61,7 @@ export const coreValues = [
 export const timeline = [
   {
     year: "2024",
-    title: "ZENCO Solar Founded",
+    title: "Sun Volt Solar Founded",
     desc: "Started with a mission to provide affordable rooftop solar solutions."
   },
   {

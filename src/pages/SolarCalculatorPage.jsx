@@ -13,15 +13,13 @@ export default function SolarCalculatorPage() {
 
   // Fully balanced interval steps with 0 isolated and tier 1 starting precisely at 1 unit
   const pricingMatrix = [
-    { minU: 1,    maxU: 240,  capacity: "2 kW",  popular: true,  totalCost: "₹1,45,000", subsidy: "- ₹60,000", effectiveCost: "₹88,770",  savings: "₹1,680/mo" },
-    { minU: 241,  maxU: 350,  capacity: "3 kW",  popular: true,  totalCost: "₹2,06,400", subsidy: "- ₹78,000", effectiveCost: "₹1,33,120", savings: "₹2,520/mo" },
-    { minU: 351,  maxU: 480,  capacity: "4 kW",  popular: false, totalCost: "₹2,58,500", subsidy: "- ₹78,000", effectiveCost: "₹1,88,320", savings: "₹3,360/mo" },
-    { minU: 481,  maxU: 600,  capacity: "5 kW",  popular: false, totalCost: "₹3,24,500", subsidy: "- ₹78,000", effectiveCost: "₹2,51,120", savings: "₹4,200/mo" },
-    { minU: 601,  maxU: 720,  capacity: "6 kW",  popular: false, totalCost: "₹3,54,300", subsidy: "- ₹78,000", effectiveCost: "₹2,82,100", savings: "₹5,040/mo" },
-    { minU: 721,  maxU: 840,  capacity: "7 kW",  popular: false, totalCost: "₹3,79,200", subsidy: "- ₹78,000", effectiveCost: "₹3,05,120", savings: "₹5,880/mo" },
-    { minU: 841,  maxU: 960,  capacity: "8 kW",  popular: false, totalCost: "₹4,54,400", subsidy: "- ₹78,000", effectiveCost: "₹3,82,770", savings: "₹6,720/mo" },
-    { minU: 961,  maxU: 1080, capacity: "9 kW",  popular: false, totalCost: "₹5,84,100", subsidy: "- ₹78,000", effectiveCost: "₹5,10,820", savings: "₹7,560/mo" },
-    { minU: 1081, maxU: 99999,capacity: "10 kW", popular: false, totalCost: "₹6,49,000", subsidy: "- ₹78,000", effectiveCost: "₹5,75,720", savings: "₹8,400/mo" }
+    { minU: 1,    maxU: 240,  capacity: "2 kW",  popular: true,  totalCost: "₹1,60,000", subsidy: "- ₹60,000", effectiveCost: "₹1,00,000",  savings: "₹1,680/mo" },
+    { minU: 241,  maxU: 360,  capacity: "3 kW",  popular: true,  totalCost: "₹2,30,000", subsidy: "- ₹78,000", effectiveCost: "₹1,52,000", savings: "₹2,520/mo" },
+    { minU: 351,  maxU: 480,  capacity: "4 kW",  popular: false, totalCost: "₹2,80,000", subsidy: "- ₹78,000", effectiveCost: "₹2,02,000", savings: "₹3,360/mo" },
+    { minU: 481,  maxU: 600,  capacity: "5 kW",  popular: false, totalCost: "₹3,40,000", subsidy: "- ₹78,000", effectiveCost: "₹2,62,000", savings: "₹4,200/mo" },
+    { minU: 601,  maxU: 720,  capacity: "6 kW",  popular: false, totalCost: "₹3,98,000", subsidy: "- ₹78,000", effectiveCost: "₹3,20,000", savings: "₹5,040/mo" },
+    { minU: 721,  maxU: 960,  capacity: "8 kW",  popular: false, totalCost: "₹5,09,000", subsidy: "- ₹78,000", effectiveCost: "₹4,31,000", savings: "₹6,720/mo" },
+    { minU: 961, maxU: 99999,capacity: "10 kW", popular: false, totalCost: "₹6,05,000", subsidy: "- ₹78,000", effectiveCost: "₹5,27,000", savings: "₹8,400/mo" }
   ];
 
   // REAL-TIME EVALUATION ENGINE: Default clear values for 0 state

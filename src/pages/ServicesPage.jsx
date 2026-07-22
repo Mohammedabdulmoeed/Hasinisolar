@@ -5,6 +5,7 @@ import {
   ArrowRight,
   CheckCircle,
   Zap,
+  Sparkles,
   Shield,
   Activity,
   Award,
@@ -221,604 +222,781 @@ export default function ServicesPage() {
           </motion.div>
         </div>
       </section>
+{/* =========================================
+    SECTION 2: RESIDENTIAL SOLAR SYSTEMS
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-slate-50/50 overflow-hidden w-full select-none text-left">
+  
+  {/* Modern Architectural Subtle Mesh Layer */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-sky-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70" />
+  </div>
 
-      {/* =========================================
-         SECTION 2: RESIDENTIAL SOLAR SYSTEMS
-         ========================================= */}
-      <section className="section-padding overflow-hidden bg-slate-50/50">
-        <div className="container-custom">
-          <div className="row-split items-center lg:gap-16">
-            {/* Left Image Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInLeft}
-              className="row-split-media relative"
-            >
-              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
-                <img
-                  src={images.futuristic_energy_home}
-                  alt="ZENCO Residential Solar System"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
-              </div>
-              
-              {/* Floating Cards */}
-              <FloatingCard
-                text="90% Bill Reduction"
-                subtext="Average Monthly Savings"
-                positionClass="top-[10%] left-[-4%]"
-                floatClass="card-float-y-1"
-                icon={TrendingUp}
-                iconColor="text-emerald-400"
-              />
-              <FloatingCard
-                text="30+ Years Performance"
-                subtext="Manufacturer Warranty"
-                positionClass="bottom-[12%] right-[-4%]"
-                floatClass="card-float-y-2"
-                icon={Shield}
-                iconColor="text-cyan-400"
-              />
-            </motion.div>
-
-            {/* Right Content Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInRight}
-              className="row-split-content"
-            >
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Home Energy</span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Residential Solar Systems</h2>
-              <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                High-efficiency rooftop solar systems designed to reduce electricity bills and increase energy independence for homeowners.
-              </p>
-
-              {/* Features List */}
-              <ul className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  "Lower Electricity Bills",
-                  "Government Subsidy Support",
-                  "Net Metering Benefits",
-                  "30-Year Performance Warranty"
-                ].map((feat) => (
-                  <motion.li
-                    key={feat}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-slate-700 text-sm font-semibold"
-                  >
-                    <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
-                    {feat}
-                  </motion.li>
-                ))}
-              </ul>
-
-              <div className="mt-10">
-                <SolarButton to="/residential">
-                  Learn More
-                </SolarButton>
-              </div>
-            </motion.div>
-          </div>
+  {/* Expanded Widescreen Canvas Constraint (max-w-7xl & lg:px-20) */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full service-split-grid">
+      
+      {/* Left Image Column (Remains Left Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInLeft}
+        className="lg:col-span-6 relative w-full pb-6 lg:pb-0"
+      >
+        {/* Soft Background Blur Flare */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-[40px] opacity-10 blur-xl pointer-events-none" />
+        
+        {/* Main Image Wrapper */}
+        <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
+          <img
+            src={images.Residential_Solar_Systems}
+            alt="SunVolt Residential Solar System"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
         </div>
-      </section>
+        
+        {/* Floating Metrics Cards */}
+        <FloatingCard
+          text="90% Bill Reduction"
+          subtext="Average Monthly Savings"
+          positionClass="absolute top-[8%] left-[-2%] z-20"
+          floatClass="card-float-y-1"
+          icon={TrendingUp}
+          iconColor="text-emerald-500"
+        />
+        <FloatingCard
+          text="30+ Years Performance"
+          subtext="Manufacturer Warranty"
+          positionClass="absolute bottom-[8%] right-[-2%] z-20"
+          floatClass="card-float-y-2"
+          icon={Shield}
+          iconColor="text-sky-500"
+        />
+      </motion.div>
 
-      {/* =========================================
-         SECTION 3: COMMERCIAL SOLAR SYSTEMS
-         ========================================= */}
-      <section className="section-padding overflow-hidden bg-white">
-        <div className="container-custom">
-          <div className="row-split items-center lg:gap-16">
-            {/* Left Content Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInLeft}
-              className="row-split-content order-split-second min-[980px]:order-1 lg:order-1"
+      {/* Right Content Column (Remains Right Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInRight}
+        className="lg:col-span-6 flex flex-col items-start"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-6">
+          <Sparkles className="h-3 w-3 text-sky-500" /> Home Energy
+        </span>
+        
+        {/* UPGRADED HEADING: Heavyweight, high-contrast title architecture */}
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          Residential <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+            Solar Infrastructure.
+          </span>
+        </h2>
+        
+        <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+          High-efficiency rooftop solar architectural designs built custom to zero-out residential electricity bills and secure permanent energy autonomy for your home.
+        </p>
+
+        {/* Features Checklist Array */}
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {[
+            "Lower Electricity Bills",
+            "Government Subsidy Support",
+            "Net Metering Benefits",
+            "30-Year Performance Warranty"
+          ].map((feat) => (
+            <motion.li
+              key={feat}
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-3 text-slate-700 text-sm font-bold"
             >
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-600">Corporate Grid</span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Commercial Solar Systems</h2>
-              <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                Reduce operational expenses and improve sustainability with advanced solar solutions for offices, malls, schools, hospitals, and commercial facilities.
-              </p>
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span>{feat}</span>
+            </motion.li>
+          ))}
+        </ul>
 
-              <ul className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  "Lower Operating Costs",
-                  "Fast Return On Investment",
-                  "Sustainable Business Growth",
-                  "Scalable Installations"
-                ].map((feat) => (
-                  <motion.li
-                    key={feat}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-slate-700 text-sm font-semibold"
-                  >
-                    <CheckCircle className="h-5 w-5 text-cyan-500 shrink-0" />
-                    {feat}
-                  </motion.li>
-                ))}
-              </ul>
-
-              <div className="mt-10">
-                <SolarButton to="/commercial">
-                  Learn More
-                </SolarButton>
-              </div>
-            </motion.div>
-
-            {/* Right Image Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInRight}
-              className="row-split-media order-split-first min-[980px]:order-2 lg:order-2 relative"
-            >
-              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
-                <img
-                  src={images.commercial_solar}
-                  alt="ZENCO Commercial Solar System"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
-              </div>
-
-              {/* Floating cards */}
-              <FloatingCard
-                text="₹45,000 / mo Savings"
-                subtext="Average Office Efficiency"
-                positionClass="top-[12%] right-[-4%]"
-                floatClass="card-float-y-3"
-                icon={Layers}
-                iconColor="text-cyan-400"
-              />
-              <FloatingCard
-                text="Tax Benefits & 5-Yr ROI"
-                subtext="Accelerated Depreciation"
-                positionClass="bottom-[10%] left-[-4%]"
-                floatClass="card-float-y-1"
-                icon={Award}
-                iconColor="text-amber-400"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-         SECTION 4: INDUSTRIAL SOLAR SYSTEMS
-         ========================================= */}
-      <section className="section-padding overflow-hidden bg-slate-50/50">
-        <div className="container-custom">
-          <div className="row-split items-center lg:gap-16">
-            {/* Left Image Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInLeft}
-              className="row-split-media relative"
-            >
-              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
-                <img
-                  src={images.industrial_solar}
-                  alt="ZENCO Industrial Solar System"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
-              </div>
-
-              {/* Floating stats card */}
-              <FloatingCard
-                text="320 kW Peak Output"
-                subtext="High-Output Live Generation"
-                positionClass="top-[10%] left-[-4%]"
-                floatClass="card-float-y-2"
-                icon={Cpu}
-                iconColor="text-emerald-400"
-              />
-              <FloatingCard
-                text="850 MWh Generated"
-                subtext="Annual Clean Energy Yield"
-                positionClass="bottom-[12%] right-[-4%]"
-                floatClass="card-float-y-3"
-                icon={Activity}
-                iconColor="text-cyan-400"
-              />
-            </motion.div>
-
-            {/* Right Content Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInRight}
-              className="row-split-content"
-            >
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Enterprise Scale</span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Industrial Solar Systems</h2>
-              <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                High-capacity solar power solutions engineered for factories, manufacturing units, warehouses, and industrial facilities.
-              </p>
-
-              <ul className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  "High Energy Output",
-                  "Reduced Production Costs",
-                  "Large-Scale Installations",
-                  "Reliable Performance"
-                ].map((feat) => (
-                  <motion.li
-                    key={feat}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-slate-700 text-sm font-semibold"
-                  >
-                    <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
-                    {feat}
-                  </motion.li>
-                ))}
-              </ul>
-
-              <div className="mt-10">
-                <SolarButton to="/industrial">
-                  Learn More
-                </SolarButton>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-         SECTION 5: ON-GRID SOLAR SYSTEMS
-         ========================================= */}
-      <section className="section-padding overflow-hidden bg-white">
-        <div className="container-custom">
-          <div className="row-split items-center lg:gap-16">
-            {/* Left Content Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInLeft}
-              className="row-split-content order-split-second min-[980px]:order-1 lg:order-1"
-            >
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-600">Utility Connected</span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">On-Grid Solar Systems</h2>
-              <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                Connect your solar system directly to the electricity grid and maximize savings through net-metering benefits.
-              </p>
-
-              <ul className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  "Net Metering Support",
-                  "Lower Electricity Bills",
-                  "High ROI",
-                  "Smart Monitoring"
-                ].map((feat) => (
-                  <motion.li
-                    key={feat}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-slate-700 text-sm font-semibold"
-                  >
-                    <CheckCircle className="h-5 w-5 text-cyan-500 shrink-0" />
-                    {feat}
-                  </motion.li>
-                ))}
-              </ul>
-
-              <div className="mt-10">
-                <SolarButton to="/solar-calculator">
-                  Learn More
-                </SolarButton>
-              </div>
-            </motion.div>
-
-            {/* Right Image Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInRight}
-              className="row-split-media order-split-first min-[980px]:order-2 lg:order-2 relative"
-            >
-              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
-                <img
-                  src={images.On1}
-                  alt="ZENCO On-Grid Utility Solar"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
-              </div>
-
-              {/* Floating card */}
-              <FloatingCard
-                text="Net Metering Active"
-                subtext="Grid Upload Stream Enabled"
-                positionClass="top-[12%] right-[-4%]"
-                floatClass="card-float-y-1"
-                icon={Radio}
-                iconColor="text-cyan-400"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-         SECTION 6: OFF-GRID SOLAR SYSTEMS
-         ========================================= */}
-      <section className="section-padding overflow-hidden bg-slate-50/50">
-        <div className="container-custom">
-          <div className="row-split items-center lg:gap-16">
-            {/* Left Image Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInLeft}
-              className="row-split-media relative"
-            >
-              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
-                <img
-                  src={images.offgrid_solar}
-                  alt="ZENCO Off-Grid Battery Solar"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
-              </div>
-
-              {/* Floating Card */}
-              <FloatingCard
-                text="100% Autonomous"
-                subtext="Off-grid Independent Power"
-                positionClass="top-[10%] left-[-4%]"
-                floatClass="card-float-y-3"
-                icon={Battery}
-                iconColor="text-emerald-400"
-              />
-            </motion.div>
-
-            {/* Right Content Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInRight}
-              className="row-split-content"
-            >
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Grid Free</span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Off-Grid Solar Systems</h2>
-              <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                Achieve complete energy independence with battery-backed solar systems designed for locations without reliable grid access.
-              </p>
-
-              <ul className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  "Energy Independence",
-                  "Battery Storage Support",
-                  "Reliable Backup Power",
-                  "Remote Area Solutions"
-                ].map((feat) => (
-                  <motion.li
-                    key={feat}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-slate-700 text-sm font-semibold"
-                  >
-                    <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
-                    {feat}
-                  </motion.li>
-                ))}
-              </ul>
-
-              <div className="mt-10">
-                <SolarButton to='/solar-calculator'>
-                  Learn More
-                </SolarButton>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-         SECTION 7: HYBRID SOLAR SYSTEMS
-         ========================================= */}
-      <section className="section-padding overflow-hidden bg-white">
-        <div className="container-custom">
-          <div className="row-split items-center lg:gap-16">
-            {/* Left Content Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInLeft}
-              className="row-split-content order-split-second min-[980px]:order-1 lg:order-1"
-            >
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-600">Smart Storage</span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Hybrid Solar Systems</h2>
-              <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                Combine the benefits of on-grid and off-grid systems with intelligent energy management and battery backup.
-              </p>
-
-              <ul className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  "Battery Backup Support",
-                  "Grid Integration benefits",
-                  "Smart Energy Control",
-                  "Maximum Efficiency Index"
-                ].map((feat) => (
-                  <motion.li
-                    key={feat}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-slate-700 text-sm font-semibold"
-                  >
-                    <CheckCircle className="h-5 w-5 text-cyan-500 shrink-0" />
-                    {feat}
-                  </motion.li>
-                ))}
-              </ul>
-
-              <div className="mt-10">
-                <SolarButton to='/solar-calculator'>
-                  Learn More
-                </SolarButton>
-              </div>
-            </motion.div>
-
-            {/* Right Image Column */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInRight}
-              className="row-split-media order-split-first min-[980px]:order-2 lg:order-2 relative"
-            >
-              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
-                <img
-                  src={images.Hybrid}
-                  alt="ZENCO Hybrid Smart Solar"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
-              </div>
-
-              {/* Floating card */}
-              <FloatingCard
-                text="Smart Switch Active"
-                subtext="AI Optimized Storage Mode"
-                positionClass="top-[12%] right-[-4%]"
-                floatClass="card-float-y-2"
-                icon={Cpu}
-                iconColor="text-cyan-400"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-         SECTION 8: WHY CHOOSE ZENCO
-         ========================================= */}
-      <section className="section-padding bg-slate-50/50">
-        <div className="container-custom text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">The ZENCO Edge</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900">
-            Why Choose ZENCO Solar Energies
-          </h2>
-          <p className="mt-4 text-slate-600 max-w-xl mx-auto text-base">
-            We combine high-performance equipment, certified engineering, and premium warranties to guarantee maximum solar savings.
-          </p>
-
-          {/* Grid of 6 Unique (non-repetitive) cards */}
-          <motion.div
-            variants={cardContainerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        {/* UPGRADED BUTTON: Solar golden button format with glow metrics */}
+        <div className="mt-10 w-full sm:w-auto">
+          <Link
+            to="/solar-calculator"
+            className="flex items-center justify-center gap-2 px-8 py-4.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_12px_24px_rgba(245,158,11,0.3)] hover:shadow-[0_16px_32px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
           >
-            {/* Card 1: Expert Engineering (Gradient Style) */}
-            <motion.div
-              variants={fadeInUpVariants}
-              whileHover={{ y: -8 }}
-              className="rounded-3xl p-8 bg-gradient-to-br from-emerald-600 to-teal-800 text-white shadow-xl flex flex-col items-start text-left relative overflow-hidden group cursor-pointer"
-            >
-              <div className="p-3 bg-white/10 rounded-2xl mb-6 text-white shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <Cpu className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold font-display leading-tight mb-3">Expert Engineering</h3>
-              <p className="text-emerald-100/90 text-sm leading-relaxed">
-                Custom structured designs mapped specifically to your roof alignment and shadows to ensure maximum sun absorption.
-              </p>
-              <div className="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/3 w-32 h-32 rounded-full bg-white/5 blur-xl pointer-events-none" />
-            </motion.div>
-
-            {/* Card 2: Premium Components (Clean border, glow hover) */}
-            <motion.div
-              variants={fadeInUpVariants}
-              whileHover={{ y: -8 }}
-              className="rounded-3xl p-8 bg-white border border-slate-100 shadow-lg flex flex-col items-start text-left relative overflow-hidden group cursor-pointer hover:border-cyan-400 hover:shadow-cyan-500/5 transition-all duration-300"
-            >
-              <div className="p-3 bg-cyan-50 text-cyan-600 rounded-2xl mb-6 shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <Layers className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold font-display text-slate-900 mb-3">Premium Components</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                We use exclusively Tier-1 monocrystalline panels, micro-inverters, and high-tensile hot-dip structural fasteners.
-              </p>
-            </motion.div>
-
-            {/* Card 3: Government Subsidy Assistance (Glassmorphism layout) */}
-            <motion.div
-              variants={fadeInUpVariants}
-              whileHover={{ y: -8 }}
-              className="rounded-3xl p-8 bg-white/60 border border-slate-200/50 backdrop-blur-xl shadow-lg flex flex-col items-start text-left relative overflow-hidden group cursor-pointer hover:border-emerald-400 transition-all duration-300"
-            >
-              <div className="p-3 bg-emerald-50 text-emerald-600 rounded-2xl mb-6 shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <FileCheck className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold font-display text-slate-900 mb-3">Subsidy Support</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                End-to-end documentation support for PM-Surya Ghar Muft Bijli Yojana, ensuring subsidies flow directly to you.
-              </p>
-            </motion.div>
-
-            {/* Card 4: Professional Installation (Horizontal layout effect) */}
-            <motion.div
-              variants={fadeInUpVariants}
-              whileHover={{ y: -8 }}
-              className="rounded-3xl p-8 bg-white border border-slate-100 shadow-lg flex flex-col items-start text-left relative overflow-hidden group cursor-pointer hover:border-teal-400 transition-all duration-300 lg:col-span-1"
-            >
-              <div className="p-3 bg-teal-50 text-teal-600 rounded-2xl mb-6 shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <Wrench className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold font-display text-slate-900 mb-3">Professional Installation</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Highly experienced execution team ensuring structured safety parameters, zero structural load risks, and prompt service.
-              </p>
-            </motion.div>
-
-            {/* Card 5: Smart Monitoring (Radial gradient shine background style) */}
-            <motion.div
-              variants={fadeInUpVariants}
-              whileHover={{ y: -8 }}
-              className="rounded-3xl p-8 bg-slate-950 text-white shadow-xl flex flex-col items-start text-left relative overflow-hidden group cursor-pointer"
-            >
-              {/* Radial gradient background accent */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.15),transparent_60%)] pointer-events-none" />
-              <div className="p-3 bg-white/5 border border-white/10 rounded-2xl mb-6 text-cyan-400 shrink-0 group-hover:scale-110 transition-transform duration-300 z-10">
-                <MonitorPlay className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold font-display text-white mb-3 z-10">Smart Monitoring</h3>
-              <p className="text-slate-300 text-sm leading-relaxed z-10">
-                Track real-time generation metrics, carbon offsets, system health parameters and net metering credits on your mobile device.
-              </p>
-            </motion.div>
-
-            {/* Card 6: Dedicated Support (Dark border style) */}
-            <motion.div
-              variants={fadeInUpVariants}
-              whileHover={{ y: -8 }}
-              className="rounded-3xl p-8 bg-white border border-slate-200/80 hover:border-amber-400 shadow-lg flex flex-col items-start text-left relative overflow-hidden group cursor-pointer transition-all duration-300"
-            >
-              <div className="p-3 bg-amber-50 text-amber-600 rounded-2xl mb-6 shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <HeartHandshake className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold font-display text-slate-900 mb-3">Dedicated Support</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Prompt maintenance support, regular structural checkups, array cleaning alerts, and performance warranty guarantees.
-              </p>
-            </motion.div>
-          </motion.div>
+            <span>Learn More</span>
+            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform stroke-[3]" />
+          </Link>
         </div>
-      </section>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
+      {/* =========================================
+    SECTION 3: COMMERCIAL SOLAR SYSTEMS
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-white overflow-hidden w-full select-none text-left">
+  
+  {/* Modern Architectural Subtle Mesh Layer */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-sky-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70" />
+  </div>
+
+  {/* Expanded Widescreen Outer Shell Wrapper */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full service-split-grid">
+      
+      {/* LEFT COLUMN: Deep Narrative Content Block (6 Columns) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInLeft}
+        className="lg:col-span-6 flex flex-col items-start"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-6">
+          <Sparkles className="h-3 w-3 text-sky-500" /> Corporate Grid
+        </span>
+        
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          Commercial <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+            Solar Frameworks.
+          </span>
+        </h2>
+        
+        <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+          Drastically drop raw operational overhead metrics and secure permanent sustainability parameters across offices, schools, distribution parks, and large commercial facilities.
+        </p>
+
+        {/* Checked Feature Items Grid */}
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {[
+            "Lower Operating Costs",
+            "Fast Return On Investment",
+            "Sustainable Business Growth",
+            "Scalable Installations"
+          ].map((feat) => (
+            <motion.li
+              key={feat}
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-3 text-slate-700 text-sm font-bold"
+            >
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span>{feat}</span>
+            </motion.li>
+          ))}
+        </ul>
+
+        <div className="mt-10 w-full sm:w-auto">
+  <Link
+    to="/solar-calculator"
+    className="flex items-center justify-center gap-2 px-8 py-4.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_12px_24px_rgba(245,158,11,0.3)] hover:shadow-[0_16px_32px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
+  >
+    <span>Learn More</span>
+    <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform stroke-[3]" />
+  </Link>
+</div>
+      </motion.div>
+
+      {/* RIGHT COLUMN: Asymmetrical Floating Media Box (6 Columns) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInRight}
+        className="lg:col-span-6 relative w-full pt-6 lg:pt-0"
+      >
+        {/* Soft Background Layer Behind Frame */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-[40px] opacity-10 blur-xl pointer-events-none" />
+        
+        {/* Primary Image Node Canvas */}
+        <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
+          <img
+            src={images.commercial}
+            alt="SunVolt Commercial Solar Infrastructure"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
+        </div>
+
+        {/* Floating Data Display Cards */}
+        <FloatingCard
+          text="₹45,000 / mo Savings"
+          subtext="Average Corporate Efficiency"
+          positionClass="absolute top-[8%] right-[-2%] z-20"
+          floatClass="card-float-y-3"
+          icon={Layers}
+          iconColor="text-sky-500"
+        />
+        <FloatingCard
+          text="Tax Benefits & 5-Yr ROI"
+          subtext="Accelerated Depreciation"
+          positionClass="absolute bottom-[8%] left-[-2%] z-20"
+          floatClass="card-float-y-1"
+          icon={Award}
+          iconColor="text-emerald-500"
+        />
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
+      {/* =========================================
+    SECTION 4: INDUSTRIAL SOLAR SYSTEMS
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-slate-50/50 overflow-hidden w-full select-none text-left">
+  
+  {/* Modern High-Tech Ambient Backdrop Fields */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70" />
+  </div>
+
+  {/* Expanded Widescreen Canvas Constraint (max-w-7xl & lg:px-20) */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full service-split-grid">
+      
+      {/* Left Image Column (Remains Left Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInLeft}
+        className="lg:col-span-6 relative w-full pb-6 lg:pt-0"
+      >
+        {/* Soft Background Blur Flare */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-[40px] opacity-10 blur-xl pointer-events-none" />
+        
+        {/* Main Image Wrapper */}
+        <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
+          <img
+            src={images.industrial_solar}
+            alt="SunVolt Industrial Solar System"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
+        </div>
+
+        {/* Floating Data Display Cards */}
+        <FloatingCard
+          text="320 kW Peak Output"
+          subtext="High-Output Live Generation"
+          positionClass="absolute top-[8%] left-[-2%] z-20"
+          floatClass="card-float-y-2"
+          icon={Cpu}
+          iconColor="text-emerald-500"
+        />
+        <FloatingCard
+          text="850 MWh Generated"
+          subtext="Annual Clean Energy Yield"
+          positionClass="absolute bottom-[8%] right-[-2%] z-20"
+          floatClass="card-float-y-3"
+          icon={Activity}
+          iconColor="text-sky-500"
+        />
+      </motion.div>
+
+      {/* Right Content Column (Remains Right Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInRight}
+        className="lg:col-span-6 flex flex-col items-start"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-6">
+          <Sparkles className="h-3 w-3 text-sky-500" /> Enterprise Scale
+        </span>
+        
+        {/* UPGRADED HEADING: Heavyweight, split brand-gradient architecture */}
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          Industrial <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+            Solar Infrastructure.
+          </span>
+        </h2>
+        
+        <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+          High-capacity energy generation arrays custom engineered to process complex megawatt demands for factories, manufacturing campuses, and distribution centers.
+        </p>
+
+        {/* Features Checklist Array */}
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {[
+            "High Energy Output",
+            "Reduced Production Costs",
+            "Large-Scale Installations",
+            "Reliable Performance"
+          ].map((feat) => (
+            <motion.li
+              key={feat}
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-3 text-slate-700 text-sm font-bold"
+            >
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span>{feat}</span>
+            </motion.li>
+          ))}
+        </ul>
+
+        {/* UPGRADED BUTTON: Solar golden button format with glow metrics */}
+        <div className="mt-10 w-full sm:w-auto">
+          <Link
+            to="/solar-calculator"
+            className="flex items-center justify-center gap-2 px-8 py-4.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_12px_24px_rgba(245,158,11,0.3)] hover:shadow-[0_16px_32px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
+          >
+            <span>Learn More</span>
+            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform stroke-[3]" />
+          </Link>
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+    {/* =========================================
+    SECTION 5: ON-GRID SOLAR SYSTEMS
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-white overflow-hidden w-full select-none text-left">
+  
+  {/* Modern Architectural Subtle Mesh Layer */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-sky-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70" />
+  </div>
+
+  {/* Expanded Widescreen Canvas Constraint (max-w-7xl & lg:px-20) */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full service-split-grid">
+      
+      {/* LEFT COLUMN: Narrative Content Block (6 Columns) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInLeft}
+        className="lg:col-span-6 flex flex-col items-start"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-6">
+          <Sparkles className="h-3 w-3 text-sky-500" /> Utility Connected
+        </span>
+        
+        {/* UPGRADED HEADING: Heavyweight, high-contrast title architecture */}
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          On-Grid <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+            Solar Frameworks.
+          </span>
+        </h2>
+        
+        <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+          Connect your custom solar cell architecture directly into the electricity grid, feeding clean excess yield backwards to maximize localized net-metering credits.
+        </p>
+
+        {/* Features Checklist Array */}
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {[
+            "Net Metering Support",
+            "Lower Electricity Bills",
+            "High ROI Metrics",
+            "Smart Power Monitoring"
+          ].map((feat) => (
+            <motion.li
+              key={feat}
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-3 text-slate-700 text-sm font-bold"
+            >
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span>{feat}</span>
+            </motion.li>
+          ))}
+        </ul>
+
+        {/* UPGRADED BUTTON: Solar golden button format with glow metrics */}
+        <div className="mt-10 w-full sm:w-auto">
+          <Link
+            to="/solar-calculator"
+            className="flex items-center justify-center gap-2 px-8 py-4.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_12px_24px_rgba(245,158,11,0.3)] hover:shadow-[0_16px_32px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
+          >
+            <span>Learn More</span>
+            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform stroke-[3]" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* RIGHT COLUMN: Asymmetrical Floating Media Box (6 Columns) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInRight}
+        className="lg:col-span-6 relative w-full pt-6 lg:pt-0"
+      >
+        {/* Soft Background Layer Behind Frame */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-[40px] opacity-10 blur-xl pointer-events-none" />
+        
+        {/* Primary Image Node Canvas */}
+        <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
+          <img
+            src={images.On1}
+            alt="SunVolt On-Grid Utility Solar System"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
+        </div>
+
+        {/* Floating Data Display Card */}
+        <FloatingCard
+          text="Net Metering Active"
+          subtext="Grid Upload Stream Enabled"
+          positionClass="absolute top-[12%] right-[-2%] z-20"
+          floatClass="card-float-y-1"
+          icon={Radio}
+          iconColor="text-sky-500"
+        />
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+      {/* =========================================
+    SECTION 6: OFF-GRID SOLAR SYSTEMS
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-slate-50/50 overflow-hidden w-full select-none text-left">
+  
+  {/* Modern High-Tech Ambient Backdrop Fields */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-sky-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70" />
+  </div>
+
+  {/* Expanded Widescreen Canvas Constraint (max-w-7xl & lg:px-20) */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full service-split-grid">
+      
+      {/* Left Image Column (Remains Left Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInLeft}
+        className="lg:col-span-6 relative w-full pb-6 lg:pt-0"
+      >
+        {/* Soft Background Layer Behind Frame */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-[40px] opacity-10 blur-xl pointer-events-none" />
+        
+        {/* Primary Image Node Canvas */}
+        <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
+          <img
+            src={images.offgrid_solar}
+            alt="SunVolt Off-Grid Battery Solar Infrastructure"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
+        </div>
+
+        {/* Floating Data Display Card */}
+        <FloatingCard
+          text="100% Autonomous"
+          subtext="Off-grid Independent Power"
+          positionClass="absolute top-[8%] left-[-2%] z-20"
+          floatClass="card-float-y-3"
+          icon={Battery}
+          iconColor="text-emerald-500"
+        />
+      </motion.div>
+
+      {/* Right Content Column (Remains Right Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInRight}
+        className="lg:col-span-6 flex flex-col items-start"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-6">
+          <Sparkles className="h-3 w-3 text-sky-500" /> Grid Free
+        </span>
+        
+        {/* UPGRADED HEADING: Heavyweight, split brand-gradient architecture */}
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          Off-Grid <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+            Solar Frameworks.
+          </span>
+        </h2>
+        
+        <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+          Achieve complete energy independence with battery-backed solar arrays engineered to supply consistent baseline electricity parameters completely independent of the utility grid.
+        </p>
+
+        {/* Features Checklist Array */}
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {[
+            "Energy Independence",
+            "Battery Storage Support",
+            "Reliable Backup Power",
+            "Remote Area Solutions"
+          ].map((feat) => (
+            <motion.li
+              key={feat}
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-3 text-slate-700 text-sm font-bold"
+            >
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span>{feat}</span>
+            </motion.li>
+          ))}
+        </ul>
+
+        {/* UPGRADED BUTTON: Solar golden button format with glow metrics */}
+        <div className="mt-10 w-full sm:w-auto">
+          <Link
+            to="/solar-calculator"
+            className="flex items-center justify-center gap-2 px-8 py-4.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_12px_24px_rgba(245,158,11,0.3)] hover:shadow-[0_16px_32px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
+          >
+            <span>Learn More</span>
+            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform stroke-[3]" />
+          </Link>
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
+     {/* =========================================
+    SECTION 7: HYBRID SOLAR SYSTEMS
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-white overflow-hidden w-full select-none text-left">
+  
+  {/* Modern Architectural Subtle Mesh Layer */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-sky-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70" />
+  </div>
+
+  {/* Expanded Widescreen Canvas Constraint (max-w-7xl & lg:px-20) */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full service-split-grid">
+      
+      {/* LEFT COLUMN: Narrative Content Block (6 Columns) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInLeft}
+        className="lg:col-span-6 flex flex-col items-start"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-6">
+          <Sparkles className="h-3 w-3 text-sky-500" /> Smart Storage
+        </span>
+        
+        {/* UPGRADED HEADING: Heavyweight, high-contrast title architecture */}
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          Hybrid <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+            Solar Frameworks.
+          </span>
+        </h2>
+        
+        <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+          Combine the absolute best performance parameters of grid-tied functionality with independent battery backups, regulated by real-time automated energy allocation management.
+        </p>
+
+        {/* Features Checklist Array */}
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {[
+            "Battery Backup Support",
+            "Grid Integration Benefits",
+            "Smart Energy Control",
+            "Maximum Efficiency Index"
+          ].map((feat) => (
+            <motion.li
+              key={feat}
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-3 text-slate-700 text-sm font-bold"
+            >
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span>{feat}</span>
+            </motion.li>
+          ))}
+        </ul>
+
+        {/* UPGRADED BUTTON: Solar golden button format with glow metrics */}
+        <div className="mt-10 w-full sm:w-auto">
+          <Link
+            to="/solar-calculator"
+            className="flex items-center justify-center gap-2 px-8 py-4.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_12px_24px_rgba(245,158,11,0.3)] hover:shadow-[0_16px_32px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
+          >
+            <span>Learn More</span>
+            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform stroke-[3]" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* RIGHT COLUMN: Asymmetrical Floating Media Box (6 Columns) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInRight}
+        className="lg:col-span-6 relative w-full pt-6 lg:pt-0"
+      >
+        {/* Soft Background Layer Behind Frame */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-[40px] opacity-10 blur-xl pointer-events-none" />
+        
+        {/* Primary Image Node Canvas */}
+        <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
+          <img
+            src={images.Hybrid}
+            alt="SunVolt Hybrid Smart Solar Installation"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
+        </div>
+
+        {/* Floating Data Display Card */}
+        <FloatingCard
+          text="Smart Switch Active"
+          subtext="AI Optimized Storage Mode"
+          positionClass="absolute top-[12%] right-[-2%] z-20"
+          floatClass="card-float-y-2"
+          icon={Cpu}
+          iconColor="text-sky-500"
+        />
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
+      {/* =========================================
+    SECTION 8: WHY CHOOSE SUNVOLT SOLAR
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-slate-50 overflow-hidden w-full select-none text-left">
+  
+  {/* Engineering Vector Mesh Backdrop */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-r from-sky-200/20 to-emerald-200/20 rounded-full blur-[160px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px]" />
+  </div>
+
+  {/* Expanded Wide Container Canvas */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    
+    {/* Upper Section Header Layout */}
+    <div className="max-w-3xl mb-16 sm:mb-20">
+      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-4">
+        <Sparkles className="h-3 w-3 text-sky-500 animate-pulse" /> The SunVolt Solar Edge
+      </span>
+      <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+        Why Choose <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+          SunVolt Solar.
+        </span>
+      </h2>
+      <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-xl">
+        We combine high-performance equipment, certified engineering architecture, and premium warranties to guarantee maximum solar yield generation.
+      </p>
+    </div>
+
+    {/* Unified Architectural Card Array Container */}
+    <motion.div
+      variants={cardContainerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+    >
+      {[
+        { 
+          title: "Expert Engineering", 
+          desc: "Custom structured designs mapped specifically to your roof alignment and shadows to ensure maximum sun absorption parameters.", 
+          icon: Cpu,
+          colors: "text-sky-600 bg-sky-50 border-sky-100"
+        },
+        { 
+          title: "Premium Components", 
+          desc: "We deploy exclusively Tier-1 grade monocrystalline modules, high-efficiency smart inverters, and high-tensile structural fasteners.", 
+          icon: Layers,
+          colors: "text-emerald-600 bg-emerald-50 border-emerald-100"
+        },
+        { 
+          title: "Subsidy Support", 
+          desc: "End-to-end documentation processing support for government incentives, ensuring state solar subsidies route directly to you.", 
+          icon: FileCheck,
+          colors: "text-cyan-600 bg-cyan-50 border-cyan-100"
+        },
+        { 
+          title: "Professional Installation", 
+          desc: "Highly experienced execution teams ensuring tight structural protection safety grids, wind resistance, and zero load risks.", 
+          icon: Wrench,
+          colors: "text-indigo-600 bg-indigo-50 border-indigo-100"
+        },
+        { 
+          title: "Smart Monitoring", 
+          desc: "Track real-time power generation metrics, multi-generational carbon offsets, array health variables, and net metering statuses directly.", 
+          icon: MonitorPlay,
+          colors: "text-amber-600 bg-amber-50 border-amber-100"
+        },
+        { 
+          title: "Dedicated Support", 
+          desc: "Prompt lifetime operational warranty assistance, scheduled structural checkups, and responsive clean alerts option streams.", 
+          icon: HeartHandshake,
+          colors: "text-rose-600 bg-rose-50 border-rose-100"
+        }
+      ].map((card, idx) => {
+        const Icon = card.icon;
+        return (
+          <motion.div
+            key={idx}
+            variants={fadeInUpVariants}
+            whileHover={{ y: -6 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+            className="group relative overflow-hidden rounded-[32px] bg-white p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-400 cursor-pointer flex flex-col justify-between"
+          >
+            {/* Discrete Left Glowing Accent Border Line */}
+            <div className="absolute top-0 bottom-0 left-0 w-[4px] bg-slate-200 group-hover:bg-gradient-to-b group-hover:from-sky-500 group-hover:to-emerald-500 transition-colors duration-400" />
+            
+            <div>
+              {/* Card Meta Row */}
+              <div className="flex items-center justify-between mb-8">
+                <div className={`p-4 rounded-2xl shadow-inner shrink-0 ${card.colors}`}>
+                  <Icon className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <span className="text-slate-100 font-mono font-black text-3xl select-none group-hover:text-slate-200 transition-colors">
+                  /0{idx + 1}
+                </span>
+              </div>
+
+              {/* Text Information Stack */}
+              <h4 className="text-xl font-black text-slate-900 tracking-tight mb-3">
+                {card.title}
+              </h4>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                {card.desc}
+              </p>
+            </div>
+
+            {/* Premium Clean Action Link Decoration */}
+            <div className="mt-8 pt-4 border-t border-slate-50 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-900 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+              <span>Explore Parameters</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </div>
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  </div>
+</section>
 
      {/* =========================================
     SECTION 9: PROJECT PROCESS (Timeline)
@@ -915,7 +1093,7 @@ export default function ServicesPage() {
             </h2>
 
             <p className="mt-6 text-slate-300 text-sm sm:text-base leading-relaxed">
-              Discover how much you can save with a customized solar solution from ZENCO Solar Energies. Let's build your clean energy independence blueprint today.
+              Discover how much you can save with a customized solar solution from Sun Volt Solar Energies. Let's build your clean energy independence blueprint today.
             </p>
 
             {/* CTA Buttons */}

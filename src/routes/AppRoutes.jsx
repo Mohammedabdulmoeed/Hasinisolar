@@ -12,7 +12,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 import SolarCalculatorPage from '../pages/SolarCalculatorPage';
 import ResidentialCalculator from '../pages/ResidentialCalculator';
 import IndustrialPage from '../pages/IndustrialPage';
-import CommercialPage from '../pages/CommercialPage';
+
 import ResidentialPage from '../pages/ResidentialPage';
 
 export default function AppRoutes() {
@@ -38,7 +38,7 @@ export default function AppRoutes() {
         />
 
         <Route path="industrial" element={<IndustrialPage />} />
-        <Route path="commercial" element={<CommercialPage />} />
+        {/* <Route path="commercial" element={<CommercialPage />} /> */}
         <Route path="residential" element={<ResidentialPage />} />
 
         <Route path="*" element={<NotFoundPage />} />

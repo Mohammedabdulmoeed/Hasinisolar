@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import WhatsAppButton from '../common/WhatsAppButton';
 import ScrollToTop from '../common/ScrollToTop';
-
+import QuoteModal from '../common/QuoteModal';
 
 export default function Layout() {
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -21,10 +21,10 @@ export default function Layout() {
       <main id="main-content" tabIndex={-1} className="min-w-0 overflow-x-clip">
         <Outlet context={{ openQuote: () => setQuoteOpen(true) }} />
       </main>
-      <Footer />
+      <Footer onQuoteClick={() => setQuoteOpen(true)} />
       <WhatsAppButton />
       <ScrollToTop />
-  
+      <QuoteModal isOpen={quoteOpen} onClose={() => setQuoteOpen(false)} />
     </>
   );
 }

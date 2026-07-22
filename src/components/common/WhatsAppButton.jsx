@@ -4,7 +4,7 @@ import { company } from '../../data/company';
 
 export default function WhatsAppButton() {
   const url = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
-    'Hello Zenco Solar Engeries , I would like to inquire about your Solar services.'
+    'Hello Sun volt solar , I would like to inquire about your Solar services.'
   )}`;
 
   return (

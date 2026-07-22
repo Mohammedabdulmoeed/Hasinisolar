@@ -1,55 +1,55 @@
-export const SITE_URL = 'https://www.samvidhamanagement.in';
-export const SITE_NAME = 'Samvidha Management';
-export const SITE_FULL_NAME = 'Samvidha Management Services';
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+// NOTE: Replace http://localhost:5173 with production domain after domain purchase (e.g., https://www.sunvoltsolar.com)
+export const SITE_URL = 'http://localhost:5173';
+export const SITE_NAME = 'Sun Volt Solar Energies';
+export const SITE_FULL_NAME = 'Sun Volt Solar Energies';
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon.jpg`;
 export const THEME_COLOR = '#0f172a';
 
 export const business = {
-  name: 'Samvidha Management',
+  name: 'Sun Volt Solar Energies',
   legalName: SITE_FULL_NAME,
   url: SITE_URL,
-  telephone: '+91-6300083986',
-  email: 'Support.samvidha@gmail.com',
+  telephone: '+91-8555033246',
+  email: 'sunvoltsolar26@gmail.com',
   address: {
-    streetAddress: 'Plot no 45, 2nd floor, NFC colony, road no 4, Kalimandir',
-    addressLocality: 'Hyderabad',
+    streetAddress: "Below Sri Sai Mom's Kitchen Restaurant, Dasnapur, Teachers Colony",
+    addressLocality: 'Adilabad',
     addressRegion: 'Telangana',
-    postalCode: '500081',
+    postalCode: '504001',
     addressCountry: 'IN',
   },
   geo: {
-    latitude: '17.385',
-    longitude: '78.4867',
+    latitude: '19.6599',
+    longitude: '78.5250',
   },
-  areaServed: 'Hyderabad, Telangana, India',
+  areaServed: 'Adilabad, Telangana, India',
   priceRange: '$$',
 };
 
 export const defaultKeywords =
-  'facility management Hyderabad, maintenance services Telangana, electrician services Hyderabad, plumbing services, housekeeping services, STP plant maintenance, Samvidha Management';
+  'Sun Volt Solar Energies, rooftop solar Telangana, solar company India, solar EPC Adilabad, PM Surya Ghar subsidy, commercial solar panels, industrial solar installation';
 
-
-  export const pageSeo = {
+export const pageSeo = {
   home: {
-    title: 'ZENCO Solar | Solar Energy Solutions in Adilabad & Telangana',
+    title: 'Sun Volt Solar Energies | Solar Energy Solutions in Adilabad & Telangana',
     description:
-      'ZENCO Solar provides residential, commercial, and industrial solar solutions in Adilabad and Telangana with government subsidy assistance and high ROI systems.',
+      'Sun Volt Solar Energies provides residential, commercial, and industrial solar solutions in Adilabad and Telangana with government subsidy assistance and high ROI systems.',
     keywords:
       'solar Adilabad, rooftop solar Telangana, solar company India, solar installation Hyderabad region, solar subsidy PM Surya Ghar',
     path: '/',
   },
 
   about: {
-    title: 'About Us | ZENCO Solar Energies',
+    title: 'About Us | Sun Volt Solar Energies',
     description:
-      'Learn about ZENCO Solar — our mission to deliver clean energy solutions with expert solar installation services across Telangana and India.',
+      'Learn about Sun Volt Solar Energies — our mission to deliver clean energy solutions with expert solar installation services across Telangana and India.',
     keywords:
-      'about ZENCO Solar, solar company Telangana, solar installers Adilabad, renewable energy India',
+      'about Sun Volt Solar, solar company Telangana, solar installers Adilabad, renewable energy India',
     path: '/about',
   },
 
   services: {
-    title: 'Solar Services | Residential, Commercial & Industrial | ZENCO Solar',
+    title: 'Solar Services | Residential, Commercial & Industrial | Sun Volt Solar Energies',
     description:
       'We provide rooftop solar installation, maintenance, subsidy assistance, and ROI-based solar consulting for homes and businesses.',
     keywords:
@@ -58,34 +58,34 @@ export const defaultKeywords =
   },
 
   projects: {
-    title: 'Solar Projects | ZENCO Solar Energies',
+    title: 'Solar Projects | Sun Volt Solar Energies',
     description:
-      'Explore completed solar installations including residential rooftops, factories, and commercial solar parks by ZENCO Solar.',
+      'Explore completed solar installations including residential rooftops, factories, and commercial solar parks by Sun Volt Solar Energies.',
     keywords:
       'solar projects Adilabad, rooftop solar installations India, solar portfolio Telangana',
     path: '/projects',
   },
 
   careers: {
-    title: 'Careers | Join ZENCO Solar Team',
+    title: 'Careers | Join Sun Volt Solar Team',
     description:
-      'Join ZENCO Solar and build your career in renewable energy, solar installation, engineering, and field operations.',
+      'Join Sun Volt Solar Energies and build your career in renewable energy, solar installation, engineering, and field operations.',
     keywords:
       'solar jobs India, renewable energy careers, solar technician jobs Telangana',
     path: '/careers',
   },
 
   contact: {
-    title: 'Contact ZENCO Solar | Get Free Solar Quote',
+    title: 'Contact Sun Volt Solar | Get Free Solar Quote',
     description:
-      'Contact ZENCO Solar for free consultation, solar installation quotes, and subsidy guidance in Adilabad and Telangana.',
+      'Contact Sun Volt Solar Energies for free consultation, solar installation quotes, and subsidy guidance in Adilabad and Telangana.',
     keywords:
-      'contact solar company, solar quote Adilabad, rooftop solar inquiry, ZENCO Solar contact',
+      'contact solar company, solar quote Adilabad, rooftop solar inquiry, Sun Volt Solar contact',
     path: '/contact',
   },
 
   industrial: {
-    title: 'Industrial Solar Solutions | ZENCO Solar',
+    title: 'Industrial Solar Solutions | Sun Volt Solar Energies',
     description:
       'Reduce industrial electricity costs with large-scale solar systems designed for factories, warehouses, and industries.',
     keywords:
@@ -94,7 +94,7 @@ export const defaultKeywords =
   },
 
   commercial: {
-    title: 'Commercial Solar Solutions | ZENCO Solar',
+    title: 'Commercial Solar Solutions | Sun Volt Solar Energies',
     description:
       'Boost business savings with commercial solar installations tailored for offices, shops, and enterprises.',
     keywords:
@@ -103,11 +103,11 @@ export const defaultKeywords =
   },
 
   residential: {
-    title: 'Residential Solar Solutions | ZENCO Solar',
+    title: 'Residential Solar Solutions | Sun Volt Solar Energies',
     description:
       'Save up to 90% on electricity bills with residential rooftop solar systems and government subsidies.',
     keywords:
       'home solar India, rooftop solar subsidy, residential solar calculator',
     path: '/residential',
   },
-}
+};

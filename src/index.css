@@ -657,3 +657,17 @@ Responsive Stability Utilities
   }
 }
 
+/* Dedicated 2-Column Split Grid for Services Page on Chrome Mobile Desktop Site Mode (min-width: 900px) */
+@media (min-width: 900px) {
+  .service-split-grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 2.5rem !important;
+    align-items: center !important;
+  }
+
+  .service-split-grid > * {
+    grid-column: span 6 / span 6 !important;
+  }
+}
+

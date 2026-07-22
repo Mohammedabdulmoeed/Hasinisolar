@@ -8,8 +8,8 @@ export default function NotFoundPage() {
   return (
     <>
       <SEO
-        title="Page Not Found | Zenco Solar Energies "
-        description="The page you are looking for does not exist on zenco Solar Energies."
+        title="Page Not Found | Sun Volt Solar Energies "
+        description="The page you are looking for does not exist on Sun Volt Solar Energies."
         path="/404"
         noindex
       />

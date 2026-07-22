@@ -171,7 +171,7 @@ export default function ProjectsPage() {
   {
     name: "Rajesh Kumar",
     role: "Textile Mill Owner",
-    review: "ZENCO's solar setup completely transformed our operating costs. Our monthly electricity bills fell by 40% starting from month one. The online monitoring dashboard and net-metering support were outstanding.",
+    review: "Sun Volt Solar setup completely transformed our operating costs. Our monthly electricity bills fell by 40% starting from month one. The online monitoring dashboard and net-metering support were outstanding.",
     logo: "Kumar Textiles",
     savings: "₹8 Lakhs / month",
     roi: "3.8 Years achieved",
@@ -180,7 +180,7 @@ export default function ProjectsPage() {
   {
     name: "A. Srinivasa Rao",
     role: "Hospital Administrator",
-    review: "Power reliability is critical for us. ZENCO engineered an On-Grid 250 kW solution that integrated seamlessly with our existing setup. Our electricity overheads have reduced significantly, hitting ROI target in exactly 4 years.",
+    review: "Power reliability is critical for us. Sun Volt Solarengineered an On-Grid 250 kW solution that integrated seamlessly with our existing setup. Our electricity overheads have reduced significantly, hitting ROI target in exactly 4 years.",
     logo: "City Hospital",
     savings: "₹2.2 Lakhs / month",
     roi: "4.0 Years achieved",
@@ -189,7 +189,7 @@ export default function ProjectsPage() {
   {
     name: "Vikram Malhotra",
     role: "Homeowner",
-    review: "For our new house, keeping the rooftop neat was very important. ZENCO custom-engineered a sleek solar panel installation that matched the home's design while easily supplying 100% of our daily power requirements.",
+    review: "For our new house, keeping the rooftop neat was very important. Sun Volt Solar custom-engineered a sleek solar panel installation that matched the home's design while easily supplying 100% of our daily power requirements.",
     logo: "Residential",
     savings: "₹15,000 / month",
     roi: "4.5 Years achieved",
@@ -264,7 +264,7 @@ export default function ProjectsPage() {
       <SEO {...pageSeo.projects} />
       <PageHero
         title="Project"
-        subtitle="ZENCO Solar Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
+        subtitle="Sun Volt Solar Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
         image="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=80"
         breadcrumb="Home / project"
       />
@@ -291,7 +291,7 @@ export default function ProjectsPage() {
               <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[32rem] bg-slate-200">
                 <img
                   src={images.industrial_solar} // Ensure this points to a residential roof image in your assets
-                  alt="ZENCO 15 kWp Residential Grid"
+                  alt="Sun Volt Solar 15 kWp Residential Grid"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-300" />
@@ -320,7 +320,7 @@ export default function ProjectsPage() {
               <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">Premium Housing</span>
               <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">15 kWp Luxury Villa Solar System</h3>
               <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                ZENCO designed and commissioned a luxury net-metered rooftop solar solution for a multi-story premium residence. Engineered seamlessly into the villa's modern architecture, this grid-tied setup fully powers heavy domestic loads, including centralized air conditioning and electric vehicle charging infrastructure.
+                Sun Volt Solar designed and commissioned a luxury net-metered rooftop solar solution for a multi-story premium residence. Engineered seamlessly into the villa's modern architecture, this grid-tied setup fully powers heavy domestic loads, including centralized air conditioning and electric vehicle charging infrastructure.
               </p>
 
               {/* Grid of details */}
@@ -444,7 +444,7 @@ export default function ProjectsPage() {
           >
             <img
               src={project.image}
-              alt="Zenco Solar Residential Installation"
+              alt="Sun Volt Solar Residential Installation"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             
@@ -543,97 +543,135 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
+{/* =========================================
+    SECTION 7: CUSTOMER SUCCESS STORIES (Testimonials)
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-slate-50 overflow-hidden w-full select-none text-left">
+  
+  {/* Modern Ambient Fluid Backdrop Fields */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-sky-200/30 rounded-full blur-[140px]" />
+    <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-40" />
+  </div>
 
-      {/* =========================================
-         SECTION 7: CUSTOMER SUCCESS STORIES (Testimonials)
-         ========================================= */}
-      <section className="section-padding bg-slate-50 overflow-hidden">
-        <div className="container-custom px-4 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Endorsements</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-12">Client Testimonials</h2>
+  {/* Expanded Widescreen Outer Shell Canvas */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    
+    {/* Section Header */}
+    <div className="max-w-3xl mb-16 sm:mb-20">
+      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-4">
+        <Sparkles className="h-3 w-3 text-sky-500" /> Endorsements
+      </span>
+      <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+        Customer Success <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+          Stories & Impact.
+        </span>
+      </h2>
+    </div>
 
-          <div className="max-w-4xl mx-auto relative px-4">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={testimonialIndex}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl text-left"
-              >
-                {/* Client profile */}
-                <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-                  <div className="h-24 w-24 rounded-full border-2 border-emerald-400 overflow-hidden mb-4 shadow-md bg-slate-100">
-                    <img
-                      src={testimonials[testimonialIndex].image}
-                      alt={testimonials[testimonialIndex].name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h4 className="text-base font-bold text-slate-900 leading-tight">{testimonials[testimonialIndex].name}</h4>
-                  <p className="text-xs text-slate-400 leading-tight mt-0.5">{testimonials[testimonialIndex].role}</p>
-                  <p className="mt-2.5 inline-block text-[10px] font-bold text-emerald-600 bg-emerald-50 rounded-full px-2.5 py-0.5 border border-emerald-100 uppercase tracking-wide">
-                    {testimonials[testimonialIndex].logo}
-                  </p>
-                </div>
+    {/* Slider Box Constraint Container */}
+    <div className="max-w-5xl mx-auto relative">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={testimonialIndex}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-[36px] p-8 sm:p-12 border border-slate-200 shadow-xl text-left relative"
+        >
+          {/* Top Decorative Gradient Horizon Tag */}
+          <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-sky-400 via-blue-500 to-emerald-500" />
 
-                {/* Review details */}
-                <div className="md:col-span-8 flex flex-col justify-between h-full">
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed italic mb-6">
-                    "{testimonials[testimonialIndex].review}"
-                  </p>
-                  
-                  <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-4">
-                    <div>
-                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Operational Savings</p>
-                      <p className="text-lg font-extrabold text-emerald-500 font-display leading-none mt-1">{testimonials[testimonialIndex].savings}</p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Investment Return</p>
-                      <p className="text-lg font-extrabold text-cyan-500 font-display leading-none mt-1">{testimonials[testimonialIndex].roi}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Testimonials controls */}
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <button
-                type="button"
-                onClick={() => setTestimonialIndex(prev => (prev - 1 + testimonials.length) % testimonials.length)}
-                className="p-2 border border-slate-200 text-slate-600 hover:border-amber-400 hover:text-slate-900 rounded-full bg-white transition-colors"
-                aria-label="Previous story"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              
-              <div className="flex gap-2">
-                {testimonials.map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setTestimonialIndex(idx)}
-                    className={`h-2.5 rounded-full transition-all ${idx === testimonialIndex ? 'w-8 bg-amber-400' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`}
-                    aria-label={`Slide to review ${idx + 1}`}
-                  />
-                ))}
+          {/* LEFT PANEL: Client Profile Details (4 Columns) */}
+          <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
+            <div className="h-28 w-28 rounded-[28px] border border-slate-200 overflow-hidden mb-5 shadow-inner bg-slate-50 relative p-1 bg-gradient-to-br from-sky-100 to-emerald-100">
+              <div className="w-full h-full rounded-[24px] overflow-hidden">
+                <img
+                  src={testimonials[testimonialIndex].image}
+                  alt={testimonials[testimonialIndex].name}
+                  className="w-full h-full object-cover"
+                />
               </div>
+            </div>
+            
+            <h4 className="text-lg font-black text-slate-900 tracking-tight leading-tight">
+              {testimonials[testimonialIndex].name}
+            </h4>
+            <p className="text-xs text-slate-400 font-bold tracking-wide mt-1">
+              {testimonials[testimonialIndex].role}
+            </p>
+            
+            <span className="mt-4 inline-flex items-center text-[10px] font-black text-emerald-700 bg-emerald-50 rounded-lg px-3 py-1 border border-emerald-100 uppercase tracking-widest">
+              {testimonials[testimonialIndex].logo}
+            </span>
+          </div>
 
-              <button
-                type="button"
-                onClick={() => setTestimonialIndex(prev => (prev + 1) % testimonials.length)}
-                className="p-2 border border-slate-200 text-slate-600 hover:border-amber-400 hover:text-slate-900 rounded-full bg-white transition-colors"
-                aria-label="Next story"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
+          {/* RIGHT PANEL: Review Narrative Details (8 Columns) */}
+          <div className="md:col-span-8 flex flex-col justify-between h-full pt-4 md:pt-0">
+            {/* Structural Large Quote Decoration Accent */}
+            <p className="text-slate-600 text-base sm:text-lg font-medium leading-relaxed italic mb-8 relative">
+              "{testimonials[testimonialIndex].review}"
+            </p>
+            
+            {/* Live Data Grid Indicators */}
+            <div className="grid grid-cols-2 gap-6 border-t border-slate-100 pt-6">
+              <div>
+                <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">Operational Savings</p>
+                <p className="text-2xl font-black text-emerald-600 tracking-tight mt-1">
+                  {testimonials[testimonialIndex].savings}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">Investment Return</p>
+                <p className="text-2xl font-black text-sky-600 tracking-tight mt-1">
+                  {testimonials[testimonialIndex].roi}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatePresence>
 
+      {/* Testimonials Interactive Control Hub */}
+      <div className="flex items-center justify-center gap-6 mt-10">
+        <button
+          type="button"
+          onClick={() => setTestimonialIndex(prev => (prev - 1 + testimonials.length) % testimonials.length)}
+          className="p-3 border border-slate-200 text-slate-600 hover:border-slate-950 hover:text-slate-900 rounded-full bg-white shadow-sm transition-all duration-300 hover:scale-105 active:scale-95"
+          aria-label="Previous story"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        
+        {/* Navigation Pip Stream */}
+        <div className="flex gap-2.5">
+          {testimonials.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setTestimonialIndex(idx)}
+              className={`h-2 rounded-full transition-all duration-300 ${idx === testimonialIndex ? 'w-8 bg-slate-900' : 'w-2 bg-slate-200 hover:bg-slate-300'}`}
+              aria-label={`Slide to review ${idx + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setTestimonialIndex(prev => (prev + 1) % testimonials.length)}
+          className="p-3 border border-slate-200 text-slate-600 hover:border-slate-950 hover:text-slate-900 rounded-full bg-white shadow-sm transition-all duration-300 hover:scale-105 active:scale-95"
+          aria-label="Next story"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* =========================================
          SECTION 8: INSTALLATION PROCESS (Timeline)
          ========================================= */}
@@ -833,7 +871,7 @@ export default function ProjectsPage() {
           
           <div className="text-center mb-8 md:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Clean Energy Dashboard</span>
-            <h2 className="mt-2 text-2xl sm:text-4xl font-bold font-display text-slate-900">ZENCO Performance Analytics</h2>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-bold font-display text-slate-900">Sun Volt Solar Performance Analytics</h2>
           </div>
 
           {/* Forced Grid: Stays side-by-side left and right across all screens including simulated desktop-mode mobile */}

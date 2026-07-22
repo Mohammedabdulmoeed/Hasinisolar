@@ -3,6 +3,7 @@ import { pageSeo } from '../data/seo';
 import Hero from '../components/home/Hero';
 import ServicesOverview from '../components/home/ServicesOverview';
 import AboutSection from '../components/home/AboutSection';
+import CEOSection from '../components/home/CEOSection';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import StatsSection from '../components/home/StatsSection';
 import ProcessSection from '../components/home/ProcessSection';
@@ -20,6 +21,7 @@ export default function HomePage() {
       <SEO {...pageSeo.home} />
       <Hero />
       <AboutSection />
+      <CEOSection />
       <WhyChooseUs />
       <SubsidySection/>
       <SolarSavingsPromo />
