@@ -67,7 +67,25 @@ export default function SubsidySection() {
             </div>
           </motion.div>
 
-          {/* Card 2 - Most Popular High Spec */}
+          {/* Card 2 - 2 KW Capacity */}
+          <motion.div 
+            variants={fadeInUp}
+            className="group relative bg-white rounded-[36px] border-2 border-slate-200/80 p-8 lg:p-10 shadow-md hover:shadow-2xl hover:border-sky-400/80 transition-all duration-400 flex flex-col justify-between overflow-hidden"
+          >
+            <div>
+              <div className="h-14 w-14 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-inner">
+                <Zap className="h-6 w-6" />
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mt-8 tracking-tight">2 KW Capacity</h3>
+              <p className="text-sm lg:text-base text-slate-500 mt-2 font-medium leading-relaxed">The optimal balanced installation setup for active modern families.</p>
+            </div>
+            <div className="mt-12 pt-8 border-t-2 border-slate-100">
+              <div className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">₹60,000</div>
+              <p className="text-xs lg:text-sm text-emerald-600 font-extrabold uppercase tracking-wider mt-2">Direct DBT Subsidy</p>
+            </div>
+          </motion.div>
+
+          {/* Card 3 - Most Popular High Spec */}
           <motion.div 
             variants={fadeInUp}
             className="group relative bg-slate-900 rounded-[36px] p-8 lg:p-10 shadow-2xl hover:shadow-sky-950/40 transition-all duration-400 flex flex-col justify-between overflow-hidden text-white"
@@ -79,32 +97,14 @@ export default function SubsidySection() {
             
             <div>
               <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                <Zap className="h-6 w-6" />
-              </div>
-              <h3 className="text-2xl lg:text-3xl font-black text-white mt-8 tracking-tight">2 KW Capacity</h3>
-              <p className="text-sm lg:text-base text-slate-300 mt-2 font-medium leading-relaxed">The optimal balanced installation setup for active modern families.</p>
-            </div>
-            <div className="mt-12 pt-8 border-t-2 border-white/10">
-              <div className="text-4xl lg:text-5xl font-black text-white tracking-tight">₹60,000</div>
-              <p className="text-xs lg:text-sm text-sky-400 font-extrabold uppercase tracking-wider mt-2">Direct DBT Subsidy</p>
-            </div>
-          </motion.div>
-
-          {/* Card 3 */}
-          <motion.div 
-            variants={fadeInUp}
-            className="group relative bg-white rounded-[36px] border-2 border-slate-200/80 p-8 lg:p-10 shadow-md hover:shadow-2xl hover:border-emerald-400/80 transition-all duration-400 flex flex-col justify-between"
-          >
-            <div>
-              <div className="h-14 w-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-emerald-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-inner">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mt-8 tracking-tight">3 KW & Above</h3>
-              <p className="text-sm lg:text-base text-slate-500 mt-2 font-medium leading-relaxed">Unlocks maximum legal government reimbursement metrics.</p>
+              <h3 className="text-2xl lg:text-3xl font-black text-white mt-8 tracking-tight">3 KW & Above</h3>
+              <p className="text-sm lg:text-base text-slate-300 mt-2 font-medium leading-relaxed">Unlocks maximum legal government reimbursement metrics.</p>
             </div>
-            <div className="mt-12 pt-8 border-t-2 border-slate-100">
-              <div className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">₹78,000</div>
-              <p className="text-xs lg:text-sm text-emerald-600 font-extrabold uppercase tracking-wider mt-2">Direct DBT Subsidy</p>
+            <div className="mt-12 pt-8 border-t-2 border-white/10">
+              <div className="text-4xl lg:text-5xl font-black text-white tracking-tight">₹78,000</div>
+              <p className="text-xs lg:text-sm text-sky-400 font-extrabold uppercase tracking-wider mt-2">Direct DBT Subsidy</p>
             </div>
           </motion.div>
         </motion.div>

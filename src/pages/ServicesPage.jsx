@@ -879,6 +879,122 @@ export default function ServicesPage() {
 </section>
 
       {/* =========================================
+    SECTION 7.5: SOLAR STREET LIGHTS
+    ========================================= */}
+<section className="relative py-24 lg:py-36 bg-slate-50/50 overflow-hidden w-full select-none text-left">
+  
+  {/* Modern Architectural Subtle Mesh Layer */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-sky-200/20 rounded-full blur-[140px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70" />
+  </div>
+
+  {/* Expanded Widescreen Canvas Constraint (max-w-7xl & lg:px-20) */}
+  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full service-split-grid">
+      
+      {/* Left Image Column (Remains Left Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInLeft}
+        className="lg:col-span-6 relative w-full pb-6 lg:pb-0"
+      >
+        {/* Soft Background Blur Flare */}
+        <div className="absolute -inset-2 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-[40px] opacity-10 blur-xl pointer-events-none" />
+        
+        {/* Main Image Wrapper */}
+        <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
+          <img
+            src={images.solar_street_lights}
+            alt="SunVolt Solar Street Lighting Solutions"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
+        </div>
+        
+        {/* Floating Metrics Cards */}
+        <FloatingCard
+          text="Auto Dusk-to-Dawn"
+          subtext="Smart Sensor Automation"
+          positionClass="absolute top-[8%] left-[-2%] z-20"
+          floatClass="card-float-y-1"
+          icon={Sparkles}
+          iconColor="text-emerald-500"
+        />
+        <FloatingCard
+          text="IP65 Weatherproof"
+          subtext="High-Grade Durability"
+          positionClass="absolute bottom-[8%] right-[-2%] z-20"
+          floatClass="card-float-y-2"
+          icon={Shield}
+          iconColor="text-sky-500"
+        />
+      </motion.div>
+
+      {/* Right Content Column (Remains Right Side) */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={slideInRight}
+        className="lg:col-span-6 flex flex-col items-start"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-6">
+          <Sparkles className="h-3 w-3 text-sky-500" /> Outdoor Lighting
+        </span>
+        
+        {/* UPGRADED HEADING */}
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          Solar Street <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
+            Lighting Solutions.
+          </span>
+        </h2>
+        
+        <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+          We provide high-quality solar street lighting solutions for roads, highways, residential communities, campuses, industrial areas, parks, villages, and commercial spaces. Our solar street lights are energy-efficient, environmentally friendly, low-maintenance, and designed for long-lasting performance with automatic dusk-to-dawn operation.
+        </p>
+
+        {/* Features Checklist Array */}
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {[
+            "High-efficiency LED lighting",
+            "Durable weather-resistant design",
+            "Automatic dusk-to-dawn operation",
+            "Low maintenance & lifespan",
+            "Eco-friendly & energy-saving",
+            "Public & private installations"
+          ].map((feat) => (
+            <motion.li
+              key={feat}
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-3 text-slate-700 text-sm font-bold"
+            >
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span>{feat}</span>
+            </motion.li>
+          ))}
+        </ul>
+
+        {/* Learn More Button */}
+        <div className="mt-10 w-full sm:w-auto">
+          <Link
+            to="/solar-calculator"
+            className="flex items-center justify-center gap-2 px-8 py-4.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 text-slate-900 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_12px_24px_rgba(245,158,11,0.3)] hover:shadow-[0_16px_32px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
+          >
+            <span>Learn More</span>
+            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform stroke-[3]" />
+          </Link>
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
+      {/* =========================================
     SECTION 8: WHY CHOOSE SUNVOLT SOLAR
     ========================================= */}
 <section className="relative py-24 lg:py-36 bg-slate-50 overflow-hidden w-full select-none text-left">

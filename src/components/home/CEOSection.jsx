@@ -148,16 +148,17 @@ export default function CEOSection() {
               </div>
 
               {/* Glass Name Bar on Image Bottom */}
-              <div className="absolute bottom-4 inset-x-4 glass-card-ceo p-4 border border-amber-400/30">
-                <div className="flex items-center gap-2 text-amber-400 text-xs font-black tracking-widest uppercase mb-0.5">
+              <div className="absolute bottom-4 inset-x-4 glass-card-ceo p-4.5 border border-amber-400/30">
+                <div className="flex items-center gap-2 text-amber-400 text-[10px] font-black tracking-widest uppercase mb-1">
                   <Sparkles className="h-3.5 w-3.5" />
                   Executive Leadership
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-tight">
-                  Managing Director
+                <h3 className="text-sm sm:text-base font-semibold text-slate-300 tracking-tight leading-none">
+                  Managing Director - Sun Volt Solar
                 </h3>
-                <p className="text-xs text-slate-300 font-medium">
-                  SunVolt Solar
+                <div className="bg-gradient-to-r from-amber-400/60 via-amber-400/25 to-transparent h-[1.5px] w-full my-2.5" />
+                <p className="text-xl sm:text-2xl font-extrabold text-white tracking-wide leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                  P Sai Kumar
                 </p>
               </div>
             </motion.div>

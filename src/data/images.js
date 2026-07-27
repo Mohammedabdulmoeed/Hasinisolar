@@ -17,6 +17,7 @@ import logos from '../assets/hero/logos.jpeg';
 import logob from '../assets/hero/logob.png';
 import solar from "../assets/hero/solar.jpeg";
 import Hybrid from "../assets/hero/Hybrid.jpg";
+import solar_street_lights from "../assets/hero/solar_street_lights.png";
 
 import project1 from "../assets/hero/project1.jpg";
 import project2 from "../assets/hero/project2.jpg";
@@ -49,6 +50,7 @@ export const images = {
   On1,
   On,
   Hybrid,
+  solar_street_lights,
   old,
 
   // Project Gallery
