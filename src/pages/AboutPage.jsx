@@ -181,7 +181,7 @@ export default function AboutPage() {
               <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
                 <img
                   src={images.office}
-                  alt="Sun Volt Solar Installation"
+                  alt="Sunrise Solar Hub Installation"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
@@ -199,7 +199,7 @@ export default function AboutPage() {
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Who We Are</span>
               <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Premium Solar EPC Partners</h2>
               <p className="mt-6 text-slate-600 leading-relaxed text-base">
-                At Sun Volt Solar, we provide end-to-end engineering, procurement, and construction (EPC) services. We specialize in planning, structurally validating, and installing clean energy solar systems tailored specifically for residential, commercial, and industrial facilities.
+                At Sunrise Solar Hub, we provide end-to-end engineering, procurement, and construction (EPC) services. We specialize in planning, structurally validating, and installing clean energy solar systems tailored specifically for residential, commercial, and industrial facilities.
               </p>
               <p className="mt-4 text-slate-600 leading-relaxed text-base">
                 Our team is committed to deploying exclusively Tier-1 monocrystalline panels, micro-inverters, and safety structures that meet rigorous MNRE guidelines to deliver high-capacity operational returns.
@@ -443,7 +443,7 @@ export default function AboutPage() {
 
             {[
               { year: "2024", title: "Company Founded", desc: "Established with a vision to build decentralized clean energy networks across southern India." },
-              { year: "2024", title: "First 1kW Project", desc: "Successfully completed our first high-capacity industrial rooftop array in Adilabad." },
+              { year: "2024", title: "First Project", desc: "Successfully completed our first high-capacity industrial rooftop array in Adilabad." },
               { year: "2025", title: "100+ Installations", desc: "Deployed modular hybrid systems and corporate net offsets PAN India." },
               { year: "2026", title: "PAN India Expansion", desc: "Actively expanding clean tech distribution and operations nodes to 15+ major metros." }
             ].map((mile, i) => (
@@ -567,10 +567,10 @@ export default function AboutPage() {
 
         <div className="container-custom relative z-10 px-4 text-center max-w-5xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 font-sans">By the Numbers</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white mb-12">Why Choose Sun Volt Solar</h2>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white mb-12">Why Choose Sunrise Solar Hub</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <AboutStatCard value={100} suffix=" kW+" label="Total Installed" icon={Zap} />
+            <AboutStatCard value={200} suffix=" kW+" label="Total Installed" icon={Zap} />
             <AboutStatCard value={14} suffix="K+Tons" label="CO₂ Saved" icon={Leaf} />
             <AboutStatCard value={100} suffix="%" label="Satisfaction" icon={Heart} />
             <AboutStatCard value={30} suffix="%" label="ROI Improvement" icon={TrendingUp} />
@@ -614,9 +614,7 @@ export default function AboutPage() {
               <AboutCTAButton to="/contact" variant='outline'>
                 Book Site Survey
               </AboutCTAButton>
-              <AboutCTAButton to="/solar-calculator" variant="outline">
-                Calculate Savings
-              </AboutCTAButton>
+             
             </div>
           </div>
         </motion.div>

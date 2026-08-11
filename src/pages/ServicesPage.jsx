@@ -155,11 +155,11 @@ export default function ServicesPage() {
       return (
 
     <PageHero
-      title="Our Solar Services"
-      subtitle="Comprehensive solar energy solutions for residential, commercial, and industrial customers."
-      image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80"
-      breadcrumb="Home / Services"
-    />
+    title="Our Solar Services"
+    subtitle="Comprehensive solar energy solutions for residential, commercial, and industrial customers."
+    image="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80"
+    breadcrumb="Home / Services"
+  />
 
       {/* =========================================
          SECTION 1: SERVICES HERO
@@ -216,9 +216,7 @@ export default function ServicesPage() {
             <SolarButton to="/contact" >
               Get Free Consultation
             </SolarButton>
-            <SolarButton to="/solar-calculator" variant="outline">
-              Calculate Savings
-            </SolarButton>
+          
           </motion.div>
         </div>
       </section>
@@ -908,7 +906,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.solar_street_lights}
-            alt="SunVolt Solar Street Lighting Solutions"
+            alt="Sunrise Solar Hub Street Lighting Solutions"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -994,8 +992,8 @@ export default function ServicesPage() {
   </div>
 </section>
 
-      {/* =========================================
-    SECTION 8: WHY CHOOSE SUNVOLT SOLAR
+    {/* =========================================
+    SECTION 8: WHY CHOOSE Sunrise Solar Hub
     ========================================= */}
 <section className="relative py-24 lg:py-36 bg-slate-50 overflow-hidden w-full select-none text-left">
   
@@ -1008,18 +1006,18 @@ export default function ServicesPage() {
   {/* Expanded Wide Container Canvas */}
   <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
     
-    {/* Upper Section Header Layout */}
-    <div className="max-w-3xl mb-16 sm:mb-20">
+    {/* Upper Section Header Layout (Centered & Heading on one line) */}
+    <div className="max-w-3xl mx-auto mb-16 sm:mb-20 text-center flex flex-col items-center">
       <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-4">
-        <Sparkles className="h-3 w-3 text-sky-500 animate-pulse" /> The SunVolt Solar Edge
+        <Sparkles className="h-3 w-3 text-sky-500 animate-pulse" /> The Sunrise Solar Hub Edge
       </span>
-      <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
-        Why Choose <br />
+      <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight whitespace-nowrap">
+        Why Choose{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
-          SunVolt Solar.
+          Sunrise Solar Hub.
         </span>
       </h2>
-      <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-xl">
+      <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-xl mx-auto text-center">
         We combine high-performance equipment, certified engineering architecture, and premium warranties to guarantee maximum solar yield generation.
       </p>
     </div>
@@ -1102,18 +1100,20 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            {/* Premium Clean Action Link Decoration */}
-            <div className="mt-8 pt-4 border-t border-slate-50 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-900 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+            {/* Premium Clean Action Link Decoration linking to contact page */}
+            <a 
+              href="/contact" 
+              className="mt-8 pt-4 border-t border-slate-50 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-slate-900 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0"
+            >
               <span>Explore Parameters</span>
               <ArrowRight className="h-3.5 w-3.5" />
-            </div>
+            </a>
           </motion.div>
         );
       })}
     </motion.div>
   </div>
 </section>
-
      {/* =========================================
     SECTION 9: PROJECT PROCESS (Timeline)
     ========================================= */}
@@ -1209,7 +1209,7 @@ export default function ServicesPage() {
             </h2>
 
             <p className="mt-6 text-slate-300 text-sm sm:text-base leading-relaxed">
-              Discover how much you can save with a customized solar solution from Sun Volt Solar Energies. Let's build your clean energy independence blueprint today.
+              Discover how much you can save with a customized solar solution from Sunrise Solar Hub Energies. Let's build your clean energy independence blueprint today.
             </p>
 
             {/* CTA Buttons */}
@@ -1218,18 +1218,7 @@ export default function ServicesPage() {
                 Get Free Consultation
               </SolarButton>
               
-              <Link
-                to="/solar-calculator"
-                className="px-6 py-3.5 text-xs font-bold uppercase tracking-wider rounded-full border border-white/20 text-white hover:text-emerald-400 hover:border-emerald-400 bg-white/5 backdrop-blur-md transition-all duration-300 inline-flex items-center gap-2 cursor-pointer w-full sm:w-auto justify-center"
-              >
-                Calculate My Savings
-                <motion.span
-                  animate={prefersReducedMotion ? {} : { x: [0, 4, 0] }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </motion.span>
-              </Link>
+              
             </div>
           </div>
         </motion.div>

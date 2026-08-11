@@ -26,40 +26,46 @@ import warrantyImg from '../../assets/hero/On.jpg';
 import engineerImg from '../../assets/hero/project1.jpg';
 import savingsImg from '../../assets/hero/commercial_solar.png';
 import greenImg from '../../assets/hero/futuristic_energy_home.png';
+import img1 from "../../assets/hero/img1.jpg";
+import img2 from "../../assets/hero/img2.jpg";
+import img3 from "../../assets/hero/img3.jpg";
+import img4 from "../../assets/hero/img4.jpg";
+import img5 from "../../assets/hero/img5.jpg";
+import img6 from "../../assets/hero/img6.jpg";
 const reasons = [
   {
     icon: Sun,
-    image: solarImg,
+    image: img1,
     title: 'Premium Solar Technology',
     desc: 'We use high-efficiency Tier-1 solar panels and advanced inverter technologies to maximize energy generation.',
   },
   {
     icon: BatteryCharging,
-    image: batteryImg,
+    image: img2,
     title: 'Complete Energy Solutions',
     desc: 'From solar panels and battery storage to EV charging systems, we deliver end-to-end clean energy solutions.',
   },
   {
     icon: ShieldCheck,
-    image: warrantyImg,
+    image: img3,
     title: '25-Year Performance Assurance',
     desc: 'Industry-leading product and performance warranties for long-term reliability.',
   },
   {
     icon: Award,
-    image: engineerImg,
+    image: img4,
     title: 'Expert Installation Team',
     desc: 'Certified engineers and technicians ensure safe, precise, and professional installation.',
   },
   {
     icon: Zap,
-    image: savingsImg,
+    image: img5,
     title: 'Maximum Savings',
     desc: 'Reduce electricity costs while increasing energy independence and long-term returns.',
   },
   {
     icon: Leaf,
-    image: greenImg,
+    image: img6,
     title: 'Sustainable Future',
     desc: 'Join the clean energy revolution and reduce your carbon footprint with solar power.',
   },
@@ -76,11 +82,11 @@ export default function WhyChooseUs() {
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
   <span className="inline-block px-4 py-2 rounded-full bg-yellow-500/20 text-yellow-400 text-sm font-semibold uppercase tracking-widest">
-    Why Choose SunVolt Solar
+    Why Choose Sunrise Solar Hub
   </span>
 
   <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white">
-    The <span className="text-yellow-400">SunVolt</span> Advantage
+    The <span className="text-yellow-400">Sunrise Solar</span> Advantage
   </h2>
 
   <p className="mt-6 max-w-3xl mx-auto text-lg text-slate-300 leading-8">

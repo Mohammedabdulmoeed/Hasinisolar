@@ -1,127 +1,3 @@
-// import { motion } from 'framer-motion';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Pagination, Autoplay } from 'swiper/modules';
-// import { Star, Quote } from 'lucide-react';
-// import { testimonials } from '../../data/testimonials';
-// import SectionHeading from '../ui/SectionHeading';
-
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-
-// export default function Testimonials() {
-//   return (
-//     <section className="section-padding bg-slate-50 overflow-hidden relative">
-//       {/* Background Glow */}
-//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-yellow-500/10 blur-[180px] rounded-full" />
-
-//       <div className="container-custom relative z-10">
-//         <SectionHeading
-//           label="Customer Success Stories"
-//           title="Trusted By Homeowners & Businesses"
-//           subtitle="See how our solar solutions are helping customers reduce electricity costs and embrace clean energy."
-//         />
-
-//         <motion.div
-//           initial={{ opacity: 0, y: 40 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           viewport={{ once: true }}
-//           transition={{ duration: 0.7 }}
-//         >
-//           <Swiper
-//             modules={[Pagination, Autoplay]}
-//             spaceBetween={24}
-//             slidesPerView={1}
-//             pagination={{ clickable: true }}
-//             autoplay={{
-//               delay: 4500,
-//               disableOnInteraction: false,
-//             }}
-//             breakpoints={{
-//               640: {
-//                 slidesPerView: 1,
-//                 spaceBetween: 20,
-//               },
-//               768: {
-//                 slidesPerView: 2,
-//                 spaceBetween: 24,
-//               },
-//               1024: {
-//                 slidesPerView: 3,
-//                 spaceBetween: 24,
-//               },
-//             }}
-//             className="pb-14"
-//           >
-//             {testimonials.map((t) => (
-//               <SwiperSlide key={t.id}>
-//                 <motion.div
-//                   whileHover={{
-//                     y: -8,
-//                     scale: 1.02,
-//                   }}
-//                   transition={{
-//                     type: 'spring',
-//                     stiffness: 300,
-//                   }}
-//                   className="h-full rounded-3xl bg-white p-8 shadow-md border border-slate-100 hover:shadow-2xl hover:border-yellow-300 relative transition-all duration-300"
-//                 >
-//                   <Quote className="absolute top-6 right-6 h-10 w-10 text-yellow-100" />
-
-//                   {/* Rating */}
-//                   <div className="flex gap-1 mb-4">
-//                     {[...Array(t.rating)].map((_, i) => (
-//                       <Star
-//                         key={i}
-//                         className="h-4 w-4 fill-yellow-400 text-yellow-400"
-//                       />
-//                     ))}
-//                   </div>
-
-//                   {/* Review */}
-//                   <p className="text-slate-600 leading-relaxed mb-6">
-//                     "{t.review}"
-//                   </p>
-
-//                   {/* User */}
-//                   <div className="flex items-center gap-4">
-//                     <img
-//                       src={t.image}
-//                       alt={t.name}
-//                       className="h-14 w-14 rounded-full object-cover ring-2 ring-yellow-100"
-//                       loading="lazy"
-//                     />
-
-//                     <div>
-//                       <p className="font-semibold text-slate-900">
-//                         {t.name}
-//                       </p>
-
-//                       <p className="text-sm text-slate-500">
-//                         {t.role}
-//                       </p>
-//                     </div>
-//                   </div>
-//                 </motion.div>
-//               </SwiperSlide>
-//             ))}
-//           </Swiper>
-//         </motion.div>
-
-//         {/* Stats Section */}
-//         <motion.div
-//           initial={{ opacity: 0, y: 40 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           viewport={{ once: true }}
-//           transition={{ delay: 0.2 }}
-//           className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20"
-//         >
-          
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// }
-
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -131,31 +7,31 @@ import SectionHeading from '../ui/SectionHeading';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// Highly optimized, brand-specific Indian testimonials for SunVolt Solar
+// Highly optimized, brand-specific Indian testimonials for Sunrise Solar Hub with simplified roles
 const sunVoltTestimonials = [
   {
     id: 1,
-    name: "Rajesh Kumar",
-    role: "Residential Homeowner (Hyderabad)",
-    review: "Switching to SunVolt Solar has been life-changing for our family. Our monthly electricity bill dropped from ₹8,500 to under ₹900. The transition was completely smooth, and the team managed the entire government subsidy paperwork for us effortlessly.",
+    name: "Priya Sharma",
+    role: "Homeowner",
+    review: "Installing rooftop solar through Sunrise Solar Hub was seamless. Our monthly power bills have plummeted from ₹7,200 to just ₹750. Their technical team handled all government subsidy documentation seamlessly.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80"
   },
   {
     id: 2,
-    name: "Ananya Reddy",
-    role: "Managing Director, Sri Krishna Textiles",
-    review: "We deployed a 45 kW commercial solar system at our manufacturing unit with SunVolt. Our operational energy overhead costs dropped by nearly 75% in the very first month. Their Tier-1 panel infrastructure and expert engineering team are top-notch.",
+    name: "Abdul Rahman",
+    role: "Business Owner",
+    review: "We integrated 60 kW commercial solar setup for our processing facility. Our operational overhead energy expenses decreased by nearly 70% in month. The Tier-1 panels and execution speed are exceptionally professional.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80"
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80"
   },
   {
     id: 3,
-    name: "Vikram Malhotra",
-    role: "Chairman, GreenTech Cold Storage",
-    review: "For an industrial cold storage plant, power reliability is critical. SunVolt designed a robust hybrid solar system that handles our high loads smoothly. The investment is already paying off ahead of schedule, with an impressive 28% calculated ROI.",
+    name: "Ravi Kumar",
+    role: "Commercial Client",
+    review: "Energy reliability is core to our cold chain infrastructure. Sunrise Solar Hub engineered a brilliant hybrid system that handles our heavy loads smoothly while delivering an outstanding return on investment ahead of schedule.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80"
   }
 ];
 

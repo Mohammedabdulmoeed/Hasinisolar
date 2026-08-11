@@ -116,7 +116,7 @@ export default function SubsidySection() {
           <div className="lg:col-span-7 bg-white rounded-[36px] p-10 md:p-12 border-2 border-slate-200/80 shadow-md flex flex-col justify-between">
             <div>
               <h3 className="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight mb-4">
-                Why Choose SunVolt Solar?
+                Why Choose Sunrise Solar Hub?
               </h3>
               <p className="text-sm sm:text-base text-slate-500 mb-12 font-medium">
                 We handle the complete corporate processing and official government mapping procedures for you.
@@ -167,7 +167,7 @@ export default function SubsidySection() {
 
             <div className="mt-14 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-between gap-6">
               <p className="text-xs font-medium text-slate-400 max-w-md">
-                * SunVolt Solar operates full technical integration logistics on behalf of corporate customers.
+                * Sunrise Solar Hub operates full technical integration logistics on behalf of corporate customers.
               </p>
               <Link to="/solar-calculator" className="inline-flex items-center gap-2 text-sm font-extrabold text-sky-600 hover:text-sky-700 transition-colors group">
                 Calculate Exact ROI <ArrowRight className="h-4 w-4 group-hover:translate-x-1.5 transition-transform" />

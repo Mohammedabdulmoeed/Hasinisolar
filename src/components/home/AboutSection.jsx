@@ -11,7 +11,7 @@ import {
 } from '../../animations/variants';
 
 const highlights = [
-  '100+ Solar Installations Completed',
+  '200+ Solar Installations Completed',
   'Residential, Commercial & Industrial Expertise',
   'Premium Tier-1 Solar Panels & Inverters',
   'End-to-End Design, Installation & Support',
@@ -28,20 +28,20 @@ export default function AboutSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="relative group row-split-media"
+            className="relative group row-split-media flex justify-center items-center w-full"
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              className="media-frame shadow-2xl overflow-hidden rounded-3xl"
+              className="media-frame shadow-2xl overflow-hidden rounded-3xl w-full max-w-[380px] sm:max-w-[420px]"
             >
               <SafeImage
                 src={images.office}
-                alt="Sun Volt Solar"
-                className="w-full object-cover aspect-[4/3] max-h-[clamp(16rem,42vw,30rem)] transition-transform duration-700 group-hover:scale-105"
+                alt="Sunrise Solar Hub"
+                className="w-full h-auto object-cover max-h-[420px] sm:max-h-[480px] transition-transform duration-700 group-hover:scale-105"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70 pointer-events-none" />
             </motion.div>
 
             {/* Floating Stats Card */}
@@ -51,10 +51,10 @@ export default function AboutSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, type: 'spring' }}
               whileHover={{ scale: 1.08 }}
-              className="absolute -bottom-6 -right-6 glass rounded-2xl p-6 shadow-2xl hidden md:block border border-white/50 bg-white/90 backdrop-blur-lg"
+              className="absolute -bottom-6 -right-2 sm:right-4 glass rounded-2xl p-6 shadow-2xl hidden md:block border border-white/50 bg-white/90 backdrop-blur-lg"
             >
               <p className="text-4xl font-extrabold bg-gradient-to-r from-yellow-500 to-orange-600 bg-clip-text text-transparent">
-                100+
+                200+
               </p>
               <p className="text-sm font-semibold text-slate-600">
                 Solar Projects Installed
@@ -71,7 +71,7 @@ export default function AboutSection() {
             className="row-split-content"
           >
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-yellow-600">
-              About Sun Volt Solar
+              About Sunrise Solar Hub
             </span>
 
             <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
@@ -82,7 +82,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="mt-6 text-slate-600 leading-relaxed text-lg">
-              Sun Volt Solar accelerates the shift to clean energy with cutting-edge solar technology. We design, install, and manage high-efficiency power systems that help homeowners and businesses slash energy costs and secure complete power independence.
+              Sunrise Solar Hub accelerates the shift to clean energy with cutting-edge solar technology. We design, install, and manage high-efficiency power systems that help homeowners and businesses slash energy costs and secure complete power independence.
             </p>
 
             <motion.ul
@@ -111,8 +111,8 @@ export default function AboutSection() {
               </Button>
 
               <Button to="/contact">
-  Get Free Consultation
-</Button>
+                Get Free Consultation
+              </Button>
             </div>
           </motion.div>
         </div>

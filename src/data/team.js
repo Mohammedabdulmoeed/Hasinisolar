@@ -61,7 +61,7 @@ export const coreValues = [
 export const timeline = [
   {
     year: "2024",
-    title: "Sun Volt Solar Founded",
+    title: "Sunrise Solar Hub Founded",
     desc: "Started with a mission to provide affordable rooftop solar solutions."
   },
   {

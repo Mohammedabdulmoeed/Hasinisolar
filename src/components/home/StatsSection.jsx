@@ -6,7 +6,7 @@ import { Sparkles, Activity } from 'lucide-react';
 
 const stats = [
   { 
-    value: 100, 
+    value: 200, 
     suffix: '+', 
     label: 'Projects Completed',
     // Sky Blue to Royal Blue gradient
@@ -56,7 +56,7 @@ export default function StatsSection() {
             <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5] rounded-[36px] overflow-hidden border border-slate-200 shadow-2xl bg-slate-100">
               <motion.img
                 src={images.office}
-                alt="SunVolt Solar Corporate Facility"
+                alt="Sunrise Solar Hub Corporate Facility"
                 className="w-full h-full object-cover object-center opacity-100"
                 initial={{ scale: 1.05 }}
                 whileInView={{ scale: 1 }}

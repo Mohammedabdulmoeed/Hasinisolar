@@ -18,7 +18,7 @@ export const servicesOverview = [
     icon: Home,
     shortDesc:
       "Reduce electricity bills with high-efficiency rooftop solar systems designed for homes and apartments.",
-    image: images.residentialSolar,
+    image: images.img1,
     color: "from-yellow-500 to-orange-600",
   },
   {
@@ -28,7 +28,7 @@ export const servicesOverview = [
     icon: Building2,
     shortDesc:
       "Customized solar energy solutions for offices, malls, schools, hospitals, and commercial facilities.",
-    image: images.commercialSolar,
+    image: images.img2,
     color: "from-blue-500 to-cyan-600",
   },
   {
@@ -38,7 +38,7 @@ export const servicesOverview = [
     icon: Factory,
     shortDesc:
       "Large-scale solar power systems engineered for factories, warehouses, and industrial operations.",
-    image: images.industrialSolar,
+    image: images.img3,
     color: "from-emerald-500 to-green-600",
   },
   {
@@ -48,7 +48,7 @@ export const servicesOverview = [
     icon: Wrench,
     shortDesc:
       "Professional monitoring, maintenance, cleaning, and performance optimization for solar plants.",
-    image: images.On,
+    image: images.img4,
     color: "from-slate-600 to-slate-800",
   },
 ];

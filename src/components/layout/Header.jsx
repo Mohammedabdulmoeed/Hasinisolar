@@ -13,7 +13,8 @@ const navLinks = [
   { to: '/projects', label: 'Projects' },
   { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact' },
-  { to: '/solar-calculator', label: 'Solar Calculator' },
+ 
+  { to: '/refer-and-earn', label: 'Refer & Earn' },
 ];
 
 /**
@@ -122,11 +123,11 @@ export default function Header({ onQuoteClick }) {
           <Link 
             to="/" 
             className="flex items-center gap-2 shrink-0 group focus:outline-none" 
-            aria-label="SunVolt Solar Home"
+            aria-label="Sunrise Solar Hub Home"
           >
             <img
               src={isLightHeader ? logos : logob}
-              alt="SunVolt Solar Logo"
+              alt="Sunrise Solar Hub Logo"
               className="h-11 sm:h-14 md:h-16 lg:h-[4.25rem] w-auto max-w-[220px] sm:max-w-[260px] md:max-w-[300px] object-contain transition-transform duration-300 group-hover:scale-105"
               loading="eager"
               decoding="async"
@@ -192,7 +193,7 @@ export default function Header({ onQuoteClick }) {
               <a
                 href={`tel:${company.phoneDisplay?.[0]?.replace(/\s/g, '') || '+918555033246'}`}
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${phoneTextClass}`}
-                aria-label="Call SunVolt Solar"
+                aria-label="Call Sunrise Solar Hub"
               >
                 <Phone className="h-3.5 w-3.5 text-amber-400" />
                 <span className="hidden sm:inline">Call</span>

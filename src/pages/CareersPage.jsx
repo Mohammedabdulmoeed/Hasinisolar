@@ -112,8 +112,8 @@ export default function CareersPage() {
   return (
     <>
       <SEO
-        title="Careers | SunVolt Solar"
-        description="Join the engineering framework elite at SunVolt Solar. Explore premium clean energy infrastructure careers."
+        title="Careers | Sunrise Solar Hub"
+        description="Join the engineering framework elite at Sunrise Solar Hub. Explore premium clean energy infrastructure careers."
       />
 
       <PageHero
@@ -238,7 +238,7 @@ export default function CareersPage() {
 
               {/* SYSTEM FORM CORE LINKAGEED TO SUNVOLT LEDGER */}
               <form
-                action="https://formsubmit.co/sunvoltsolar.career@gmail.com"
+                action="https://formsubmit.co/sunrisesolarhub@gmail.com"
                 method="POST"
                 encType="multipart/form-data"
                 className="space-y-4 mt-2"
@@ -251,7 +251,7 @@ export default function CareersPage() {
                 <div className="grid grid-cols-1 gap-4">
                   <div>
                     <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1.5 ml-1">Full Name *</label>
-                    <input name="name" type="text" placeholder="John Doe" required className="w-full border border-slate-200 p-3.5 rounded-xl bg-slate-50 text-slate-900 font-medium text-sm focus:outline-none focus:border-sky-500 focus:bg-white transition-all duration-300" />
+                    <input name="name" type="text" placeholder="Enter Full Name " required className="w-full border border-slate-200 p-3.5 rounded-xl bg-slate-50 text-slate-900 font-medium text-sm focus:outline-none focus:border-sky-500 focus:bg-white transition-all duration-300" />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -348,7 +348,7 @@ export default function CareersPage() {
               </h2>
 
               <p className="mt-4 text-slate-500 text-sm font-medium leading-relaxed">
-                Thank you for applying. The SunVolt Solar engineering operations team will process your documentation matrix and sync up shortly.
+                Thank you for applying. The Sunrise Solar Hub engineering operations team will process your documentation matrix and sync up shortly.
               </p>
 
               <button

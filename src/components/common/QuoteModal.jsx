@@ -70,7 +70,7 @@ export default function QuoteModal({ isOpen, onClose }) {
 
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/30 mb-2">
                 <Zap className="h-3 w-3 fill-amber-400" />
-                <span>SunVolt Solar</span>
+                <span>Sunrise Solar Hub</span>
               </div>
 
               <h3 id="quote-modal-title" className="text-2xl font-black tracking-tight text-white font-sans">

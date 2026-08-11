@@ -98,13 +98,7 @@ export default function ContactCTA() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full sm:w-auto"
               >
-                <Link
-                  to="/solar-calculator"
-                  className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4.5 rounded-2xl border border-slate-700 bg-slate-900 text-white font-bold text-base hover:bg-slate-800 transition-colors duration-300 group"
-                >
-                  <span>Calculate Savings</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
-                </Link>
+               
               </motion.div>
             </motion.div>
 

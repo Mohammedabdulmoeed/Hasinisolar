@@ -20,18 +20,25 @@ import Hybrid from "../assets/hero/Hybrid.jpg";
 import solar_street_lights from "../assets/hero/solar_street_lights.png";
 
 import project1 from "../assets/hero/project1.jpg";
-import project2 from "../assets/hero/project2.jpg";
-import project3 from "../assets/hero/project3.jpg";
-import project4 from "../assets/hero/project4.jpg";
-import project5 from "../assets/hero/project5.jpg";
-import project6 from "../assets/hero/project6.jpg";
-import project7 from "../assets/hero/project7.jpg";
-import project8 from "../assets/hero/project8.jpg";
-import project9 from "../assets/hero/project9.jpg";
-import project10 from "../assets/hero/project10.jpg";
-import project11 from "../assets/hero/project11.jpg";
-import project12 from "../assets/hero/project12.jpg";
+import project2 from "../assets/hero/project2.jpeg";
+import project3 from "../assets/hero/project3.jpeg";
+import project4 from "../assets/hero/project4.jpeg";
+import project5 from "../assets/hero/project5.jpeg";
+import project6 from "../assets/hero/project6.jpeg";
+import project7 from "../assets/hero/project7.jpeg";
+import project8 from "../assets/hero/project8.jpeg";
+import project9 from "../assets/hero/project9.jpeg";
+import project10 from "../assets/hero/project10.jpeg";
+import project11 from "../assets/hero/project11.jpeg";
+import project12 from "../assets/hero/project12.jpeg";
 
+
+import img1 from "../assets/hero/img1.jpg";
+import img2 from "../assets/hero/img2.jpg";
+import img3 from "../assets/hero/img3.jpg";
+import img4 from "../assets/hero/img4.jpg";
+import img5 from "../assets/hero/img5.jpg";
+import img6 from "../assets/hero/img6.jpg";
 export const images = {
   // Office / Branding
   office,
@@ -52,7 +59,12 @@ export const images = {
   Hybrid,
   solar_street_lights,
   old,
-
+img1,
+img2,
+img3,
+img4,
+img5,
+img6,
   // Project Gallery
   project1,
   project2,
@@ -66,6 +78,7 @@ export const images = {
   project10,
   project11,
   project12,
+
 
   // Fallback
   placeholder: office,

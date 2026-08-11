@@ -14,7 +14,7 @@ import './CEOSection.css';
 
 const achievementCards = [
   {
-    title: "100+ Projects Completed",
+    title: "200+ Projects Completed",
     description: "Utility-scale Commercial, Industrial & Residential Solar Installations",
     icon: Award,
     highlightColor: "text-amber-400"
@@ -134,7 +134,7 @@ export default function CEOSection() {
             >
               <img 
                 src={ceoImage} 
-                alt="CEO & Managing Director - Sun Volt Solars"
+                alt="CEO & Managing Director - Sunrise Solar Hubs"
                 className="ceo-portrait-img"
                 loading="lazy"
               />
@@ -154,7 +154,7 @@ export default function CEOSection() {
                   Executive Leadership
                 </div>
                 <h3 className="text-sm sm:text-base font-semibold text-slate-300 tracking-tight leading-none">
-                  Managing Director - Sun Volt Solar
+                  Managing Director - Sunrise Solar Hub
                 </h3>
                 <div className="bg-gradient-to-r from-amber-400/60 via-amber-400/25 to-transparent h-[1.5px] w-full my-2.5" />
                 <p className="text-xl sm:text-2xl font-extrabold text-white tracking-wide leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
@@ -194,7 +194,7 @@ export default function CEOSection() {
             {/* 3. Executive Message Copy (~190 Words) */}
             <motion.div variants={itemVariants} className="mt-6 space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed font-sans font-normal">
               <p>
-                "At SunVolt Solar, our vision is built on an unwavering commitment to engineering excellence, technological innovation, and trust. As India accelerates towards clean energy independence, we are proud to be at the forefront—delivering utility-scale Solar EPC, turnkey commercial and industrial solar installations, and 24/7 intelligent O&M operations.
+                "At Sunrise Solar Hub, our vision is built on an unwavering commitment to engineering excellence, technological innovation, and trust. As India accelerates towards clean energy independence, we are proud to be at the forefront—delivering utility-scale Solar EPC, turnkey commercial and industrial solar installations, and 24/7 intelligent O&M operations.
               </p>
               <p>
                 We believe that transitioning to solar is more than just installing photovoltaic panels; it is about building resilient, high-efficiency grid infrastructure that empowers enterprises, safeguards our environment, and drives sustainable economic growth. Every project we undertake is executed with zero-downtime reliability, tier-1 MNRE-compliant components, and rigorous safety standards.
@@ -214,7 +214,7 @@ export default function CEOSection() {
                   Executive Leadership
                 </h4>
                 <p className="text-sm font-semibold text-amber-400">
-                  Founder & Managing Director, SunVolt Solar
+                  Founder & Managing Director, Sunrise Solar Hub
                 </p>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">

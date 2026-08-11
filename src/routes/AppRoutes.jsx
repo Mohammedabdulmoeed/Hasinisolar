@@ -14,6 +14,7 @@ import ResidentialCalculator from '../pages/ResidentialCalculator';
 import IndustrialPage from '../pages/IndustrialPage';
 
 import ResidentialPage from '../pages/ResidentialPage';
+import ReferEarnPage from '../pages/ReferEarnPage';
 
 export default function AppRoutes() {
   return (
@@ -26,7 +27,7 @@ export default function AppRoutes() {
         <Route path="projects" element={<ProjectsPage />} />
         <Route path="careers" element={<CareersPage />} />
         <Route path="contact" element={<ContactPage />} />
-
+<Route path="refer-and-earn" element={<ReferEarnPage />} />
         <Route
           path="solar-calculator"
           element={<SolarCalculatorPage />}
@@ -40,6 +41,8 @@ export default function AppRoutes() {
         <Route path="industrial" element={<IndustrialPage />} />
         {/* <Route path="commercial" element={<CommercialPage />} /> */}
         <Route path="residential" element={<ResidentialPage />} />
+        <Route path="refer-earn" element={<ReferEarnPage />} />
+        
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>

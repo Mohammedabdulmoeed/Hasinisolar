@@ -117,8 +117,8 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact Us | Sun Volt Solar Energies"
-        description="Get in touch with Sun Volt Solar Energies for premium Residential, Commercial, and Industrial rooftop solar power installations."
+        title="Contact Us | Sunrise Solar Hub Energies"
+        description="Get in touch with Sunrise Solar Hub Energies for premium Residential, Commercial, and Industrial rooftop solar power installations."
       />
 <PageHero
               title="Contact"
@@ -223,7 +223,7 @@ export default function ContactPage() {
           >
             <div className="mb-4 sm:mb-8">
               <span className="inline-flex px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-emerald-100 text-emerald-700 text-[8px] sm:text-xs font-bold uppercase tracking-wider">
-                Contact Sun Volt Solar
+                Contact Sunrise Solar Hub
               </span>
 
               <h2 className="mt-1 sm:mt-4 text-sm sm:text-4xl font-extrabold font-display text-slate-900 tracking-tight">
@@ -236,7 +236,7 @@ export default function ContactPage() {
             </div>
 
             <form
-              action="https://formsubmit.co/sunvoltsolar26@gmail.com"
+              action="https://formsubmit.co/Sunrisesolarhub@gmail.com"
               method="POST"
               className="space-y-2 sm:space-y-5"
             >
@@ -294,6 +294,10 @@ export default function ContactPage() {
                 <option>Residential Solar</option>
                 <option>Commercial Solar</option>
                 <option>Industrial Solar</option>
+                <option>On-grid Solar</option>
+                <option>Off-grid Solar</option>
+                <option>Hybrid Solar</option>
+                <option>Street Light Solar</option>
               </select>
 
               <textarea
@@ -318,7 +322,7 @@ export default function ContactPage() {
           {/* RIGHT SIDE - MAP WITH GLASS OVERLAY INFOCARD (40% Width Share) */}
           <div className="col-span-5 relative overflow-hidden rounded-2xl sm:rounded-[32px] shadow-2xl min-h-[300px] sm:min-h-[600px]">
             <iframe
-              title="Sun Volt Solar Location"
+              title="Sunrise Solar Hub Location"
               src={company.mapEmbed}
               width="100%"
               height="100%"
@@ -422,7 +426,7 @@ export default function ContactPage() {
           <div className="text-6xl mb-4">🎉</div>
           <h2 className="text-3xl font-bold text-slate-900 font-display">Inquiry Sent Successfully</h2>
           <p className="mt-3 text-slate-600 text-sm">
-            Thank you for contacting Sun Volt Solar Energies. Our team will contact you shortly.
+            Thank you for contacting Sunrise Solar Hub Energies. Our team will contact you shortly.
           </p>
           <button
             onClick={() => setSuccess(false)}

@@ -15,17 +15,17 @@ export default function FAQSection() {
         <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-60" />
       </div>
 
-      {/* CHANGED: Expanded from max-w-4xl to max-w-7xl to make it full size across the desktop site */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 relative z-10">
         
         {/* HEADER AREA: Wide aligned layout */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-extrabold text-[10px] uppercase tracking-widest shadow-sm mb-4">
             <Sparkles className="h-3 w-3 text-sky-500" /> FAQ Base
           </span>
           
-          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
-            Frequently Asked <br />
+          {/* CHANGED: Removed <br /> and optimized font size to keep it strictly on one line */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-none whitespace-nowrap">
+            Frequently Asked{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-emerald-600">
               Questions.
             </span>
@@ -39,7 +39,7 @@ export default function FAQSection() {
         {/* SINGLE COLUMN DECK WITH FULL WIDTH FILL */}
         <div className="space-y-6 w-full">
           
-          {/* Main Accordion Panel (Now dynamically scales to full component size wrapper boundaries) */}
+          {/* Main Accordion Panel */}
           <div className="w-full bg-white border border-slate-200/80 p-6 sm:p-10 rounded-3xl shadow-sm">
             <div className="
               w-full
@@ -62,7 +62,7 @@ export default function FAQSection() {
             </div>
           </div>
 
-          {/* Inline Action Helper Banner (Scales to match matching full width layout parameters) */}
+          {/* Inline Action Helper Banner */}
           <div className="w-full bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-sky-500/5 blur-3xl pointer-events-none" />
             

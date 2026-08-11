@@ -3,9 +3,22 @@ import { MessageCircle } from 'lucide-react';
 import { company } from '../../data/company';
 
 export default function WhatsAppButton() {
-  const url = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
-    'Hello Sun volt solar , I would like to inquire about your Solar services.'
-  )}`;
+const url = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
+`👋 Hello Sunrise Solar Hub Team,
+
+I'm interested in installing a solar system.
+
+Please share details about:
+• Solar solutions
+• Price quotation
+• Government subsidy
+• Installation process
+• Warranty
+
+Looking forward to hearing from you.
+
+Thank you!`
+)}`;
 
   return (
     <motion.a
