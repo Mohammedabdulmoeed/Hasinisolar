@@ -133,11 +133,11 @@ export default function ReferEarnPage() {
     <>
       <SEO {...pageSeo.projects} />
       <PageHero
-        title="Project"
-        subtitle="Sunrise Solar Hub Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
-        image="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=80"
-        breadcrumb="Home / project"
-      />
+    title="Refer & Earn"
+    subtitle="Join the Sunrise Solar Hub Ambassador Program, share the benefits of clean energy with your network, and earn exciting rewards for every successful referral."
+    image="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80"
+    breadcrumb="Home / refer & earn"
+/>
 
       <div className="relative w-full bg-slate-50 text-slate-900 font-sans overflow-hidden selection:bg-amber-400 selection:text-slate-950">
         
@@ -169,7 +169,7 @@ export default function ReferEarnPage() {
         >
           <Sparkles className="h-3.5 w-3.5 lg:h-4 lg:w-4 text-amber-600" />
           <span className="text-amber-800 text-[10px] lg:text-xs font-extrabold uppercase tracking-widest">
-            SunVolt Ambassador Program 2026
+            Sunrise solar hub Ambassador Program 2026
           </span>
         </motion.div>
 
@@ -887,7 +887,7 @@ export default function ReferEarnPage() {
                 method="POST"
                 className="space-y-6"
               >
-                <input type="hidden" name="_subject" value="New Solar Referral Submission - SunVolt Network" />
+                <input type="hidden" name="_subject" value="New Solar Referral Submission - Sunrise solar hub Network" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" value={`${window.location.origin}/refer-earn?success=true`} />
 

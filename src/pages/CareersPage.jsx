@@ -236,7 +236,7 @@ export default function CareersPage() {
                 <p className="text-sm font-semibold text-slate-500 mt-0.5">{selectedJob.title}</p>
               </div>
 
-              {/* SYSTEM FORM CORE LINKAGEED TO SUNVOLT LEDGER */}
+              {/* SYSTEM FORM CORE LINKAGEED TO Sunrise solar hub LEDGER */}
               <form
                 action="https://formsubmit.co/sunrisesolarhub@gmail.com"
                 method="POST"

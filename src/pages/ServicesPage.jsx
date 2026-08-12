@@ -250,7 +250,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.Residential_Solar_Systems}
-            alt="SunVolt Residential Solar System"
+            alt="Sunrise solar hub Residential Solar System"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -417,7 +417,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.commercial}
-            alt="SunVolt Commercial Solar Infrastructure"
+            alt="Sunrise solar hub Commercial Solar Infrastructure"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -476,7 +476,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.industrial_solar}
-            alt="SunVolt Industrial Solar System"
+            alt="Sunrise solar hub Industrial Solar System"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -644,7 +644,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.On1}
-            alt="SunVolt On-Grid Utility Solar System"
+            alt="Sunrise solar hub On-Grid Utility Solar System"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -694,7 +694,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.offgrid_solar}
-            alt="SunVolt Off-Grid Battery Solar Infrastructure"
+            alt="Sunrise solar hub Off-Grid Battery Solar Infrastructure"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -855,7 +855,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.Hybrid}
-            alt="SunVolt Hybrid Smart Solar Installation"
+            alt="Sunrise solar hub Hybrid Smart Solar Installation"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />

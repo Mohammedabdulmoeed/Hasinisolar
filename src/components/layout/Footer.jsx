@@ -65,7 +65,7 @@ export default function Footer() {
                 { to: '/projects', label: 'Projects' },
                 { to: '/careers', label: 'Careers' },
                 { to: '/contact', label: 'Contact' },
-                { to: '/solar-calculator', label: 'Solar Calculator' }
+               
               ].map((link) => (
                 <li key={link.to} className="flex justify-center sm:justify-start">
                   <Link 
@@ -92,7 +92,7 @@ export default function Footer() {
                 'Industrial Solar',
                 'On-Grid Solar',
                 'Off-Grid Solar',
-                'Solar Water Heater'
+                'Solar street Light'
               ].map((title, idx) => (
                 <li key={idx} className="flex justify-center sm:justify-start">
                   <Link 

@@ -1,4 +1,4 @@
-// NOTE: Replace http://localhost:5173 with production domain after domain purchase (e.g., https://www.sunvoltsolar.com)
+// NOTE: Replace http://localhost:5173 with production domain after domain purchase (e.g., https://www.Sunrise solar hubsolar.com)
 export const SITE_URL = 'http://localhost:5173';
 export const SITE_NAME = 'Sunrise Solar Hub Energies';
 export const SITE_FULL_NAME = 'Sunrise Solar Hub Energies';
@@ -10,7 +10,7 @@ export const business = {
   legalName: SITE_FULL_NAME,
   url: SITE_URL,
   telephone: '+91-8555033246',
-  email: 'sunvoltsolar26@gmail.com',
+  email: 'Sunrise solar hubsolar26@gmail.com',
   address: {
     streetAddress: "Below Sri Sai Mom's Kitchen Restaurant, Dasnapur, Teachers Colony",
     addressLocality: 'Adilabad',

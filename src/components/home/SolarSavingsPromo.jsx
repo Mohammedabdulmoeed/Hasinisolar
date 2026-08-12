@@ -221,7 +221,7 @@ export default function SolarCalculatorCTA() {
             </h2>
 
             <p className="text-sm sm:text-base lg:text-lg text-neutral-400 leading-relaxed mb-10 max-w-xl font-medium">
-              Stop projecting arbitrary returns. SunVolt's automated assessment engine maps live localized tariff metrics, regional rooftop asset geometry, and active government subsidies instantly.
+              Stop projecting arbitrary returns. Sunrise solar hub's automated assessment engine maps live localized tariff metrics, regional rooftop asset geometry, and active government subsidies instantly.
             </p>
 
             <div>

@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // Highly optimized, brand-specific Indian testimonials for Sunrise Solar Hub with simplified roles
-const sunVoltTestimonials = [
+const SunrisesolarhubTestimonials = [
   {
     id: 1,
     name: "Priya Sharma",
@@ -84,7 +84,7 @@ export default function Testimonials() {
             }}
             className="pb-20 [&_.swiper-pagination-bullet]:w-3 [&_.swiper-pagination-bullet]:h-3 [&_.swiper-pagination-bullet]:bg-slate-300 [&_.swiper-pagination-bullet-active]:bg-sky-600 [&_.swiper-pagination-bullet-active]:w-8 [&_.swiper-pagination-bullet]:rounded-full [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-300"
           >
-            {sunVoltTestimonials.map((t) => (
+            {SunrisesolarhubTestimonials.map((t) => (
               <SwiperSlide key={t.id} className="h-auto">
                 <div className="group h-full flex flex-col justify-between rounded-[32px] bg-white p-8 lg:p-10 border-2 border-slate-200/70 shadow-sm hover:shadow-xl hover:border-sky-400/80 transition-all duration-400 relative overflow-hidden">
                   

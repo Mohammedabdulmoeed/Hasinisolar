@@ -8,8 +8,8 @@ export const company = {
   '+91 9347395825'
 ],
   whatsapp: '+91 93473 95825',
-  email: ['sunvoltsolar26@gmail.com'],
-  careersEmail: 'sunvoltsolar26@gmail.com',
+  email: ['sunrisesolarhub@gmail.com'],
+  careersEmail: 'sunrisesolarhub@gmail.com',
   address: "NH-44 Near Punjab Chowk , Adilabad Telangana - 504001",
   hours: 'Mon – Sat: 8:00 AM – 8:00 PM | Sun: Emergency Support Only',
   founded: 2024,

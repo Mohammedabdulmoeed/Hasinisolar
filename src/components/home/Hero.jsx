@@ -208,7 +208,7 @@ export default function Hero() {
               <Award className="h-5 w-5" />
             </div>
             <div className="stat-content-box">
-              <AnimatedCounter value={5} suffix="+" label="Years Experience" />
+              <AnimatedCounter value={3} suffix="+" label="Years Experience" />
               <p className="stat-subtitle">Delivering trusted solar solutions .</p>
             </div>
           </div>

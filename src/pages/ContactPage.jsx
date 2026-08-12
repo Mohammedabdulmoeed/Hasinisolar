@@ -240,7 +240,7 @@ export default function ContactPage() {
               method="POST"
               className="space-y-2 sm:space-y-5"
             >
-              <input type="hidden" name="_subject" value="New Inquiry From ZENCO Website" />
+              <input type="hidden" name="_subject" value="New Inquiry From Sunrise solar hub Website" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value={`${window.location.origin}/contact?success=true`} />
 
