@@ -31,6 +31,9 @@ import project9 from "../assets/hero/project9.jpeg";
 import project10 from "../assets/hero/project10.jpeg";
 import project11 from "../assets/hero/project11.jpeg";
 import project12 from "../assets/hero/project12.jpeg";
+import project13 from "../assets/hero/project13.jpeg";
+import project14 from "../assets/hero/project14.jpeg";
+import project15 from "../assets/hero/project15.jpeg";
 
 
 import img1 from "../assets/hero/img1.jpg";
@@ -78,6 +81,9 @@ img6,
   project10,
   project11,
   project12,
+   project13,
+    project14,
+     project15,
 
 
   // Fallback

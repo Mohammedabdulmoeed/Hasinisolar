@@ -250,7 +250,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.Residential_Solar_Systems}
-            alt="Sunrise solar hub Residential Solar System"
+            alt="Hasini Solar Enterprises & Solutions Residential Solar System"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -417,7 +417,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.commercial}
-            alt="Sunrise solar hub Commercial Solar Infrastructure"
+            alt="Hasini Solar Enterprises & Solutions Commercial Solar Infrastructure"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -476,7 +476,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.industrial_solar}
-            alt="Sunrise solar hub Industrial Solar System"
+            alt="Hasini Solar Enterprises & Solutions Industrial Solar System"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -644,7 +644,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.On1}
-            alt="Sunrise solar hub On-Grid Utility Solar System"
+            alt="Hasini Solar Enterprises & Solutions On-Grid Utility Solar System"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -694,7 +694,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.offgrid_solar}
-            alt="Sunrise solar hub Off-Grid Battery Solar Infrastructure"
+            alt="Hasini Solar Enterprises & Solutions Off-Grid Battery Solar Infrastructure"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -855,7 +855,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.Hybrid}
-            alt="Sunrise solar hub Hybrid Smart Solar Installation"
+            alt="Hasini Solar Enterprises & Solutions Hybrid Smart Solar Installation"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -906,7 +906,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[36px] border border-slate-200 shadow-2xl group cursor-pointer aspect-[4/3] bg-slate-100 w-full">
           <img
             src={images.solar_street_lights}
-            alt="Sunrise Solar Hub Street Lighting Solutions"
+            alt="Hasini Solar Enterprises & Solutions Street Lighting Solutions"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-60" />
@@ -993,7 +993,7 @@ export default function ServicesPage() {
 </section>
 
     {/* =========================================
-    SECTION 8: WHY CHOOSE Sunrise Solar Hub
+    SECTION 8: WHY CHOOSE Hasini Solar Enterprises & Solutions
     ========================================= */}
 <section className="relative py-24 lg:py-36 bg-slate-50 overflow-hidden w-full select-none text-left">
   
@@ -1009,12 +1009,12 @@ export default function ServicesPage() {
     {/* Upper Section Header Layout (Centered & Heading on one line) */}
     <div className="max-w-3xl mx-auto mb-16 sm:mb-20 text-center flex flex-col items-center">
       <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-4">
-        <Sparkles className="h-3 w-3 text-sky-500 animate-pulse" /> The Sunrise Solar Hub Edge
+        <Sparkles className="h-3 w-3 text-sky-500 animate-pulse" /> The Hasini Solar Enterprises & Solutions Edge
       </span>
       <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight whitespace-nowrap">
         Why Choose{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
-          Sunrise Solar Hub.
+          Hasini Solar Enterprises & Solutions.
         </span>
       </h2>
       <p className="mt-6 text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-xl mx-auto text-center">
@@ -1209,7 +1209,7 @@ export default function ServicesPage() {
             </h2>
 
             <p className="mt-6 text-slate-300 text-sm sm:text-base leading-relaxed">
-              Discover how much you can save with a customized solar solution from Sunrise Solar Hub Energies. Let's build your clean energy independence blueprint today.
+              Discover how much you can save with a customized solar solution from Hasini Solar Enterprises & Solutions Energies. Let's build your clean energy independence blueprint today.
             </p>
 
             {/* CTA Buttons */}

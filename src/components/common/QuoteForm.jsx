@@ -65,14 +65,14 @@ export default function QuoteForm({ onClose, onSuccess }) {
       setIsSubmitting(true);
 
       // Print submission data in console
-      console.log('=== Sunrise Solar Hub - QUOTE SUBMISSION DATA ===');
+      console.log('=== Hasini Solar Enterprises & Solutions - QUOTE SUBMISSION DATA ===');
       console.log('Full Name:', formData.fullName.trim());
       console.log('Mobile Number:', formData.mobile.trim());
       console.log('Address:', formData.address.trim());
       console.log('Timestamp:', new Date().toISOString());
 
       try {
-        const response = await fetch("https://formsubmit.co/ajax/sunrisesolarhub@gmail.com", {
+        const response = await fetch("https://formsubmit.co/ajax/Hasini Solar Enterprises & Solutionssolarhub@gmail.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default function QuoteForm({ onClose, onSuccess }) {
             _subject: "New Solar Quote Request",
             _captcha: "false",
             _template: "table",
-            _autoresponse: "Thank you for contacting Sunrise Solar Hub. Our solar expert will contact you shortly."
+            _autoresponse: "Thank you for contacting Hasini Solar Enterprises & Solutions. Our solar expert will contact you shortly."
           })
         });
 

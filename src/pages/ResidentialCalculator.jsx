@@ -44,7 +44,7 @@ export default function ResidentialCalculator() {
             
             <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
               <span className="inline-flex max-w-fit px-4 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4">
-                Why Choose Sunrise Solar Hub
+                Why Choose Hasini Solar Enterprises & Solutions
               </span>
 
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight leading-tight">
@@ -53,7 +53,7 @@ export default function ResidentialCalculator() {
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
-              Sunrise Solar Hub   integrates structural tier-1 hardware frameworks with intelligent telemetry arrays. We transition local corporate architectures into highly independent, clean power infrastructures optimized for sustained financial return.
+              Hasini Solar Enterprises & Solutions   integrates structural tier-1 hardware frameworks with intelligent telemetry arrays. We transition local corporate architectures into highly independent, clean power infrastructures optimized for sustained financial return.
               </p>
 
               <div className="mt-6 space-y-2.5">
@@ -71,7 +71,7 @@ export default function ResidentialCalculator() {
             <div className="col-span-12 lg:col-span-5 relative h-[200px] sm:h-[340px] rounded-2xl overflow-hidden border border-slate-100 shadow-xl group">
               <img 
                 src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80" 
-                alt="Sunrise Solar Hub Station Profile" 
+                alt="Hasini Solar Enterprises & Solutions Station Profile" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>

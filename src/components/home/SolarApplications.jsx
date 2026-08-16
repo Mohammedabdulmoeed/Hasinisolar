@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Sun } from "lucide-react";
+import { ArrowLeft, ArrowRight, Sun, Sparkles } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectCoverflow, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -11,174 +11,179 @@ import { images } from "../../data/images";
 
 const applications = [
   {
+    tag: "Most Popular",
     title: "Residential Solar",
     image: images.Residential_Solar_Systems,
     desc: "Reduce electricity bills and power your home with clean renewable energy.",
   },
   {
+    tag: "Corporate",
     title: "Commercial Solar",
     image: images.commercial_solar,
     desc: "Smart solar solutions designed for offices and commercial buildings.",
   },
   {
+    tag: "High Capacity",
     title: "Industrial Solar",
     image: images.industrial_solar,
     desc: "Large-scale installations for factories and industrial facilities.",
   },
   {
+    tag: "Utility Grade",
     title: "On-Grid Solar Systems",
     image: images.On1,
-    desc: "High-efficiency solar systems for large land areas.",
+    desc: "High-efficiency solar systems tied seamlessly to the grid.",
   },
   {
+    tag: "Independent",
     title: "Off-Grid Solar Systems",
     image: images.offgrid_solar,
-    desc: "Solar pumps and energy solutions for farms and agriculture.",
+    desc: "Autonomous energy storage solutions for complete independence.",
   },
   {
+    tag: "Advanced",
     title: "Hybrid Solar Systems",
     image: images.Hybrid,
-    desc: "Innovative solar installations on lakes and reservoirs.",
+    desc: "Smart grid-tied systems equipped with backup battery storage.",
   },
 ];
 
 export default function SolarApplications() {
   return (
-    <section className="relative py-28 bg-[#050816] overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-yellow-500/20 blur-[200px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[150px] rounded-full" />
+    <section className="relative py-28 bg-[#030712] overflow-hidden">
+      {/* Dynamic Ambient Background Glows */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-amber-500/10 blur-[180px] rounded-full pointer-events-none" />
 
-      <div className="container-custom relative z-10">
-        {/* Changed lg:grid-cols-12 to md:grid-cols-12 to maintain horizontal alignment in mobile-desktop simulation modes */}
-        <div className="grid md:grid-cols-12 gap-10 md:gap-8 lg:gap-16 items-center">
-          
-          {/* Left Side Content Stack */}
-          <motion.div
-            className="md:col-span-4 w-full"
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Centered Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-md">
+            <Sun size={14} />
+            <span>Solar Solutions</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Solar Power{" "}
+            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent">
+              For Every Need
+            </span>
+          </h2>
+
+          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+            Explore our wide range of custom-engineered solar solutions designed to deliver maximum output, extreme durability, and long-term financial returns.
+          </p>
+        </div>
+
+        {/* Full-Width Swiper Container */}
+        <div className="relative">
+          <Swiper
+            modules={[Navigation, EffectCoverflow, Autoplay]}
+            effect="coverflow"
+            centeredSlides
+            loop
+            grabCursor
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            navigation={{
+              prevEl: ".solar-prev",
+              nextEl: ".solar-next",
+            }}
+            slidesPerView={3}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 1.1,
+              scale: 0.9,
+              slideShadows: false,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                centeredSlides: false,
+              },
+              640: {
+                slidesPerView: 1.5,
+              },
+              768: {
+                slidesPerView: 2.1,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className="w-full py-6 overflow-visible"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-sm font-semibold mb-6">
-              <Sun size={16} />
-              Solar Solutions
-            </div>
+            {applications.map((item) => (
+              <SwiperSlide key={item.title} className="h-auto">
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  className="group relative rounded-3xl overflow-hidden bg-zinc-900/80 border border-zinc-800/80 hover:border-amber-500/40 backdrop-blur-2xl shadow-2xl flex flex-col h-[480px] transition-all duration-500"
+                >
+                  {/* Card Image Container */}
+                  <div className="relative overflow-hidden h-[260px] w-full shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-black/30 opacity-90" />
+                    
+                    {/* Floating Category Tag */}
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-amber-400 text-xs font-semibold">
+                        <Sparkles size={12} />
+                        {item.tag}
+                      </span>
+                    </div>
+                  </div>
 
-            <h3 className="text-4xl sm:text-5xl md:text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Solar Power{" "}
-              <span className="block bg-gradient-to-r from-yellow-300 via-yellow-500 to-orange-400 bg-clip-text text-transparent">
-                For Every Need
-              </span>
-            </h3>
-
-            <div className="space-y-4">
-              <Link
-                to="/services"
-                className="block w-full py-4 rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold text-center hover:scale-[1.02] transition-all duration-300 shadow-xl"
-              >
-                Explore Solutions
-              </Link>
-
-              <Link
-                to="/contact"
-                className="block w-full py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-white text-center hover:bg-white hover:text-black transition-all duration-300"
-              >
-                Book Free Consultation
-              </Link>
-            </div>
-
-            <div className="flex gap-4 mt-10">
-              <button className="solar-prev h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-white/5 border border-white/10 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 flex items-center justify-center">
-                <ArrowLeft size={20} />
-              </button>
-
-              <button className="solar-next h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-white/5 border border-white/10 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 flex items-center justify-center">
-                <ArrowRight size={20} />
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Right Side Swiper Slider */}
-          <motion.div
-            className="md:col-span-8 w-full min-w-0"
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <Swiper
-              modules={[Navigation, EffectCoverflow, Autoplay]}
-              effect="coverflow"
-              centeredSlides
-              loop
-              grabCursor
-              autoplay={{
-                delay: 3500,
-                disableOnInteraction: false,
-              }}
-              navigation={{
-                prevEl: ".solar-prev",
-                nextEl: ".solar-next",
-              }}
-              slidesPerView={2.2}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 140,
-                modifier: 1,
-                scale: 0.88,
-                slideShadows: false,
-              }}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                },
-                640: {
-                  slidesPerView: 1.3,
-                },
-                768: {
-                  slidesPerView: 1.5,
-                },
-                1024: {
-                  slidesPerView: 2.2,
-                },
-              }}
-              className="w-full"
-            >
-              {applications.map((item) => (
-                <SwiperSlide key={item.title} className="p-2">
-                  <motion.div
-                    whileHover={{ y: -10 }}
-                    className="group rounded-[32px] overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 h-full flex flex-col"
-                  >
-                    <div className="relative overflow-hidden aspect-[4/3] w-full">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
+                  {/* Card Content Body */}
+                  <div className="p-6 sm:p-7 flex-grow flex flex-col justify-between bg-gradient-to-b from-zinc-900/50 to-zinc-950">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 group-hover:text-amber-400 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                        {item.desc}
+                      </p>
                     </div>
 
-                    <div className="p-6 lg:p-8 flex-grow flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm lg:text-base text-slate-400 leading-relaxed">
-                          {item.desc}
-                        </p>
+                    <div className="pt-4 border-t border-zinc-800/60 flex items-center justify-between">
+                      <span className="text-xs font-semibold text-amber-400/90 tracking-wide uppercase">
+                        Hasini Solar Enterprises & Solutions Verified System
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-black transition-all duration-300">
+                        <ArrowRight size={14} />
                       </div>
                     </div>
-                  </motion.div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </motion.div>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
+          {/* Slider Navigation Buttons Positioned at Sides */}
+          <div className="flex items-center justify-center gap-4 mt-10">
+            <button 
+              aria-label="Previous Slide"
+              className="solar-prev h-12 w-12 rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:bg-amber-400 hover:text-black hover:border-amber-400 transition-all duration-300 flex items-center justify-center shadow-lg cursor-pointer"
+            >
+              <ArrowLeft size={20} />
+            </button>
+
+            <button 
+              aria-label="Next Slide"
+              className="solar-next h-12 w-12 rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:bg-amber-400 hover:text-black hover:border-amber-400 transition-all duration-300 flex items-center justify-center shadow-lg cursor-pointer"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </div>
         </div>
+
       </div>
     </section>
   );

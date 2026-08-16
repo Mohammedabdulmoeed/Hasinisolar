@@ -134,7 +134,7 @@ export default function ReferEarnPage() {
       <SEO {...pageSeo.projects} />
       <PageHero
     title="Refer & Earn"
-    subtitle="Join the Sunrise Solar Hub Ambassador Program, share the benefits of clean energy with your network, and earn exciting rewards for every successful referral."
+    subtitle="Join the Hasini Solar Enterprises & Solutions Ambassador Program, share the benefits of clean energy with your network, and earn exciting rewards for every successful referral."
     image="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80"
     breadcrumb="Home / refer & earn"
 />
@@ -169,7 +169,7 @@ export default function ReferEarnPage() {
         >
           <Sparkles className="h-3.5 w-3.5 lg:h-4 lg:w-4 text-amber-600" />
           <span className="text-amber-800 text-[10px] lg:text-xs font-extrabold uppercase tracking-widest">
-            Sunrise solar hub Ambassador Program 2026
+            Hasini Solar Enterprises & Solutions Ambassador Program 2026
           </span>
         </motion.div>
 
@@ -191,7 +191,7 @@ export default function ReferEarnPage() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-slate-600 text-xs sm:text-base lg:text-lg leading-relaxed max-w-xl font-normal"
         >
-          Introduce your friends, neighbors, or business networks to clean, cost-saving solar energy. Earn handsome cash incentives for every successful rooftop installation commissioned by Sunrise Solar Hub.
+          Introduce your friends, neighbors, or business networks to clean, cost-saving solar energy. Earn handsome cash incentives for every successful rooftop installation commissioned by Hasini Solar Enterprises & Solutions.
         </motion.p>
 
         <motion.div 
@@ -347,7 +347,7 @@ export default function ReferEarnPage() {
           </div>
         </section>
         {/* ===================================================================
-            3. WHY REFER Sunrise Solar Hub
+            3. WHY REFER Hasini Solar Enterprises & Solutions
             =================================================================== */}
         <section className="py-24 relative border-t border-slate-200 z-10">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-8">
@@ -356,7 +356,7 @@ export default function ReferEarnPage() {
                 Why Us
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight font-display">
-                Why Refer Sunrise Solar Hub
+                Why Refer Hasini Solar Enterprises & Solutions
               </h2>
               <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
                 When you refer a friend, you refer them to India's most trusted solar EPC and custom design experts.
@@ -883,11 +883,11 @@ export default function ReferEarnPage() {
               </div>
 
               <form
-                action="https://formsubmit.co/sunrisesolarhub@gmail.com"
+                action="https://formsubmit.co/Hasini Solar Enterprises & Solutionssolarhub@gmail.com"
                 method="POST"
                 className="space-y-6"
               >
-                <input type="hidden" name="_subject" value="New Solar Referral Submission - Sunrise solar hub Network" />
+                <input type="hidden" name="_subject" value="New Solar Referral Submission - Hasini Solar Enterprises & Solutions Network" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" value={`${window.location.origin}/refer-earn?success=true`} />
 
@@ -1048,7 +1048,7 @@ export default function ReferEarnPage() {
               </h2>
 
               <p className="mt-4 text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
-                Thank you for submitting your referral! The Sunrise Solar Hub ambassador operations desk has received the prospect's details and will coordinate the site survey matrix. We'll update you shortly.
+                Thank you for submitting your referral! The Hasini Solar Enterprises & Solutions ambassador operations desk has received the prospect's details and will coordinate the site survey matrix. We'll update you shortly.
               </p>
 
               <button

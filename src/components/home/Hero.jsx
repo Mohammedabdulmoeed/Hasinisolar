@@ -1,61 +1,59 @@
 // Hero.jsx
 import { useRef, useState, useEffect } from 'react';
-import { useOutletContext, Link } from 'react-router-dom';
+import { useOutletContext, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Leaf,
   Zap,
-  Award,
   Sun,
-  Users,
-  Smile,
+  Battery,
   Home,
-  Building2,
-  Factory,
-  Gauge,
-  Droplet,
-  LineChart
+  TrendingUp,
+  PiggyBank,
+  ChevronRight
 } from 'lucide-react';
-import AnimatedCounter from '../ui/AnimatedCounter';
 import heroVideo from '../../assets/hero/heroVideo.mp4';
 import './Hero.css';
 
 export default function Hero() {
+  const navigate = useNavigate();
   const outletContext = useOutletContext();
   const openQuote = outletContext?.openQuote;
   const containerRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isTouchDesktopSite, setIsTouchDesktopSite] = useState(false);
+
+  // Live telemetry states
+  const [liveGen, setLiveGen] = useState(12.8);
+  const [co2Saved, setCo2Saved] = useState(32.6);
+  const [savings, setSavings] = useState(842);
 
   useEffect(() => {
     setIsLoaded(true);
 
-    const checkTouchDesktopSite = () => {
-      const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-      // Tall portrait layout typical of mobile viewports running Desktop Site emulation
-      const isPortraitOrTall = window.innerHeight / window.innerWidth > 1.0;
-      setIsTouchDesktopSite(isTouch && isPortraitOrTall && window.innerWidth >= 980);
-    };
-
-    checkTouchDesktopSite();
-    window.addEventListener('resize', checkTouchDesktopSite);
-    return () => window.removeEventListener('resize', checkTouchDesktopSite);
+    const interval = setInterval(() => {
+      setLiveGen(parseFloat((12.5 + Math.random() * 0.6).toFixed(1)));
+      setCo2Saved(parseFloat((32.1 + Math.random() * 1.0).toFixed(1)));
+      setSavings(Math.floor(830 + Math.random() * 25));
+    }, 4000);
+    
+    return () => clearInterval(interval);
   }, []);
 
+  // Framer Motion Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.15,
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -63,29 +61,33 @@ export default function Hero() {
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, x: 40 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 } }
-  };
+  const cardVariants = (delay) => ({
+    hidden: { opacity: 0, x: 50, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
+    },
+  });
 
-  const statsVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.6 } }
-  };
-
-  const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.8 } }
+  const journeyVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.5 },
+    },
   };
 
   return (
     <section
       ref={containerRef}
-      className={`hero-section-root ${isTouchDesktopSite ? 'is-touch-desktop-site' : ''}`}
+      className="hero-section-root"
       id="hero"
-      aria-label="Sunrise Solar Hub Hero Section"
+      aria-label="Home Hero Section"
     >
-      {/* BACKGROUND VIDEO LAYER */}
+      {/* Background Video Layer */}
       <div className="hero-bg-layer">
         <video
           src={heroVideo}
@@ -93,156 +95,242 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
           className="hero-bg-video"
         />
-        {/* Cinematic dark left-to-right gradient overlay */}
-        <div className="hero-bg-overlay" />
       </div>
 
-      {/* GLOWING DOTTED LINES SVG LAYER */}
-      <svg className="hero-badge-lines-svg" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="glow-gold" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        
-       
-      </svg>
-
-      {/* FLOATING BADGES OVERLAY */}
-      {isLoaded && (
-        <div className="hero-badges-layer">
-         
-          
-        </div>
-      )}
-
-      {/* MAIN CONTENT CONTAINER */}
+      {/* Main Content Container */}
       <div className="hero-content-container">
-        {/* LEFT SIDE CONTENT PANEL */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isLoaded ? "visible" : "hidden"}
-          className="hero-left-content"
-        >
-          {/* Eyebrow Label with Yellow Line */}
-          <motion.div variants={itemVariants} className="hero-eyebrow-container">
-            <span className="hero-eyebrow-line" />
-            <span className="hero-eyebrow-text">
-              POWERING A GREENER FUTURE
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            variants={itemVariants}
-            className="hero-headline"
+        <div className="hero-main-layout">
+          
+          {/* Left Hero Content */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isLoaded ? 'visible' : 'hidden'}
+            className="hero-left-content"
           >
-            Powering a Brighter Tomorrow with <br />
-            <span className="hero-headline-highlight">Smart Solar</span> Solutions
-          </motion.h1>
+            {/* Premium Badge */}
+            <motion.div variants={fadeInUpVariants} className="hero-premium-badge">
+              <Sun className="badge-sun-icon" />
+              <span>CLEAN ENERGY. BRIGHTER FUTURE.</span>
+            </motion.div>
 
-          {/* Paragraph */}
+            {/* Headline */}
+           <motion.h1 variants={fadeInUpVariants} className="hero-headline">
+  POWER YOUR
+  <br />
+  <span className="highlight-yellow">FUTURE</span>
+  <br />
+  WITH THE <span className="highlight-yellow">SUN</span>
+</motion.h1>
+
+            {/* Accent Line */}
+            <motion.div variants={fadeInUpVariants} className="hero-accent-line" />
+
+            {/* Description */}
+            <motion.p variants={fadeInUpVariants} className="hero-description">
+              Advanced solar solutions that transform sunlight into clean energy, lower bills, and a sustainable future.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div variants={fadeInUpVariants} className="hero-buttons-container">
+              <button
+                onClick={() => openQuote ? openQuote() : (window.location.href = '/contact#contact-form')}
+                className="hero-btn-primary"
+                aria-label="Get Your Solar Plan"
+              >
+                <span>GET YOUR SOLAR PLAN</span>
+                <ArrowRight className="btn-arrow-icon" />
+              </button>
+
+              <button
+                onClick={() => navigate("/services")}
+                className="hero-btn-secondary"
+                aria-label="Explore Our Services"
+              >
+                <span className="dot-icon">◉</span>
+                <span>EXPLORE OUR SERVICES</span>
+              </button>
+            </motion.div>
+
+            {/* Three Feature Items */}
           
-
-          {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="hero-buttons-container">
-            <button
-              onClick={() => openQuote ? openQuote() : window.location.href = '/contact#contact-form'}
-              className="hero-btn-primary"
-              aria-label="Get Free Quote"
-            >
-              <span>Get a Free Quote</span>
-              <div className="hero-btn-icon-circle-primary">
-                <ArrowRight className="h-4.5 w-4.5" />
-              </div>
-            </button>
-
-            <Link
-              to="/services"
-              className="hero-btn-secondary"
-            >
-              <span>Explore Our Services</span>
-              <div className="hero-btn-icon-circle-secondary">
-                <ArrowRight className="h-4.5 w-4.5" />
-              </div>
-            </Link>
           </motion.div>
-        </motion.div>
 
-        {/* OVERLAID VERTICAL GLASS CARD */}
-        
-          {/* Item 1 */}
-          
+          {/* Right-side Live Data Cards */}
+          <div className="hero-right-cards">
+            {/* Card 1 */}
+            <motion.div
+              variants={cardVariants(0.2)}
+              initial="hidden"
+              animate={isLoaded ? 'visible' : 'hidden'}
+              className="telemetry-card"
+            >
+              <div className="card-header-row">
+                <div className="card-title-group">
+                  <Zap className="card-icon text-yellow" />
+                  <span className="card-title">EXPERIENCE</span>
+                </div>
+              </div>
+              <div className="card-value">3+</div>
+              <div className="card-subtitle">Years Experience</div>
+              <div className="card-graph-container">
+                <svg viewBox="0 0 100 20" className="card-graph-svg">
+                  <path
+                    d="M 0 12 Q 15 2 30 14 T 60 4 T 90 10 L 100 8"
+                    fill="none"
+                    stroke="#FFD000"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+            </motion.div>
 
-          <hr className="feature-divider" />
+            {/* Card 2 */}
+            <motion.div
+              variants={cardVariants(0.35)}
+              initial="hidden"
+              animate={isLoaded ? 'visible' : 'hidden'}
+              className="telemetry-card"
+            >
+              <div className="card-header-row">
+                <div className="card-title-group">
+                  <Leaf className="card-icon text-green" />
+                  <span className="card-title">INSTALLATIONS</span>
+                </div>
+              </div>
+              <div className="card-value">350+</div>
+              <div className="card-subtitle">Successfully completed</div>
+              <div className="card-graph-container">
+                <svg viewBox="0 0 100 20" className="card-graph-svg">
+                  <path
+                    d="M 0 16 Q 20 6 45 15 T 80 4 L 100 6"
+                    fill="none"
+                    stroke="#A6E637"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+            </motion.div>
 
-          {/* Item 2 */}
-         
+            {/* Card 3 */}
+            <motion.div
+              variants={cardVariants(0.5)}
+              initial="hidden"
+              animate={isLoaded ? 'visible' : 'hidden'}
+              className="telemetry-card"
+            >
+              <div className="card-header-row">
+                <div className="card-title-group">
+                  <PiggyBank className="card-icon text-yellow-green" />
+                  <span className="card-title">SATISFACTION</span>
+                </div>
+              </div>
+              <div className="card-value">100%</div>
+              <div className="card-subtitle">Happy customers who trust SunVolt Solar.</div>
+              <div className="card-graph-container">
+                <svg viewBox="0 0 100 20" className="card-graph-svg">
+                  <path
+                    d="M 0 15 Q 15 5 35 12 T 70 2 L 100 4"
+                    fill="none"
+                    stroke="#8CFF3A"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+            </motion.div>
+          </div>
 
-          <hr className="feature-divider" />
+        </div>
 
-          {/* Item 3 */}
-          
-        
-      </div>
-
-      {/* BOTTOM FLOATING STATISTICS CARD */}
-      <div className="hero-stats-panel-container">
+        {/* Bottom Solar Journey Panel */}
         <motion.div
-          variants={statsVariants}
+          variants={journeyVariants}
           initial="hidden"
-          animate={isLoaded ? "visible" : "hidden"}
-          className="hero-stats-strip"
+          animate={isLoaded ? 'visible' : 'hidden'}
+          className="solar-journey-panel"
         >
-          {/* Column 1 */}
-          <div className="stat-column">
-            <div className="stat-icon-circle">
-              <Award className="h-5 w-5" />
-            </div>
-            <div className="stat-content-box">
-              <AnimatedCounter value={3} suffix="+" label="Years Experience" />
-              <p className="stat-subtitle">Delivering trusted solar solutions .</p>
-            </div>
+          <div className="journey-left-header">
+            <span className="journey-eyebrow">THE SOLAR JOURNEY</span>
+            <h4 className="journey-title">
+              Sunlight to Savings,<br />We Power Everything
+            </h4>
           </div>
 
-          {/* Column 2 */}
-          <div className="stat-column">
-            <div className="stat-icon-circle">
-              <Users className="h-5 w-5" />
+          <div className="journey-right-flow">
+            {/* Stage 1 */}
+            <div className="journey-stage">
+              <div className="journey-stage-icon-circle accent-yellow" style={{ background: 'linear-gradient(135deg, rgba(255, 208, 0, 0.25), rgba(255, 140, 0, 0.25))', boxShadow: '0 0 20px rgba(255, 208, 0, 0.3)', border: '1px solid rgba(255, 208, 0, 0.5)' }}>
+                <Sun className="journey-stage-icon" style={{ color: '#FFD000', filter: 'drop-shadow(0 0 8px rgba(255, 208, 0, 0.8))' }} />
+              </div>
+              <div className="journey-stage-text">
+                <span className="stage-title">SUNLIGHT</span>
+                <span className="stage-desc">Captured by solar panels</span>
+              </div>
             </div>
-            <div className="stat-content-box">
-              <AnimatedCounter value={200} suffix="+" label="Installations" />
-              <p className="stat-subtitle">Successfully completed .</p>
-            </div>
-          </div>
 
-          {/* Column 3 */}
-          <div className="stat-column">
-            <div className="stat-icon-circle">
-              <Zap className="h-5 w-5" />
+            <div className="journey-arrow">
+              <ChevronRight className="arrow-icon" />
             </div>
-            <div className="stat-content-box">
-              <AnimatedCounter value={200} suffix="kW+" label="Installed Capacity" />
-              <p className="stat-subtitle">Generating clean energy at a greater scale.</p>
-            </div>
-          </div>
 
-          {/* Column 4 */}
-          <div className="stat-column">
-            <div className="stat-icon-circle">
-              <Smile className="h-5 w-5" />
+            {/* Stage 2 */}
+            <div className="journey-stage">
+              <div className="journey-stage-icon-circle accent-cyan" style={{ background: 'linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(0, 150, 255, 0.25))', boxShadow: '0 0 20px rgba(0, 240, 255, 0.3)', border: '1px solid rgba(0, 240, 255, 0.5)' }}>
+                <Zap className="journey-stage-icon" style={{ color: '#00F0FF', filter: 'drop-shadow(0 0 8px rgba(0, 240, 255, 0.8))' }} />
+              </div>
+              <div className="journey-stage-text">
+                <span className="stage-title">GENERATION</span>
+                <span className="stage-desc">Clean electricity produced</span>
+              </div>
             </div>
-            <div className="stat-content-box">
-              <AnimatedCounter value={100} suffix="%" label="Customer Satisfaction" />
-              <p className="stat-subtitle">Happy customers who trust Sunrise Solar.</p>
+
+            <div className="journey-arrow">
+              <ChevronRight className="arrow-icon" />
+            </div>
+
+            {/* Stage 3 */}
+            <div className="journey-stage">
+              <div className="journey-stage-icon-circle accent-green" style={{ background: 'linear-gradient(135deg, rgba(166, 230, 55, 0.25), rgba(0, 200, 100, 0.25))', boxShadow: '0 0 20px rgba(166, 230, 55, 0.3)', border: '1px solid rgba(166, 230, 55, 0.5)' }}>
+                <Battery className="journey-stage-icon" style={{ color: '#A6E637', filter: 'drop-shadow(0 0 8px rgba(166, 230, 55, 0.8))' }} />
+              </div>
+              <div className="journey-stage-text">
+                <span className="stage-title">STORAGE</span>
+                <span className="stage-desc">Stored for when you need it</span>
+              </div>
+            </div>
+
+            <div className="journey-arrow">
+              <ChevronRight className="arrow-icon" />
+            </div>
+
+            {/* Stage 4 */}
+            <div className="journey-stage">
+              <div className="journey-stage-icon-circle accent-purple" style={{ background: 'linear-gradient(135deg, rgba(180, 100, 255, 0.25), rgba(120, 50, 255, 0.25))', boxShadow: '0 0 20px rgba(180, 100, 255, 0.3)', border: '1px solid rgba(180, 100, 255, 0.5)' }}>
+                <Home className="journey-stage-icon" style={{ color: '#C084FC', filter: 'drop-shadow(0 0 8px rgba(180, 100, 255, 0.8))' }} />
+              </div>
+              <div className="journey-stage-text">
+                <span className="stage-title">POWER</span>
+                <span className="stage-desc">Powers your home & business</span>
+              </div>
+            </div>
+
+            <div className="journey-arrow">
+              <ChevronRight className="arrow-icon" />
+            </div>
+
+            {/* Stage 5 */}
+            <div className="journey-stage">
+              <div className="journey-stage-icon-circle accent-yellow-green" style={{ background: 'linear-gradient(135deg, rgba(74, 222, 128, 0.25), rgba(16, 185, 129, 0.25))', boxShadow: '0 0 20px rgba(74, 222, 128, 0.3)', border: '1px solid rgba(74, 222, 128, 0.5)' }}>
+                <span className="journey-stage-rupee" style={{ color: '#4ADE80', fontSize: '1.25rem', fontWeight: 'bold', filter: 'drop-shadow(0 0 8px rgba(74, 222, 128, 0.8))' }}>₹</span>
+              </div>
+              <div className="journey-stage-text">
+                <span className="stage-title">SAVINGS</span>
+                <span className="stage-desc">Lower bills, greater independence</span>
+              </div>
             </div>
           </div>
         </motion.div>

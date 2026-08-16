@@ -5,7 +5,7 @@ export const testimonials = [
     role: "Homeowner",
     rating: 5,
     review:
-      "Sunrise Solar Hub installed a rooftop solar system for our home. Our electricity bills have dropped significantly and the installation process was smooth from start to finish.",
+      "Hasini Solar Enterprises & Solutions installed a rooftop solar system for our home. Our electricity bills have dropped significantly and the installation process was smooth from start to finish.",
     image: "https://images.unsplash.com/photo-1629301085299-a0b879255825?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with local asset like "/images/testimonials/rajesh.jpg"
   },
   {

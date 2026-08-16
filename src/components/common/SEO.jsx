@@ -56,7 +56,7 @@ export default function SEO({
   const pageTitle = title || SITE_FULL_NAME;
   const metaDescription =
     description ||
-    'Sunrise Solar Hub Energies provides Residential, Commercial and Industrial Solar Power Solutions across India. Save electricity bills with premium solar installations'
+    'Hasini Solar Enterprises & Solutions Energies provides Residential, Commercial and Industrial Solar Power Solutions across India. Save electricity bills with premium solar installations'
 
   const schema = buildLocalBusinessSchema({ title: pageTitle, description: metaDescription });
 

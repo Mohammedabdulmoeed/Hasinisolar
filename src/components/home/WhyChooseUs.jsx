@@ -82,11 +82,11 @@ export default function WhyChooseUs() {
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
   <span className="inline-block px-4 py-2 rounded-full bg-yellow-500/20 text-yellow-400 text-sm font-semibold uppercase tracking-widest">
-    Why Choose Sunrise Solar Hub
+    Why Choose Hasini Solar Enterprises & Solutions
   </span>
 
   <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white">
-    The <span className="text-yellow-400">Sunrise Solar</span> Advantage
+    The <span className="text-yellow-400">Hasini Solar Enterprises & Solutions Solar</span> Advantage
   </h2>
 
   <p className="mt-6 max-w-3xl mx-auto text-lg text-slate-300 leading-8">

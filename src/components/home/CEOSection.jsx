@@ -134,7 +134,7 @@ export default function CEOSection() {
             >
               <img 
                 src={ceoImage} 
-                alt="CEO & Managing Director - Sunrise Solar Hubs"
+                alt="CEO & Managing Director - Hasini Solar Enterprises & Solutionss"
                 className="ceo-portrait-img"
                 loading="lazy"
               />
@@ -154,11 +154,11 @@ export default function CEOSection() {
                   Executive Leadership
                 </div>
                 <h3 className="text-sm sm:text-base font-semibold text-slate-300 tracking-tight leading-none">
-                  Managing Director - Sunrise Solar Hub
+                  Managing Director - Hasini Solar Enterprises & Solutions
                 </h3>
                 <div className="bg-gradient-to-r from-amber-400/60 via-amber-400/25 to-transparent h-[1.5px] w-full my-2.5" />
                 <p className="text-xl sm:text-2xl font-extrabold text-white tracking-wide leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-                  P Sai Kumar
+                 Praneeth Murarkar
                 </p>
               </div>
             </motion.div>
@@ -194,13 +194,13 @@ export default function CEOSection() {
             {/* 3. Executive Message Copy (~190 Words) */}
             <motion.div variants={itemVariants} className="mt-6 space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed font-sans font-normal">
               <p>
-                "At Sunrise Solar Hub, our vision is built on an unwavering commitment to engineering excellence, technological innovation, and trust. As India accelerates towards clean energy independence, we are proud to be at the forefront—delivering utility-scale Solar EPC, turnkey commercial and industrial solar installations, and 24/7 intelligent O&M operations.
+                "At Hasini Solar Enterprises & Solutions, our journey is driven by a clear belief: the future of energy must be cleaner, smarter, more reliable, and accessible to everyone. As India moves rapidly toward renewable energy and greater energy independence, we are committed to playing a meaningful role in this transformation by delivering solar solutions built around quality, performance, innovation, and trust.
               </p>
               <p>
-                We believe that transitioning to solar is more than just installing photovoltaic panels; it is about building resilient, high-efficiency grid infrastructure that empowers enterprises, safeguards our environment, and drives sustainable economic growth. Every project we undertake is executed with zero-downtime reliability, tier-1 MNRE-compliant components, and rigorous safety standards.
+                Our expertise extends across solar EPC, commercial and industrial solar installations, rooftop systems, utility-scale solutions, solar infrastructure, and ongoing operations and maintenance. From the initial consultation and system design to installation, commissioning, monitoring, and long-term support, our team works closely with every client to ensure that their solar investment delivers meaningful and sustainable value.
               </p>
               <p>
-                Our commitment extends far beyond technology. We build enduring partnerships with our clients, providing end-to-end support throughout the 30-year performance lifecycle of their solar assets. Together with our engineers and partners, we are shaping a zero-carbon future for generations to come."
+                As we look ahead, our ambition is to continue expanding our capabilities, embracing emerging technologies, strengthening our engineering expertise, and delivering increasingly intelligent renewable-energy solutions. We want Hasini Solar Enterprises & Solutions to be recognized not only for the solar systems we build, but for the reliability, integrity, and lasting value we bring to every project."
               </p>
             </motion.div>
 
@@ -214,7 +214,7 @@ export default function CEOSection() {
                   Executive Leadership
                 </h4>
                 <p className="text-sm font-semibold text-amber-400">
-                  Founder & Managing Director, Sunrise Solar Hub
+                  Founder & Managing Director, Hasini Solar Enterprises & Solutions
                 </p>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">

@@ -21,9 +21,11 @@ export default function HomePage() {
       <SEO {...pageSeo.home} />
       <Hero />
       <AboutSection />
-     
+      
+     <CEOSection/>
+     <SubsidySection/>
       <WhyChooseUs />
-      <SubsidySection/>
+    
       
       <ServicesOverview />
       <SolarApplications/>

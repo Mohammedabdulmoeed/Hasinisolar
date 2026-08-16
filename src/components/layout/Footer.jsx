@@ -23,12 +23,12 @@ export default function Footer() {
             <div className="flex justify-center sm:justify-start w-full">
               <img
                 src={logos}
-                alt="Sunrise Solar Hub" 
+                alt="Hasini Solar Enterprises & Solutions" 
                 className="w-[140px] sm:w-[160px] md:w-[200px] h-auto object-contain bg-white rounded-2xl p-2 shadow-2xl border border-white/10 hover:scale-102 transition-transform duration-300"
               />
             </div>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xs font-medium">
-              Sunrise Solar Hub delivers premium Residential, Commercial, Industrial and Government solar EPC solutions with complete design, installation, maintenance and energy optimization across Telangana and India.
+              Hasini Solar Enterprises & Solutions delivers premium Residential, Commercial, Industrial and Government solar EPC solutions with complete design, installation, maintenance and energy optimization across Telangana and India.
             </p>
             
             {/* Social Instagram Card */}
@@ -175,7 +175,7 @@ export default function Footer() {
         {/* Divider line */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs font-bold text-slate-500 tracking-wider text-center">
           <div>
-            &copy; {new Date().getFullYear()} Sunrise Solar Hub. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Hasini Solar Enterprises & Solutions. All Rights Reserved.
           </div>
           <div className="flex items-center gap-1 text-slate-400 font-semibold">
             Designed & Developed with <span className="text-red-500 animate-pulse">❤️</span>

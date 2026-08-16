@@ -4,7 +4,7 @@ import { company } from '../../data/company';
 
 export default function WhatsAppButton() {
 const url = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
-`👋 Hello Sunrise Solar Hub Team,
+`👋 Hello Hasini Solar Enterprises & Solutions Team,
 
 I'm interested in installing a solar system.
 

@@ -159,10 +159,9 @@ export default function AboutPage() {
       <PageHero
         title="About Us"
         subtitle="Build your future with a team that values excellence, growth, and innovation."
-        image="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1600&q=80" 
+        image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=80" 
         breadcrumb="Home / About"
       />
-
       {/* =========================================
          SECTION 2: ABOUT COMPANY SECTION
          ========================================= */}
@@ -181,7 +180,7 @@ export default function AboutPage() {
               <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[30rem] bg-slate-200">
                 <img
                   src={images.office}
-                  alt="Sunrise Solar Hub Installation"
+                  alt="Hasini Solar Enterprises & Solutions Installation"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
@@ -199,7 +198,7 @@ export default function AboutPage() {
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Who We Are</span>
               <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-slate-900">Premium Solar EPC Partners</h2>
               <p className="mt-6 text-slate-600 leading-relaxed text-base">
-                At Sunrise Solar Hub, we provide end-to-end engineering, procurement, and construction (EPC) services. We specialize in planning, structurally validating, and installing clean energy solar systems tailored specifically for residential, commercial, and industrial facilities.
+                At Hasini Solar Enterprises & Solutions, we provide end-to-end engineering, procurement, and construction (EPC) services. We specialize in planning, structurally validating, and installing clean energy solar systems tailored specifically for residential, commercial, and industrial facilities.
               </p>
               <p className="mt-4 text-slate-600 leading-relaxed text-base">
                 Our team is committed to deploying exclusively Tier-1 monocrystalline panels, micro-inverters, and safety structures that meet rigorous MNRE guidelines to deliver high-capacity operational returns.
@@ -222,203 +221,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="relative py-28 lg:py-40 bg-slate-50 overflow-hidden w-full select-none text-left">
-  
-  {/* Luxury Lens Flares & Tech Grid Mesh */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-r from-sky-200/30 to-emerald-200/30 rounded-full blur-[160px]" />
-    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px]" />
-  </div>
+     
 
-  {/* CHANGED: Expanded to max-w-7xl and increased horizontal padding bounds (lg:px-20) */}
-  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
       
-      {/* LEFT SPLIT LAYER: Hyper-Modern Focus Statement (4 Columns) */}
-      <div className="lg:col-span-4 flex flex-col items-start space-y-4">
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-black text-xs uppercase tracking-widest shadow-inner">
-          <Sparkles className="h-3 w-3 text-sky-500 animate-pulse" /> Core Directives
-        </span>
-        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
-          Our Blueprint <br />For The 
-          <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
-            Next Generation.
-          </span>
-        </h2>
-      </div>
 
-      {/* RIGHT SPLIT LAYER: Premium Overlapping Asymmetrical Cards (8 Columns) */}
-      <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 items-stretch w-full">
-        
-        {/* Mission Card Asset */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          whileHover={{ y: -8 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-          className="group relative overflow-hidden rounded-[36px] bg-white p-8 lg:p-10 border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-400 cursor-pointer flex flex-col justify-between w-full"
-        >
-          <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-emerald-400 to-teal-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
-          <div>
-            <div className="p-4 bg-emerald-50 text-emerald-600 rounded-2xl w-max mb-8 shadow-inner transition-colors duration-300 group-hover:bg-slate-900 group-hover:text-white">
-              <Target className="h-7 w-7 group-hover:rotate-6 transition-transform" />
-            </div>
-            <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-4">
-              Our Mission
-            </h3>
-            <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
-              To make clean solar energy affordable, accessible, and reliable for every residential home and commercial business while accelerating India's transition toward sustainable energy independence.
-            </p>
-          </div>
-          <div className="mt-8 pt-4 border-t border-slate-50 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-            <span>Read parameters</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </div>
-        </motion.div>
-
-        {/* Vision Card Asset */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          whileHover={{ y: -8 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-          className="group relative overflow-hidden rounded-[36px] bg-white p-8 lg:p-10 border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-400 cursor-pointer flex flex-col justify-between w-full sm:translate-y-6"
-        >
-          <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-sky-400 to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
-          <div>
-            <div className="p-4 bg-sky-50 text-sky-600 rounded-2xl w-max mb-8 shadow-inner transition-colors duration-300 group-hover:bg-slate-900 group-hover:text-white">
-              <Eye className="h-7 w-7 group-hover:rotate-6 transition-transform" />
-            </div>
-            <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-4">
-              Our Vision
-            </h3>
-            <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
-              To become India's most trusted solar energy company by delivering innovative panel technology, customized blueprints, and exceptional support that empowers future generations.
-            </p>
-          </div>
-          <div className="mt-8 pt-4 border-t border-slate-50 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-sky-600 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-            <span>Read architecture</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </div>
-        </motion.div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-     {/* =========================================
-          SECTION 4: CORE VALUES (Bento Grid Edition)
-          ========================================= */}
-      <section className="section-padding bg-slate-50 overflow-hidden relative text-left">
-        {/* Ambient background glow */}
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 h-96 w-96 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none" />
-        
-        <div className="container-custom px-4 relative z-10">
-          <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full">
-              Our Principles
-            </span>
-            <h2 className="mt-4 text-3xl sm:text-5xl font-black tracking-tight font-display text-slate-900">
-              Driven by Values, Built for Performance
-            </h2>
-          </div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-6 gap-6"
-          >
-            {[
-              { 
-                title: "Quality First", 
-                desc: "Rigorous standards from raw solar arrays to engineering panel locks. We accept nothing short of Tier-1 excellence.", 
-                icon: Shield,
-                span: "md:col-span-3",
-                accent: "from-emerald-500 to-teal-500"
-              },
-              { 
-                title: "Active Innovation", 
-                desc: "Smart localized cloud monitoring and customized hybrid microgrids tailored for maximum yield.", 
-                icon: Cpu,
-                span: "md:col-span-3",
-                accent: "from-cyan-500 to-blue-500"
-              },
-              { 
-                title: "Sustainability", 
-                desc: "Delivering massive carbon offsets and clean output parameters for generations.", 
-                icon: Leaf,
-                span: "md:col-span-2",
-                accent: "from-green-400 to-emerald-600"
-              },
-              { 
-                title: "Integrity", 
-                desc: "100% document transparency on subsidy processing and net metering metrics.", 
-                icon: Award,
-                span: "md:col-span-2",
-                accent: "from-amber-400 to-orange-500"
-              },
-              { 
-                title: "Rooftop Safety", 
-                desc: "Strict adherence to safety grids, wind-resistant secure frames, and structural protection.", 
-                icon: AlertCircleShim,
-                span: "md:col-span-2",
-                accent: "from-rose-500 to-red-600"
-              },
-              { 
-                title: "Customer Focus", 
-                desc: "Dedicated lifetime warranty assistance, active clean alerts, and continuous optimization support.", 
-                icon: Heart,
-                span: "md:col-span-6",
-                accent: "from-indigo-500 via-purple-500 to-pink-500"
-              }
-            ].map((val, idx) => {
-              const Icon = val.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  variants={fadeInUpVariants}
-                  whileHover={{ y: -4, scale: 1.01 }}
-                  className={`${val.span} group relative overflow-hidden rounded-[2.5rem] bg-white p-8 border border-slate-200/60 shadow-sm hover:shadow-2xl hover:border-transparent transition-all duration-500 flex flex-col justify-between cursor-pointer`}
-                >
-                  {/* Subtle Gradient Line Hover Effect */}
-                  <div className={`absolute bottom-0 left-0 h-1.5 w-0 group-hover:w-full bg-gradient-to-r ${val.accent} transition-all duration-500 rounded-b-[2.5rem]`} />
-
-                  <div>
-                    {/* Icon Base */}
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="p-4 bg-slate-50 text-slate-800 rounded-2xl group-hover:bg-slate-900 group-hover:text-white transition-colors duration-500 shadow-inner">
-                        <Icon className="h-6 w-6 group-hover:rotate-6 transition-transform duration-500" />
-                      </div>
-                      <span className="text-slate-200 font-display font-black text-4xl group-hover:text-slate-100 transition-colors">
-                        0{idx + 1}
-                      </span>
-                    </div>
-
-                    {/* Title & Description */}
-                    <h4 className="text-xl font-extrabold font-display text-slate-900 tracking-tight mb-3">
-                      {val.title}
-                    </h4>
-                    <p className="text-slate-500 text-sm font-normal leading-relaxed max-w-xl group-hover:text-slate-700 transition-colors">
-                      {val.desc}
-                    </p>
-                  </div>
-
-                  {/* Aesthetic clean arrow link decoration */}
-                  <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 text-slate-900 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-                    <span>Learn standard</span>
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
+     
       {/* =========================================
          SECTION 5: OUR JOURNEY (Vertical Timeline)
          ========================================= */}
@@ -567,7 +374,7 @@ export default function AboutPage() {
 
         <div className="container-custom relative z-10 px-4 text-center max-w-5xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 font-sans">By the Numbers</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white mb-12">Why Choose Sunrise Solar Hub</h2>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white mb-12">Why Choose Hasini Solar Enterprises & Solutions</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <AboutStatCard value={200} suffix=" kW+" label="Total Installed" icon={Zap} />

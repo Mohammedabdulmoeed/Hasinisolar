@@ -37,7 +37,7 @@ export default function AboutSection() {
             >
               <SafeImage
                 src={images.office}
-                alt="Sunrise Solar Hub"
+                alt="Hasini Solar Enterprises & Solutions"
                 className="w-full h-auto object-cover max-h-[420px] sm:max-h-[480px] transition-transform duration-700 group-hover:scale-105"
               />
 
@@ -71,7 +71,7 @@ export default function AboutSection() {
             className="row-split-content"
           >
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-yellow-600">
-              About Sunrise Solar Hub
+              About Hasini Solar Enterprises & Solutions
             </span>
 
             <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
@@ -82,7 +82,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="mt-6 text-slate-600 leading-relaxed text-lg">
-              Sunrise Solar Hub accelerates the shift to clean energy with cutting-edge solar technology. We design, install, and manage high-efficiency power systems that help homeowners and businesses slash energy costs and secure complete power independence.
+              Hasini Solar Enterprises & Solutions accelerates the shift to clean energy with cutting-edge solar technology. We design, install, and manage high-efficiency power systems that help homeowners and businesses slash energy costs and secure complete power independence.
             </p>
 
             <motion.ul

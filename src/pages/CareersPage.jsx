@@ -112,8 +112,8 @@ export default function CareersPage() {
   return (
     <>
       <SEO
-        title="Careers | Sunrise Solar Hub"
-        description="Join the engineering framework elite at Sunrise Solar Hub. Explore premium clean energy infrastructure careers."
+        title="Careers | Hasini Solar Enterprises & Solutions"
+        description="Join the engineering framework elite at Hasini Solar Enterprises & Solutions. Explore premium clean energy infrastructure careers."
       />
 
       <PageHero
@@ -236,9 +236,9 @@ export default function CareersPage() {
                 <p className="text-sm font-semibold text-slate-500 mt-0.5">{selectedJob.title}</p>
               </div>
 
-              {/* SYSTEM FORM CORE LINKAGEED TO Sunrise solar hub LEDGER */}
+              {/* SYSTEM FORM CORE LINKAGEED TO Hasini Solar Enterprises & Solutions LEDGER */}
               <form
-                action="https://formsubmit.co/sunrisesolarhub@gmail.com"
+                action="https://formsubmit.co/Hasini Solar Enterprises & Solutionssolarhub@gmail.com"
                 method="POST"
                 encType="multipart/form-data"
                 className="space-y-4 mt-2"
@@ -348,7 +348,7 @@ export default function CareersPage() {
               </h2>
 
               <p className="mt-4 text-slate-500 text-sm font-medium leading-relaxed">
-                Thank you for applying. The Sunrise Solar Hub engineering operations team will process your documentation matrix and sync up shortly.
+                Thank you for applying. The Hasini Solar Enterprises & Solutions engineering operations team will process your documentation matrix and sync up shortly.
               </p>
 
               <button

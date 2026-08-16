@@ -171,7 +171,7 @@ export default function ProjectsPage() {
   {
     name: "Rajesh Kumar",
     role: "Textile Mill Owner",
-    review: "Sunrise Solar Hub setup completely transformed our operating costs. Our monthly electricity bills fell by 40% starting from month one. The online monitoring dashboard and net-metering support were outstanding.",
+    review: "Hasini Solar Enterprises & Solutions setup completely transformed our operating costs. Our monthly electricity bills fell by 40% starting from month one. The online monitoring dashboard and net-metering support were outstanding.",
     logo: "Kumar Textiles",
     savings: "₹8 Lakhs / month",
     roi: "3.8 Years achieved",
@@ -180,7 +180,7 @@ export default function ProjectsPage() {
   {
     name: "A. Srinivasa Rao",
     role: "Hospital Administrator",
-    review: "Power reliability is critical for us. Sunrise Solar Hubengineered an On-Grid 250 kW solution that integrated seamlessly with our existing setup. Our electricity overheads have reduced significantly, hitting ROI target in exactly 4 years.",
+    review: "Power reliability is critical for us. Hasini Solar Enterprises & Solutionsengineered an On-Grid 250 kW solution that integrated seamlessly with our existing setup. Our electricity overheads have reduced significantly, hitting ROI target in exactly 4 years.",
     logo: "City Hospital",
     savings: "₹2.2 Lakhs / month",
     roi: "4.0 Years achieved",
@@ -189,7 +189,7 @@ export default function ProjectsPage() {
   {
     name: "Vikram Malhotra",
     role: "Homeowner",
-    review: "For our new house, keeping the rooftop neat was very important. Sunrise Solar Hub custom-engineered a sleek solar panel installation that matched the home's design while easily supplying 100% of our daily power requirements.",
+    review: "For our new house, keeping the rooftop neat was very important. Hasini Solar Enterprises & Solutions custom-engineered a sleek solar panel installation that matched the home's design while easily supplying 100% of our daily power requirements.",
     logo: "Residential",
     savings: "₹15,000 / month",
     roi: "4.5 Years achieved",
@@ -264,7 +264,7 @@ export default function ProjectsPage() {
       <SEO {...pageSeo.projects} />
       <PageHero
         title="Project"
-        subtitle="Sunrise Solar Hub Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
+        subtitle="Hasini Solar Enterprises & Solutions Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
         image="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=80"
         breadcrumb="Home / project"
       />
@@ -291,7 +291,7 @@ export default function ProjectsPage() {
               <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[32rem] bg-slate-200">
                 <img
                   src={images.industrial_solar} // Ensure this points to a residential roof image in your assets
-                  alt="Sunrise Solar Hub 15 kWp Residential Grid"
+                  alt="Hasini Solar Enterprises & Solutions 15 kWp Residential Grid"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-300" />
@@ -320,7 +320,7 @@ export default function ProjectsPage() {
               <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">Premium Housing</span>
               <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">15 kWp Luxury Villa Solar System</h3>
               <p className="mt-4 text-slate-600 leading-relaxed text-base">
-                Sunrise Solar Hub designed and commissioned a luxury net-metered rooftop solar solution for a multi-story premium residence. Engineered seamlessly into the villa's modern architecture, this grid-tied setup fully powers heavy domestic loads, including centralized air conditioning and electric vehicle charging infrastructure.
+                Hasini Solar Enterprises & Solutions designed and commissioned a luxury net-metered rooftop solar solution for a multi-story premium residence. Engineered seamlessly into the villa's modern architecture, this grid-tied setup fully powers heavy domestic loads, including centralized air conditioning and electric vehicle charging infrastructure.
               </p>
 
               {/* Grid of details */}
@@ -422,7 +422,7 @@ export default function ProjectsPage() {
     
 
 {/* =========================================
-    SECTION 5: 9-IMAGE MINIMALIST GALLERY
+    SECTION 5: 15-IMAGE MINIMALIST GALLERY
     ========================================= */}
 <section className="section-padding bg-slate-50/50">
   <div className="container-custom px-4 max-w-7xl mx-auto">
@@ -431,7 +431,7 @@ export default function ProjectsPage() {
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
     >
       <AnimatePresence mode="popLayout">
-        {projects.map((project) => (
+        {projects.slice(0, 15).map((project) => (
           <motion.div
             key={project.id}
             layout
@@ -444,7 +444,7 @@ export default function ProjectsPage() {
           >
             <img
               src={project.image}
-              alt="Sunrise Solar Hub Residential Installation"
+              alt="Hasini Solar Enterprises & Solutions Installation"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             
@@ -853,7 +853,7 @@ export default function ProjectsPage() {
           
           <div className="text-center mb-8 md:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Clean Energy Dashboard</span>
-            <h2 className="mt-2 text-2xl sm:text-4xl font-bold font-display text-slate-900">Sunrise Solar Hub Performance Analytics</h2>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-bold font-display text-slate-900">Hasini Solar Enterprises & Solutions Performance Analytics</h2>
           </div>
 
           {/* Forced Grid: Stays side-by-side left and right across all screens including simulated desktop-mode mobile */}
