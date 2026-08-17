@@ -225,43 +225,7 @@ export default function CEOSection() {
 
         </motion.div>
 
-        {/* ===================================================================
-            BOTTOM: THREE PREMIUM ACHIEVEMENT CARDS
-            =================================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 ceo-achievement-cards-grid"
-        >
-          {achievementCards.map((card, idx) => {
-            const IconComponent = card.icon;
-            return (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -6, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 350, damping: 22 }}
-                className="ceo-achievement-card group cursor-pointer"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-2xl bg-slate-900/80 border border-white/15 flex items-center justify-center shrink-0 group-hover:border-amber-400/50 transition-colors">
-                    <IconComponent className={`h-6 w-6 ${card.highlightColor}`} />
-                  </div>
-                  <div>
-                    <h4 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                      {card.title}
-                    </h4>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        
 
       </div>
     </section>
