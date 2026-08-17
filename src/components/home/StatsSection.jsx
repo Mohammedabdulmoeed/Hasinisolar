@@ -5,7 +5,7 @@ import { Sparkles, Zap, ShieldCheck, Trophy, Users, ArrowRight } from 'lucide-re
 
 const statsData = [
   { 
-    value: 350, 
+    value: 200, 
     suffix: '+', 
     label: 'Successful Installations',
     percentage: 95,
@@ -14,7 +14,7 @@ const statsData = [
     iconBg: 'bg-amber-100/70 text-amber-600 border-amber-200'
   },
   { 
-    value: 1200, 
+    value: 1000, 
     suffix: ' kW+', 
     label: 'Solar Capacity Delivered',
     percentage: 90,
@@ -32,7 +32,7 @@ const statsData = [
     iconBg: 'bg-emerald-100/70 text-emerald-700 border-emerald-200'
   },
   { 
-    value: 100, 
+    value: 99, 
     suffix: '%', 
     label: 'Client Satisfaction',
     percentage: 100,
@@ -52,10 +52,11 @@ export default function StatsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
+        {/* Changed lg:grid-cols-12 to md:grid-cols-12 so it triggers side-by-side earlier on tablets / desktop-mode phones */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* LEFT SIDE: Content & Featured Image */}
-          <div className="lg:col-span-5">
+          <div className="md:col-span-5">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-200 bg-amber-100/60 text-amber-800 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
               <Sparkles className="h-3.5 w-3.5 text-amber-600" /> Performance Milestones
             </div>
@@ -93,7 +94,7 @@ export default function StatsSection() {
           </div>
 
           {/* RIGHT SIDE: Progress Metric Rows with Percentage Display */}
-          <div className="lg:col-span-7 space-y-4">
+          <div className="md:col-span-7 space-y-4">
             {statsData.map((item, index) => {
               const IconComp = item.icon;
               return (

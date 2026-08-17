@@ -883,7 +883,7 @@ export default function ReferEarnPage() {
               </div>
 
               <form
-                action="https://formsubmit.co/Hasini Solar Enterprises & Solutionssolarhub@gmail.com"
+                action="https://formsubmit.co/hasinisolar@gmail.com"
                 method="POST"
                 className="space-y-6"
               >

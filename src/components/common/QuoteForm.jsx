@@ -72,7 +72,7 @@ export default function QuoteForm({ onClose, onSuccess }) {
       console.log('Timestamp:', new Date().toISOString());
 
       try {
-        const response = await fetch("https://formsubmit.co/ajax/Hasini Solar Enterprises & Solutionssolarhub@gmail.com", {
+        const response = await fetch("https://formsubmit.co/ajax/hasinisolar@gmail.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -193,33 +193,7 @@ export default function QuoteForm({ onClose, onSuccess }) {
           )}
         </div>
 
-        {/* ADDRESS TEXTAREA FIELD */}
-        <div>
-          <label htmlFor="quote-address" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-            Address <span className="text-amber-400">*</span>
-          </label>
-          <div className="relative">
-            <div className="absolute top-3.5 left-0 pl-3.5 flex items-start pointer-events-none text-amber-400">
-              <MapPin className="h-4.5 w-4.5" />
-            </div>
-            <textarea
-              id="quote-address"
-              name="address"
-              rows={3}
-              value={formData.address}
-              onChange={handleChange}
-              placeholder="Enter your complete installation address"
-              className={`w-full pl-10 pr-4 py-3 bg-slate-900/80 border rounded-xl text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 transition-all resize-none ${
-                errors.address 
-                  ? 'border-red-500 focus:ring-red-500/50' 
-                  : 'border-white/15 focus:border-amber-400 focus:ring-amber-400/30'
-              }`}
-            />
-          </div>
-          {errors.address && (
-            <p className="mt-1 text-xs text-red-400 font-medium">{errors.address}</p>
-          )}
-        </div>
+   
 
         {/* BUTTON ACTIONS */}
         <div className="pt-3 flex items-center justify-end gap-3">

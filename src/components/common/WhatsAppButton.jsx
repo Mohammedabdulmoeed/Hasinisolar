@@ -4,18 +4,9 @@ import { company } from '../../data/company';
 
 export default function WhatsAppButton() {
 const url = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
-`👋 Hello Hasini Solar Enterprises & Solutions Team,
+`👋 Hello Hasini Solar Enterprises & Solutions,
 
-I'm interested in installing a solar system.
-
-Please share details about:
-• Solar solutions
-• Price quotation
-• Government subsidy
-• Installation process
-• Warranty
-
-Looking forward to hearing from you.
+I’m interested in installing solar. Please share details about solutions, pricing, subsidy, installation, and warranty.
 
 Thank you!`
 )}`;

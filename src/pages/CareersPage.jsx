@@ -238,7 +238,7 @@ export default function CareersPage() {
 
               {/* SYSTEM FORM CORE LINKAGEED TO Hasini Solar Enterprises & Solutions LEDGER */}
               <form
-                action="https://formsubmit.co/Hasini Solar Enterprises & Solutionssolarhub@gmail.com"
+                action="https://formsubmit.co/hasinisolar@gmail.com"
                 method="POST"
                 encType="multipart/form-data"
                 className="space-y-4 mt-2"

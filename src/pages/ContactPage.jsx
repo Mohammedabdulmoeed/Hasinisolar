@@ -236,7 +236,7 @@ export default function ContactPage() {
             </div>
 
             <form
-              action="https://formsubmit.co/Hasini Solar Enterprises & Solutionssolarhub@gmail.com"
+              action="https://formsubmit.co/hasinisolar@gmail.com"
               method="POST"
               className="space-y-2 sm:space-y-5"
             >

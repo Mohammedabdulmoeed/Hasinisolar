@@ -76,7 +76,7 @@ export const timeline = [
   },
   {
     year: "2026",
-    title: "100+ Projects Completed",
+    title: "200+ Projects Completed",
     desc: "Crossed 100 successful solar installations and continued growing across India."
   }
 ];

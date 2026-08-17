@@ -24,7 +24,7 @@
   position: relative;
   width: 100%;
   margin-top: var(--header-height);
-  min-height: calc(100vh - var(--header-height));
+  min-height: min(calc(100vh - var(--header-height)), 820px);
   height: auto;
   background-color: #030806;
   box-sizing: border-box;
@@ -62,7 +62,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 40px 4% 40px 5%;
-  min-height: calc(100vh - var(--header-height));
+  min-height: min(calc(100vh - var(--header-height)), 820px);
   height: auto;
   box-sizing: border-box;
   display: flex;
@@ -582,11 +582,57 @@
   }
 }
 
-/* Tablet Screens (max-width: 1024px) */
-@media (max-width: 1024px) {
+/* Compact styling for medium laptops / Chrome Desktop Site */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .solar-journey-panel {
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    padding: 14px 18px;
+  }
+
+  .journey-left-header {
+    padding-right: 16px;
+  }
+
+  .journey-title {
+    font-size: 15px;
+  }
+
+  .journey-right-flow {
+    gap: 4px;
+  }
+
+  .journey-stage {
+    gap: 4px;
+  }
+
+  .journey-stage-icon-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .journey-stage-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .stage-desc {
+    max-width: 80px;
+    font-size: 9px;
+    line-height: 1.25;
+  }
+
+  .arrow-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Tablet Screens (max-width: 991px) */
+@media (max-width: 991px) {
   .hero-section-root {
     height: auto;
-    min-height: calc(100vh - var(--header-height));
+    min-height: min(calc(100vh - var(--header-height)), 820px);
   }
 
   .hero-content-container {
@@ -622,18 +668,41 @@
 
   .journey-right-flow {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 16px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 6px;
   }
 
   .journey-stage {
-    flex: none;
-    width: calc(33.33% - 12px);
+    flex: 1;
+    width: auto;
+    gap: 6px;
+  }
+
+  .journey-stage-icon-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .journey-stage-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .stage-desc {
+    max-width: 80px;
+    font-size: 9px;
+    line-height: 1.2;
   }
 
   .journey-arrow {
-    display: none; /* Hide arrows on wrapped tablet layout */
+    display: flex;
+    align-items: center;
+  }
+
+  .arrow-icon {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -711,8 +780,24 @@
   .journey-stage {
     width: 100%;
   }
+
+  .journey-stage-icon-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .journey-stage-icon {
+    width: 16px;
+    height: 16px;
+  }
   
   .stage-desc {
     max-width: 100%;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+
+  .journey-arrow {
+    display: none;
   }
 }
