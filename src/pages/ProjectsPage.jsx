@@ -265,7 +265,7 @@ export default function ProjectsPage() {
       <PageHero
         title="Project"
         subtitle="Hasini Solar Enterprises & Solutions Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
-        image="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1000&q=80"
+        image="https://images.unsplash.com/photo-1698752821934-28bd5ce6fd42?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         breadcrumb="Home / project"
       />
 
@@ -288,14 +288,14 @@ export default function ProjectsPage() {
               variants={slideInLeft}
               className="row-split-media relative"
             >
-              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[32rem] bg-slate-200">
-                <img
-                  src={images.industrial_solar} // Ensure this points to a residential roof image in your assets
-                  alt="Hasini Solar Enterprises & Solutions 15 kWp Residential Grid"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-300" />
-              </div>
+              <div className="relative overflow-hidden rounded-[32px] border border-slate-100 shadow-2xl group cursor-pointer aspect-[4/3] max-h-[32rem] w-[85%] bg-slate-200">
+  <img
+    src={images.projectnext}
+    alt="Hasini Solar Enterprises & Solutions 15 kWp Residential Grid"
+    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+  />
+  <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-300" />
+</div>
 
               {/* Floating metrics labels */}
               <div className="absolute top-[8%] left-[-4%] glass-card-2026 rounded-2xl p-4 shadow-xl border border-white/10 pointer-events-none card-float-y-1">
@@ -543,144 +543,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
-{/* =========================================
-    SECTION 7: CUSTOMER SUCCESS STORIES (Testimonials)
-    ========================================= */}
-<section className="relative py-24 lg:py-36 bg-slate-50 overflow-hidden w-full select-none text-left">
-  
-  {/* Modern Ambient Fluid Backdrop Fields */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-sky-200/30 rounded-full blur-[140px]" />
-    <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-200/20 rounded-full blur-[140px]" />
-    <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-40" />
-  </div>
 
-  {/* Expanded Widescreen Outer Shell Canvas */}
-  <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
-    
-    {/* Section Header (Centered & Modernized) */}
-    <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 flex flex-col items-center">
-      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-xs uppercase tracking-widest shadow-inner mb-4">
-        <Sparkles className="h-3 w-3 text-sky-500" /> Endorsements
-      </span>
-      <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight whitespace-nowrap">
-        Customer Success{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600">
-          Stories & Impact.
-        </span>
-      </h2>
-      <p className="mt-4 text-slate-500 text-sm sm:text-base font-medium leading-relaxed max-w-xl mx-auto text-center">
-        Discover how our high-efficiency solar architectures drive continuous financial returns and operational independence for our clients.
-      </p>
-    </div>
-
-    {/* Slider Box Constraint Container */}
-    <div className="max-w-5xl mx-auto relative">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={testimonialIndex}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-[36px] p-8 sm:p-12 border border-slate-200/80 shadow-2xl text-left relative overflow-hidden"
-        >
-          {/* Top Decorative Gradient Horizon Tag */}
-          <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-sky-400 via-blue-500 to-emerald-500" />
-
-          {/* LEFT PANEL: Client Profile Details (4 Columns) */}
-          <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-            <div className="h-28 w-28 rounded-[28px] border border-slate-200 overflow-hidden mb-5 shadow-inner bg-slate-50 relative p-1 bg-gradient-to-br from-sky-100 to-emerald-100">
-              <div className="w-full h-full rounded-[24px] overflow-hidden">
-                <img
-                  src={
-                    testimonialIndex === 0 
-                      ? "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80"
-                      : testimonialIndex === 1
-                      ? "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80"
-                      : "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80"
-                  }
-                  alt={testimonials[testimonialIndex].name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            <h4 className="text-lg font-black text-slate-900 tracking-tight leading-tight">
-              {testimonialIndex === 0 ? "Priya Sharma" : testimonialIndex === 1 ? "Abdul Rahman" : "Ravi Kumar"}
-            </h4>
-            <p className="text-xs text-slate-400 font-bold tracking-wide mt-1">
-              {testimonialIndex === 0 ? "Homeowner" : testimonialIndex === 1 ? "Business Owner" : "Commercial Client"}
-            </p>
-            
-            <span className="mt-4 inline-flex items-center text-[10px] font-black text-emerald-700 bg-emerald-50 rounded-lg px-3 py-1 border border-emerald-100 uppercase tracking-widest">
-              {testimonials[testimonialIndex].logo}
-            </span>
-          </div>
-
-          {/* RIGHT PANEL: Review Narrative Details (8 Columns) */}
-          <div className="md:col-span-8 flex flex-col justify-between h-full pt-4 md:pt-0">
-            {/* Structural Large Quote Decoration Accent */}
-            <p className="text-slate-600 text-base sm:text-lg font-medium leading-relaxed italic mb-8 relative">
-              "{testimonials[testimonialIndex].review}"
-            </p>
-            
-            {/* Live Data Grid Indicators */}
-            <div className="grid grid-cols-2 gap-6 border-t border-slate-100 pt-6">
-              <div>
-                <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">Operational Savings</p>
-                <p className="text-2xl font-black text-emerald-600 tracking-tight mt-1 font-mono">
-                  {testimonials[testimonialIndex].savings}
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">Investment Return</p>
-                <p className="text-2xl font-black text-sky-600 tracking-tight mt-1 font-mono">
-                  {testimonials[testimonialIndex].roi}
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Testimonials Interactive Control Hub */}
-      <div className="flex items-center justify-center gap-6 mt-10">
-        <button
-          type="button"
-          onClick={() => setTestimonialIndex(prev => (prev - 1 + testimonials.length) % testimonials.length)}
-          className="p-3 border border-slate-200 text-slate-600 hover:border-slate-950 hover:text-slate-900 rounded-full bg-white shadow-sm transition-all duration-300 hover:scale-105 active:scale-95"
-          aria-label="Previous story"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        
-        {/* Navigation Pip Stream */}
-        <div className="flex gap-2.5">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setTestimonialIndex(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${idx === testimonialIndex ? 'w-8 bg-slate-900' : 'w-2 bg-slate-200 hover:bg-slate-300'}`}
-              aria-label={`Slide to review ${idx + 1}`}
-            />
-          ))}
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setTestimonialIndex(prev => (prev + 1) % testimonials.length)}
-          className="p-3 border border-slate-200 text-slate-600 hover:border-slate-950 hover:text-slate-900 rounded-full bg-white shadow-sm transition-all duration-300 hover:scale-105 active:scale-95"
-          aria-label="Next story"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
-
-    </div>
-  </div>
-</section>
       {/* =========================================
          SECTION 8: INSTALLATION PROCESS (Timeline)
          ========================================= */}

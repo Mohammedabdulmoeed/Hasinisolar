@@ -63,7 +63,7 @@ export default function SolarCalculatorPage() {
       <PageHero
         title="Solar Savings Calculator"
         subtitle="Calculate your solar system size, subsidy, savings and ROI."
-        image={images.On}
+        image="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         breadcrumb="Home / Solar Calculator"
       />
 

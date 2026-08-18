@@ -27,6 +27,7 @@ import SEO from '../components/common/SEO';
 import { pageSeo } from '../data/seo';
 import { images } from '../data/images';
 import { useCounter } from '../hooks/useCounter';
+import MissionVision from '../components/home/MissionVision';
 
 // ----------------------------------------------------
 // Reusable About Sub-components
@@ -159,7 +160,7 @@ export default function AboutPage() {
       <PageHero
         title="About Us"
         subtitle="Build your future with a team that values excellence, growth, and innovation."
-        image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=80" 
+        image="https://images.unsplash.com/photo-1694327671697-730cc4c5b9e8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
         breadcrumb="Home / About"
       />
       {/* =========================================
@@ -221,11 +222,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-     
+      {/* =========================================
+         SECTION 3: MISSION & VISION
+         ========================================= */}
+      <MissionVision />
 
-      
-
-     
       {/* =========================================
          SECTION 5: OUR JOURNEY (Vertical Timeline)
          ========================================= */}

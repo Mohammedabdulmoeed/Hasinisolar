@@ -12,12 +12,21 @@ import Residential_Solar_Systems from "../assets/hero/Residential_Solar_Systems.
 import On1 from "../assets/hero/On1.jpg";
 import On from "../assets/hero/On.jpg";
 import old from "../assets/hero/old.jpeg";
+import projectnext from "../assets/hero/projectnext.png";
 
 import logos from '../assets/hero/logos.jpeg';
 import logob from '../assets/hero/logob.png';
 import solar from "../assets/hero/solar.jpeg";
 import Hybrid from "../assets/hero/Hybrid.jpg";
 import solar_street_lights from "../assets/hero/solar_street_lights.png";
+
+import hero1 from "../assets/hero/hero1.jpg";
+import hero2 from "../assets/hero/hero2.jpg";
+import hero3 from "../assets/hero/hero3.jpg";
+import hero4 from "../assets/hero/hero4.jpg";
+import hero5 from "../assets/hero/hero5.jpg";
+import hero6 from "../assets/hero/hero6.jpg";
+
 
 import project1 from "../assets/hero/project1.jpg";
 import project2 from "../assets/hero/project2.jpeg";
@@ -61,6 +70,7 @@ export const images = {
   On,
   Hybrid,
   solar_street_lights,
+  projectnext,
   old,
 img1,
 img2,

@@ -157,7 +157,7 @@ export default function ServicesPage() {
     <PageHero
     title="Our Solar Services"
     subtitle="Comprehensive solar energy solutions for residential, commercial, and industrial customers."
-    image="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80"
+    image="https://images.unsplash.com/photo-1674168481499-983f0968a68f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     breadcrumb="Home / Services"
   />
 
