@@ -305,7 +305,7 @@ export default function ProjectsPage() {
 
               <div className="absolute bottom-[10%] right-[-4%] glass-card-2026 rounded-2xl p-4 shadow-xl border border-white/10 pointer-events-none card-float-y-2">
                 <p className="text-xs text-slate-400 font-bold uppercase">Project Timeline</p>
-                <p className="text-lg font-bold text-slate-800">3 Days Execution</p>
+                <p className="text-lg font-bold text-slate-800">12 Days Execution</p>
               </div>
             </motion.div>
 
@@ -318,7 +318,7 @@ export default function ProjectsPage() {
               className="row-split-content text-left"
             >
               <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">Premium Housing</span>
-              <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">15 kWp Luxury Villa Solar System</h3>
+              <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">50 kWp Luxury Villa Solar System</h3>
               <p className="mt-4 text-slate-600 leading-relaxed text-base">
                 Hasini Solar Enterprises & Solutions designed and commissioned a luxury net-metered rooftop solar solution for a multi-story premium residence. Engineered seamlessly into the villa's modern architecture, this grid-tied setup fully powers heavy domestic loads, including centralized air conditioning and electric vehicle charging infrastructure.
               </p>
@@ -327,11 +327,11 @@ export default function ProjectsPage() {
               <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-slate-100 pt-6">
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Capacity</p>
-                  <p className="text-lg font-extrabold text-slate-800 font-display">15 kWp</p>
+                  <p className="text-lg font-extrabold text-slate-800 font-display">50 kWp</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Annual Generation</p>
-                  <p className="text-lg font-extrabold text-slate-800 font-display">22,500 kWh</p>
+                  <p className="text-lg font-extrabold text-slate-800 font-display">75,500 kWh</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Investment ROI</p>
