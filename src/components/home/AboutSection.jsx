@@ -11,7 +11,7 @@ import {
 } from '../../animations/variants';
 
 const highlights = [
-  '200+ Solar Installations Completed',
+  '400+ Solar Installations Completed',
   'Residential, Commercial & Industrial Expertise',
   'Premium Tier-1 Solar Panels & Inverters',
   'End-to-End Design, Installation & Support',
@@ -54,7 +54,7 @@ export default function AboutSection() {
               className="absolute -bottom-6 -right-2 sm:right-4 glass rounded-2xl p-6 shadow-2xl hidden md:block border border-white/50 bg-white/90 backdrop-blur-lg"
             >
               <p className="text-4xl font-extrabold bg-gradient-to-r from-yellow-500 to-orange-600 bg-clip-text text-transparent">
-                200+
+                400+
               </p>
               <p className="text-sm font-semibold text-slate-600">
                 Solar Projects Installed

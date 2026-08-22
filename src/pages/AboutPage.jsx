@@ -250,10 +250,17 @@ export default function AboutPage() {
             </div>
 
             {[
-              { year: "2024", title: "Company Founded", desc: "Established with a vision to build decentralized clean energy networks across southern India." },
-              { year: "2024", title: "First Project", desc: "Successfully completed our first high-capacity industrial rooftop array in Adilabad." },
-              { year: "2025", title: "100+ Installations", desc: "Deployed modular hybrid systems and corporate net offsets PAN India." },
-              { year: "2026", title: "PAN India Expansion", desc: "Actively expanding clean tech distribution and operations nodes to 15+ major metros." }
+              { year: "2022", title: "Company Founded", desc: "Established with a vision to build decentralized clean energy networks across southern India." },
+
+{ year: "2022", title: "First Project", desc: "Successfully completed our first high-capacity industrial rooftop array in Adilabad." },
+
+{ year: "2023", title: "150+ Installations", desc: "Successfully completed 150+ residential, commercial, and industrial solar installations." },
+
+{ year: "2024", title: "Growing Solar Footprint", desc: "Expanded our residential, commercial, and industrial solar portfolio with a growing number of successful clean energy installations." },
+
+{ year: "2025", title: "Advanced Solar Solutions", desc: "Strengthened our expertise in on-grid, off-grid, hybrid systems, solar street lighting, and sustainable energy solutions." },
+
+{ year: "2026", title: "PAN India Expansion", desc: "Actively expanding clean tech distribution and operations nodes to 15+ major metros." }
             ].map((mile, i) => (
               <motion.div
                 key={i}
@@ -365,27 +372,7 @@ export default function AboutPage() {
   </div>
 </section>
     
-      <section className="section-padding bg-slate-900 relative overflow-hidden">
-        {/* Animated gradient mesh backdrop */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <div className="absolute top-1/4 left-1/4 h-[450px] w-[450px] rounded-full bg-emerald-500/10 blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 h-[350px] w-[350px] rounded-full bg-cyan-500/10 blur-[90px]" />
-          <div className="absolute inset-0 particles-container opacity-25" />
-        </div>
-
-        <div className="container-custom relative z-10 px-4 text-center max-w-5xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 font-sans">By the Numbers</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-display text-white mb-12">Why Choose Hasini Solar Enterprises & Solutions</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <AboutStatCard value={200} suffix=" kW+" label="Total Installed" icon={Zap} />
-            <AboutStatCard value={14} suffix="K+Tons" label="CO₂ Saved" icon={Leaf} />
-            <AboutStatCard value={100} suffix="%" label="Satisfaction" icon={Heart} />
-            <AboutStatCard value={30} suffix="%" label="ROI Improvement" icon={TrendingUp} />
-          </div>
-        </div>
-      </section>
-
+    
       {/* =========================================
          SECTION 8: FINAL CTA SECTION
          ========================================= */}

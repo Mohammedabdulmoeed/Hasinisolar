@@ -6,14 +6,14 @@ import './StatsSection.css';
 const statsData = [
   {
     num: "01",
-    value: 200,
+    value: 400,
     suffix: "+",
     label: "Successful Installations",
     desc: "Solar solutions installed across diverse applications."
   },
   {
     num: "02",
-    value: 500,
+    value: 900,
     suffix: " kW+",
     label: "Solar Capacity Delivered",
     desc: "Solar capacity driving dependable renewable-energy solutions."

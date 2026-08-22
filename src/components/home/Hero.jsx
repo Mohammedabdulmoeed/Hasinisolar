@@ -173,7 +173,7 @@ export default function Hero() {
                   <span className="card-title">EXPERIENCE</span>
                 </div>
               </div>
-              <div className="card-value">2+</div>
+              <div className="card-value">4+</div>
               <div className="card-subtitle">Years Experience</div>
               <div className="card-graph-container">
                 <svg viewBox="0 0 100 20" className="card-graph-svg">
@@ -201,7 +201,7 @@ export default function Hero() {
                   <span className="card-title">INSTALLATIONS</span>
                 </div>
               </div>
-              <div className="card-value">200+</div>
+              <div className="card-value">400+</div>
               <div className="card-subtitle">Successfully completed</div>
               <div className="card-graph-container">
                 <svg viewBox="0 0 100 20" className="card-graph-svg">
