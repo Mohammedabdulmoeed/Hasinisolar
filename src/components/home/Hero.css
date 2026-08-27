@@ -541,6 +541,14 @@
   height: 14px;
 }
 
+
+/* Large Desktop Screens (min-width: 1367px) */
+@media (min-width: 1367px) {
+  .hero-right-cards {
+    margin-right: 24px;
+  }
+}
+
 /* ==========================================================================
    RESPONSIVE LAYOUT MEDIA QUERIES
    ========================================================================== */

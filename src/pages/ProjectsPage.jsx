@@ -2,11 +2,14 @@ import { useRef, useState, useEffect } from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
 import PageHero from '../components/ui/PageHero';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   TrendingUp,
   Shield,
   Activity,
+  Sun,
+  Leaf,
   Award,
   Clock,
   Compass,
@@ -204,7 +207,7 @@ export default function ProjectsPage() {
     x: "50%",
     y: "50%",
     capacity: "Main Hub",
-    projects: 200,
+    projects: 400,
     co2: "Active Operations",
   },
   {
@@ -318,7 +321,7 @@ export default function ProjectsPage() {
               className="row-split-content text-left"
             >
               <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">Premium Housing</span>
-              <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">50 kWp Luxury Villa Solar System</h3>
+              <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-900">90 kWp Luxury Villa Solar System</h3>
               <p className="mt-4 text-slate-600 leading-relaxed text-base">
                 Hasini Solar Enterprises & Solutions designed and commissioned a luxury net-metered rooftop solar solution for a multi-story premium residence. Engineered seamlessly into the villa's modern architecture, this grid-tied setup fully powers heavy domestic loads, including centralized air conditioning and electric vehicle charging infrastructure.
               </p>
@@ -327,7 +330,7 @@ export default function ProjectsPage() {
               <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-slate-100 pt-6">
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Capacity</p>
-                  <p className="text-lg font-extrabold text-slate-800 font-display">50 kWp</p>
+                  <p className="text-lg font-extrabold text-slate-800 font-display">90 kWp</p>
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Annual Generation</p>
@@ -594,219 +597,691 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-     {/* =========================================
-          SECTION 9: PROJECT MAP
-          ========================================= */}
-      <section className="section-padding bg-slate-950 border-t border-b border-white/5 relative overflow-hidden">
-        {/* Soft background light mesh glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] bg-cyan-500/5 blur-[120px] pointer-events-none" />
+    {/* =========================================
+    SECTION 9: INTERACTIVE SOLAR NETWORK
+========================================= */}
+<section className="relative overflow-hidden bg-[#06111f] py-12 sm:py-16 lg:py-24">
 
-        <div className="container-custom relative z-10 w-full px-2 sm:px-4">
-          
-          {/* Main Section Header */}
-          <div className="w-full text-center mb-10 md:mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full">
-              Enterprise Footprint
-            </span>
-            <h2 className="mt-4 text-3xl sm:text-5xl font-black tracking-tight font-display text-white">
-              Our Operational Network
-            </h2>
+  {/* =========================================
+      COLORFUL BACKGROUND EFFECTS
+  ========================================= */}
+  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+    {/* Yellow Solar Glow */}
+    <div className="absolute -left-40 top-10 h-[400px] w-[400px] animate-pulse rounded-full bg-yellow-400/10 blur-[140px]" />
+
+    {/* Orange Glow */}
+    <div className="absolute right-0 top-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-orange-500/10 blur-[160px]" />
+
+    {/* Green Glow */}
+    <div className="absolute bottom-0 left-1/3 h-[450px] w-[450px] rounded-full bg-emerald-500/10 blur-[150px]" />
+
+    {/* Cyan Glow */}
+    <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-cyan-500/10 blur-[150px]" />
+
+    {/* Background Grid */}
+    <div
+      className="absolute inset-0 opacity-[0.04]"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+      }}
+    />
+
+  </div>
+
+
+  <div className="container-custom relative z-10 w-full px-2 sm:px-4 lg:px-6">
+
+    {/* =========================================
+        SECTION HEADER
+    ========================================= */}
+    <div className="mx-auto mb-8 max-w-4xl text-center sm:mb-12 lg:mb-16">
+
+      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1.5 backdrop-blur-xl sm:mb-5 sm:px-5 sm:py-2">
+
+        <span className="relative flex h-2 w-2 sm:h-3 sm:w-3">
+
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-400 opacity-75" />
+
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow-400 shadow-[0_0_20px_rgba(250,204,21,0.9)] sm:h-3 sm:w-3" />
+
+        </span>
+
+        <span className="text-[8px] font-bold uppercase tracking-[0.15em] text-yellow-300 sm:text-xs sm:tracking-[0.25em]">
+          Solar Network • India
+        </span>
+
+      </div>
+
+
+      <h2 className="font-display text-3xl font-black leading-tight text-white sm:text-5xl lg:text-7xl">
+
+        Powering Every Corner
+
+        <span className="mt-1 block bg-gradient-to-r from-yellow-300 via-orange-400 to-emerald-400 bg-clip-text text-transparent sm:mt-2">
+
+          With The Energy Of The Sun
+
+        </span>
+
+      </h2>
+
+
+      <p className="mx-auto mt-3 max-w-2xl text-[10px] leading-relaxed text-slate-400 sm:mt-6 sm:text-sm lg:text-lg">
+
+        Building a cleaner, smarter and more sustainable India through
+        innovative solar energy solutions and a rapidly expanding
+        installation network.
+
+      </p>
+
+    </div>
+
+
+    {/* =========================================
+        TOP SOLAR STATISTICS
+    ========================================= */}
+    <div className="mb-4 grid grid-cols-4 gap-2 sm:mb-6 sm:gap-4">
+
+      {/* PROJECTS */}
+      <div className="group relative overflow-hidden rounded-xl border border-yellow-400/20 bg-gradient-to-br from-yellow-400/10 to-transparent p-2.5 transition-all duration-500 hover:-translate-y-1 hover:border-yellow-400/60 hover:shadow-[0_20px_60px_rgba(250,204,21,0.18)] sm:rounded-3xl sm:p-5">
+
+        <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-yellow-400/10 blur-2xl transition-all duration-500 group-hover:scale-150 sm:h-28 sm:w-28" />
+
+        <div className="relative">
+
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-yellow-400 text-slate-950 shadow-lg shadow-yellow-400/30 sm:h-11 sm:w-11 sm:rounded-2xl">
+
+            <Zap className="h-3.5 w-3.5 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-125 sm:h-5 sm:w-5" />
+
           </div>
 
-          {/* Grid Layout: Stays left and right across all modes including simulated mobile */}
-          <div className="grid grid-cols-12 gap-4 sm:gap-6 lg:gap-12 items-center">
-            
-           {/* Left Side: Interactive Map Side details */}
-            <div className="col-span-5 text-left flex flex-col items-start space-y-4">
-              <div>
-                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-cyan-400 font-sans">Interactive Dashboard</span>
-                
-                {/* Margin bottom added to create breathing room beneath the main heading */}
-                <h3 className="mt-1 sm:mt-2 mb-4 lg:mb-6 text-base sm:text-2xl lg:text-4xl font-black font-display text-white tracking-tight">
-                  PAN India Presence
-                </h3>
-              </div>
-              
-              <p className="mt-2 text-slate-400 leading-relaxed text-[10px] sm:text-sm lg:text-base hidden xs:block">
-                Click on the glowing interactive solar markers on the dashboard map to track localized statistics.
+          <p className="mt-2 text-sm font-black text-white sm:mt-5 sm:text-3xl lg:text-4xl">
+            57k+
+          </p>
+
+          <p className="mt-1 text-[6px] font-bold uppercase tracking-tight text-yellow-300 sm:text-[10px] sm:tracking-widest">
+            Trees saved
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* ENERGY */}
+      <div className="group relative overflow-hidden rounded-xl border border-orange-400/20 bg-gradient-to-br from-orange-500/10 to-transparent p-2.5 transition-all duration-500 hover:-translate-y-1 hover:border-orange-400/60 hover:shadow-[0_20px_60px_rgba(249,115,22,0.18)] sm:rounded-3xl sm:p-5">
+
+        <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-orange-400/10 blur-2xl transition-all duration-500 group-hover:scale-150 sm:h-28 sm:w-28" />
+
+        <div className="relative">
+
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-400 text-white shadow-lg shadow-orange-400/30 sm:h-11 sm:w-11 sm:rounded-2xl">
+
+            <Sun className="h-3.5 w-3.5 transition-transform duration-700 group-hover:rotate-180 sm:h-5 sm:w-5" />
+
+          </div>
+
+          <p className="mt-2 text-sm font-black text-white sm:mt-5 sm:text-3xl lg:text-4xl">
+            100%
+          </p>
+
+          <p className="mt-1 text-[6px] font-bold uppercase tracking-tight text-orange-300 sm:text-[10px] sm:tracking-widest">
+            UPTIME
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* CO2 */}
+      <div className="group relative overflow-hidden rounded-xl border border-emerald-400/20 bg-gradient-to-br from-emerald-500/10 to-transparent p-2.5 transition-all duration-500 hover:-translate-y-1 hover:border-emerald-400/60 hover:shadow-[0_20px_60px_rgba(16,185,129,0.18)] sm:rounded-3xl sm:p-5">
+
+        <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-emerald-400/10 blur-2xl transition-all duration-500 group-hover:scale-150 sm:h-28 sm:w-28" />
+
+        <div className="relative">
+
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-400/30 sm:h-11 sm:w-11 sm:rounded-2xl">
+
+            <Leaf className="h-3.5 w-3.5 transition-transform duration-500 group-hover:scale-125 sm:h-5 sm:w-5" />
+
+          </div>
+
+          <p className="mt-2 text-sm font-black text-white sm:mt-5 sm:text-3xl lg:text-4xl">
+            12K+
+          </p>
+
+          <p className="mt-1 text-[6px] font-bold uppercase tracking-tight text-emerald-300 sm:text-[10px] sm:tracking-widest">
+            CO₂ Saved
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* REGIONS */}
+      <div className="group relative overflow-hidden rounded-xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/10 to-transparent p-2.5 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-[0_20px_60px_rgba(34,211,238,0.18)] sm:rounded-3xl sm:p-5">
+
+        <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-cyan-400/10 blur-2xl transition-all duration-500 group-hover:scale-150 sm:h-28 sm:w-28" />
+
+        <div className="relative">
+
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-400 text-slate-950 shadow-lg shadow-cyan-400/30 sm:h-11 sm:w-11 sm:rounded-2xl">
+
+            <MapPin className="h-3.5 w-3.5 transition-transform duration-500 group-hover:-translate-y-1 sm:h-5 sm:w-5" />
+
+          </div>
+
+          <p className="mt-2 text-sm font-black text-white sm:mt-5 sm:text-3xl lg:text-4xl">
+           24/7
+          </p>
+
+          <p className="mt-1 text-[6px] font-bold uppercase tracking-tight text-cyan-300 sm:text-[10px] sm:tracking-widest">
+         Support Available
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* =========================================
+        MAIN SECTION
+        ALWAYS LEFT + RIGHT
+    ========================================= */}
+    <div className="grid grid-cols-12 items-stretch gap-2 sm:gap-4 lg:gap-6">
+
+
+      {/* =========================================
+          LEFT SIDE — INTERACTIVE MAP
+      ========================================= */}
+      <div className="relative col-span-8 min-h-[360px] overflow-hidden rounded-2xl border border-yellow-400/20 bg-gradient-to-br from-[#0b1d2f] via-[#07111f] to-[#020712] shadow-[0_30px_100px_rgba(0,0,0,0.4)] sm:min-h-[500px] sm:rounded-[2rem] lg:min-h-[580px]">
+
+
+        {/* TOP LIVE BAR */}
+        <div className="absolute left-0 right-0 top-0 z-30 flex items-center justify-between border-b border-white/5 bg-black/20 px-3 py-2 backdrop-blur-xl sm:px-5 sm:py-4 lg:px-7">
+
+          <div className="flex items-center gap-2 sm:gap-3">
+
+            <div className="relative flex h-7 w-7 items-center justify-center rounded-lg bg-yellow-400/10 sm:h-10 sm:w-10 sm:rounded-xl">
+
+              <Sun className="h-3.5 w-3.5 animate-[spin_10s_linear_infinite] text-yellow-400 sm:h-5 sm:w-5" />
+
+            </div>
+
+            <div>
+
+              <p className="text-[6px] font-bold uppercase tracking-[0.15em] text-yellow-300 sm:text-[9px] sm:tracking-[0.25em]">
+                Live Solar Network
               </p>
 
-              {/* Selected City Telemetry Card (Pushed down slightly for structural clarity) */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedCity}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full mt-4 glass-card-2026 rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-white/10 bg-slate-900/80 backdrop-blur-md"
-                >
-                  <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4">
-                    <MapPin className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-amber-400 shrink-0" />
-                    <h4 className="text-xs sm:text-lg font-bold text-white font-display leading-none">{selectedCity} Hub</h4>
-                  </div>
+              <p className="text-[8px] font-bold text-white sm:text-sm">
+                India Operations
+              </p>
 
-                  {/* Grid layout within the telemetry card */}
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-4 border-t border-white/5 pt-2 sm:pt-4">
-                    <div>
-                      <p className="text-[7px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-tight">Capacity</p>
-                      <p className="text-[10px] sm:text-base font-extrabold text-white font-display mt-0.5">{currentCityData.capacity}</p>
-                    </div>
-                    <div>
-                      <p className="text-[7px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-tight">Projects</p>
-                      <p className="text-[10px] sm:text-base font-extrabold text-white font-display mt-0.5">{currentCityData.projects}+</p>
-                    </div>
-                    <div>
-                      <p className="text-[7px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-tight">CO₂ Offset</p>
-                      <p className="text-[10px] sm:text-base font-extrabold text-emerald-400 font-display mt-0.5">{currentCityData.co2}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Right Side: SVG Map of India Layer (With New Contrast Background) */}
-            <div className="col-span-7 flex items-center justify-center relative w-full aspect-square border border-slate-800 rounded-2xl sm:rounded-3xl bg-slate-900/90 shadow-2xl p-2 sm:p-4 overflow-hidden">
-              
-              {/* Abstract map visual layout background */}
-              <svg viewBox="0 0 400 450" className="w-full h-full fill-none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 100 200 L 170 100 L 250 250 L 180 300 Z" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-                <path d="M 170 100 L 190 280 L 100 200" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-                <path d="M 180 300 L 190 380 L 250 250" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-
-                <circle cx="170" cy="100" r="1.5" fill="rgba(255,255,255,0.15)" />
-                <circle cx="100" cy="200" r="1.5" fill="rgba(255,255,255,0.15)" />
-                <circle cx="250" cy="250" r="1.5" fill="rgba(255,255,255,0.15)" />
-                <circle cx="180" cy="300" r="1.5" fill="rgba(255,255,255,0.15)" />
-                <circle cx="190" cy="380" r="1.5" fill="rgba(255,255,255,0.15)" />
-                <circle cx="190" cy="280" r="1.5" fill="rgba(255,255,255,0.15)" />
-              </svg>
-
-              {/* Map Pulsing City Markers */}
-              {mapCities.map((city) => (
-                <button
-                  key={city.name}
-                  type="button"
-                  onClick={() => setSelectedCity(city.name)}
-                  className="absolute z-10 flex h-4 w-4 sm:h-6 sm:w-6 items-center justify-center -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform duration-300"
-                  style={{ left: city.x, top: city.y }}
-                >
-                  <span className="relative flex h-2 w-2 sm:h-3 sm:w-3">
-                    <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${selectedCity === city.name ? 'bg-amber-400' : 'bg-cyan-400'}`} />
-                    <span className={`relative inline-flex h-2 w-2 sm:h-3 sm:w-3 rounded-full ${selectedCity === city.name ? 'bg-amber-400 border border-white' : 'bg-cyan-400'}`} />
-                  </span>
-                  
-                  {/* Tooltip text elements optimized for micro screen heights */}
-                  <span className="absolute bottom-4 sm:bottom-6 bg-slate-950 border border-white/10 text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded shadow-xl uppercase whitespace-nowrap pointer-events-none">
-                    {city.name}
-                  </span>
-                </button>
-              ))}
             </div>
 
           </div>
+
+
+          <div className="hidden items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 sm:flex">
+
+            <span className="relative flex h-2.5 w-2.5">
+
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400" />
+
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+
+            </span>
+
+            <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-300">
+              Active
+            </span>
+
+          </div>
+
         </div>
-      </section>
-      
-     {/* =========================================
-          SECTION 11: PROJECT PERFORMANCE DASHBOARD (Analytics charts)
-          ========================================= */}
-      <section className="section-padding bg-slate-50">
-        <div className="container-custom px-2 sm:px-4">
-          
-          <div className="text-center mb-8 md:mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 font-sans">Clean Energy Dashboard</span>
-            <h2 className="mt-2 text-2xl sm:text-4xl font-bold font-display text-slate-900">Hasini Solar Enterprises & Solutions Performance Analytics</h2>
+
+
+        {/* ANIMATED SUN */}
+        <div className="absolute right-5 top-16 opacity-40 sm:right-10 sm:top-24">
+
+          <div className="relative">
+
+            <div className="absolute inset-0 animate-ping rounded-full bg-yellow-400/20 blur-xl" />
+
+            <div className="relative flex h-10 w-10 animate-[spin_25s_linear_infinite] items-center justify-center rounded-full border border-yellow-400/30 bg-yellow-400/10 sm:h-20 sm:w-20">
+
+              <Sun className="h-5 w-5 text-yellow-400 sm:h-10 sm:w-10" />
+
+            </div>
+
           </div>
 
-          {/* Forced Grid: Stays side-by-side left and right across all screens including simulated desktop-mode mobile */}
-          <div className="grid grid-cols-12 gap-3 sm:gap-6 lg:gap-8 items-stretch">
-            
-            {/* Left Side: Live Chart Visual Overlay */}
-            <div className="col-span-7 rounded-2xl sm:rounded-3xl bg-slate-950 p-3 sm:p-6 flex flex-col justify-between border border-white/5 shadow-2xl relative overflow-hidden text-left min-h-[220px] sm:min-h-[350px]">
-              
-              {/* Ambient back glow */}
-              <div className="absolute top-[-20%] left-[-20%] h-[150px] w-[150px] sm:h-[300px] sm:w-[300px] rounded-full bg-emerald-500/10 blur-[40px] sm:blur-[80px] pointer-events-none" />
-              
-              <div className="flex justify-between items-start mb-3 sm:mb-6 relative z-10 gap-2">
-                <div>
-                  <p className="text-[7px] sm:text-xs text-slate-400 font-bold uppercase leading-none mb-1">Energy Production Curve</p>
-                  <h4 className="text-xs sm:text-2xl font-extrabold text-white font-display tracking-tight leading-tight">Active Real-Time Array Output</h4>
+        </div>
+
+
+        {/* ENERGY RAYS */}
+        <div className="absolute inset-0 opacity-30">
+
+          <div className="absolute left-1/2 top-1/2 h-[1px] w-[70%] origin-left rotate-[25deg] bg-gradient-to-r from-yellow-400/0 via-yellow-400 to-transparent animate-pulse" />
+
+          <div className="absolute left-1/2 top-1/2 h-[1px] w-[60%] origin-left -rotate-[30deg] bg-gradient-to-r from-orange-400/0 via-orange-400 to-transparent animate-pulse" />
+
+          <div className="absolute left-1/2 top-1/2 h-[1px] w-[50%] origin-left rotate-[70deg] bg-gradient-to-r from-emerald-400/0 via-emerald-400 to-transparent animate-pulse" />
+
+        </div>
+
+
+        {/* INDIA MAP SVG */}
+        <div className="absolute inset-x-0 bottom-0 top-10 sm:top-16">
+
+          <svg
+            viewBox="0 0 400 600"
+            className="absolute left-1/2 top-1/2 h-[82%] w-[70%] -translate-x-1/2 -translate-y-1/2 sm:h-[88%] sm:w-[65%]"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <defs>
+
+              <linearGradient
+                id="solarIndiaGradient"
+                x1="0"
+                y1="0"
+                x2="400"
+                y2="600"
+              >
+
+                <stop offset="0%" stopColor="#facc15" />
+                <stop offset="45%" stopColor="#f97316" />
+                <stop offset="100%" stopColor="#22c55e" />
+
+              </linearGradient>
+
+            </defs>
+
+
+            {/* INDIA INSPIRED SHAPE */}
+            <path
+              d="
+                M190 20
+                L245 65
+                L280 120
+                L245 170
+                L300 220
+                L275 290
+                L315 350
+                L270 430
+                L245 520
+                L200 580
+                L165 510
+                L135 430
+                L95 350
+                L125 285
+                L105 220
+                L145 160
+                L135 85
+                Z
+              "
+              fill="rgba(250,204,21,0.04)"
+              stroke="url(#solarIndiaGradient)"
+              strokeWidth="2"
+            />
+
+
+            {/* ENERGY CONNECTIONS */}
+            <path
+              d="M180 100 L230 160 L160 230 L250 300 L180 370 L240 470"
+              fill="none"
+              stroke="#facc15"
+              strokeWidth="1.5"
+              strokeDasharray="6 10"
+              className="animate-[pulse_3s_ease-in-out_infinite]"
+            />
+
+            <path
+              d="M145 170 L230 160 L250 300 L170 380 L240 470"
+              fill="none"
+              stroke="#22d3ee"
+              strokeWidth="1.5"
+              strokeDasharray="5 10"
+              className="animate-[pulse_4s_ease-in-out_infinite]"
+            />
+
+            <path
+              d="M230 160 L290 240 L250 300 L295 380"
+              fill="none"
+              stroke="#22c55e"
+              strokeWidth="1.5"
+              strokeDasharray="5 10"
+              className="animate-[pulse_5s_ease-in-out_infinite]"
+            />
+
+          </svg>
+
+        </div>
+
+
+        {/* =========================================
+            CITY MARKERS
+        ========================================= */}
+        {mapCities.map((city, index) => (
+
+          <motion.button
+            key={city.name}
+            type="button"
+            onClick={() => setSelectedCity(city.name)}
+
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+
+            transition={{
+              delay: index * 0.1,
+              type: "spring",
+              stiffness: 200,
+            }}
+
+            whileHover={{
+              scale: 1.4,
+            }}
+
+            whileTap={{
+              scale: 0.9,
+            }}
+
+            style={{
+              left: city.x,
+              top: city.y,
+            }}
+
+            className="group absolute z-30 -translate-x-1/2 -translate-y-1/2"
+          >
+
+            {/* OUTER PULSE */}
+            <span
+              className={`absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full sm:h-12 sm:w-12 ${
+                selectedCity === city.name
+                  ? "bg-yellow-400/30"
+                  : "bg-cyan-400/20"
+              }`}
+            />
+
+
+            {/* GLOW */}
+            <span
+              className={`absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full blur-lg transition-all duration-300 group-hover:scale-150 sm:h-8 sm:w-8 ${
+                selectedCity === city.name
+                  ? "bg-yellow-400"
+                  : "bg-cyan-400"
+              }`}
+            />
+
+
+            {/* MAIN NODE */}
+            <span
+              className={`relative flex h-3 w-3 items-center justify-center rounded-full border border-white shadow-xl transition-all duration-300 sm:h-5 sm:w-5 sm:border-2 ${
+                selectedCity === city.name
+                  ? "bg-yellow-400 shadow-yellow-400/80"
+                  : "bg-gradient-to-br from-cyan-300 to-emerald-400 shadow-cyan-400/70"
+              }`}
+            >
+
+              <span className="h-1 w-1 rounded-full bg-white sm:h-1.5 sm:w-1.5" />
+
+            </span>
+
+
+            {/* CITY NAME */}
+            <span
+              className={`absolute left-1/2 top-5 -translate-x-1/2 whitespace-nowrap rounded-lg border px-1.5 py-0.5 text-[5px] font-bold uppercase tracking-wide backdrop-blur-xl transition-all duration-300 sm:top-8 sm:rounded-xl sm:px-3 sm:py-1.5 sm:text-[9px] ${
+                selectedCity === city.name
+                  ? "border-yellow-400/40 bg-yellow-400/10 text-yellow-300 opacity-100"
+                  : "border-white/10 bg-slate-950/80 text-white opacity-0 group-hover:opacity-100"
+              }`}
+            >
+
+              {city.name}
+
+            </span>
+
+          </motion.button>
+
+        ))}
+
+
+        {/* BOTTOM STATUS */}
+        <div className="absolute bottom-3 left-3 z-30 sm:bottom-5 sm:left-5">
+
+          <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-black/30 px-2 py-1.5 backdrop-blur-xl sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3">
+
+            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)] sm:h-3 sm:w-3" />
+
+            <span className="text-[6px] font-bold uppercase tracking-wide text-slate-300 sm:text-[9px] sm:tracking-wider">
+
+              Solar Hubs
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        {/* GROWTH */}
+        <div className="absolute bottom-3 right-3 z-30 hidden sm:block">
+
+          <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-3 backdrop-blur-xl">
+
+            <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-300">
+
+              +38% Growth
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      {/* =========================================
+          RIGHT SIDE — CITY INFORMATION
+      ========================================= */}
+      <div className="col-span-4">
+
+        <AnimatePresence mode="wait">
+
+          <motion.div
+            key={selectedCity}
+
+            initial={{
+              opacity: 0,
+              x: 20,
+            }}
+
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+
+            exit={{
+              opacity: 0,
+              x: -20,
+            }}
+
+            transition={{
+              duration: 0.35,
+            }}
+
+            className="relative h-full min-h-[360px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-2.5 backdrop-blur-xl sm:min-h-[500px] sm:rounded-[2rem] sm:p-5 lg:min-h-[580px] lg:p-8"
+          >
+
+            {/* BACKGROUND GLOW */}
+            <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-yellow-400/10 blur-[80px]" />
+
+
+            <div className="relative">
+
+              {/* TOP ICON */}
+              <div className="flex items-center justify-between">
+
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-yellow-300 to-orange-500 shadow-xl shadow-orange-500/30 sm:h-11 sm:w-11 sm:rounded-xl lg:h-14 lg:w-14 lg:rounded-2xl">
+
+                  <MapPin className="h-3.5 w-3.5 text-white sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
+
                 </div>
-                <div className="flex items-center gap-1 bg-emerald-500/15 border border-emerald-500/30 rounded-full px-1.5 py-0.5 sm:px-3 sm:py-1 shrink-0">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  <span className="text-[6px] sm:text-[10px] text-emerald-400 font-bold uppercase tracking-tight">Live</span>
+
+
+                <div className="hidden rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2 py-1 sm:block sm:px-3 sm:py-1.5">
+
+                  <span className="text-[7px] font-bold uppercase tracking-wide text-emerald-300 lg:text-[9px] lg:tracking-widest">
+
+                    Active
+
+                  </span>
+
                 </div>
+
               </div>
 
-              {/* Power curve Bell SVG path */}
-              <div className="w-full h-24 sm:h-48 relative z-10 flex items-end">
-                <svg className="w-full h-full" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {/* Grid lines */}
-                  <line x1="0" y1="120" x2="500" y2="120" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                  <line x1="0" y1="80" x2="500" y2="80" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                  <line x1="0" y1="40" x2="500" y2="40" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
 
-                  {/* Bell Curve line */}
-                  <path
-                    d="M 10 140 C 100 140, 150 10, 250 10 C 350 10, 400 140, 490 140"
-                    stroke="url(#chart-grad-dashboard)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
+              {/* SELECTED CITY */}
+              <p className="mt-3 text-[6px] font-bold uppercase tracking-[0.12em] text-yellow-400 sm:mt-6 sm:text-[9px] sm:tracking-[0.2em] lg:mt-8 lg:text-[10px] lg:tracking-[0.3em]">
 
-                  {/* Active dot tracer */}
-                  <circle cx="250" cy="10" r="5" fill="#10B981" className="animate-pulse" />
+                Selected Hub
 
-                  <defs>
-                    <linearGradient id="chart-grad-dashboard" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#06B6D4" />
-                      <stop offset="50%" stopColor="#10B981" />
-                      <stop offset="100%" stopColor="#FBBF24" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+              </p>
 
-                {/* Curve legend timelines */}
-                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-[6px] sm:text-[8px] text-slate-500 font-bold uppercase tracking-wider px-1">
-                  <span>06:00 AM</span>
-                  <span>12:00 PM (Peak)</span>
-                  <span>06:00 PM</span>
+
+              <h3 className="mt-1 break-words text-sm font-black text-white sm:mt-2 sm:text-2xl lg:text-4xl">
+
+                {selectedCity}
+
+              </h3>
+
+
+              <p className="mt-2 hidden text-xs leading-relaxed text-slate-400 sm:block lg:mt-3 lg:text-sm">
+
+                Delivering reliable solar energy solutions and helping homes
+                and businesses transition towards a cleaner future.
+
+              </p>
+
+
+              {/* DATA CARDS */}
+              <div className="mt-4 space-y-2 sm:mt-7 sm:space-y-3 lg:mt-10 lg:space-y-4">
+
+
+                {/* CAPACITY */}
+                <div className="group rounded-lg border border-white/10 bg-black/20 p-2 transition-all duration-300 hover:scale-[1.03] hover:border-yellow-400/40 sm:rounded-2xl sm:p-3 lg:p-4">
+
+                  <p className="text-[6px] font-bold uppercase tracking-tight text-slate-500 sm:text-[8px] sm:tracking-widest lg:text-[9px]">
+
+                    Capacity
+
+                  </p>
+
+                  <p className="mt-1 text-xs font-black text-yellow-400 sm:text-lg lg:mt-2 lg:text-2xl">
+
+                    {currentCityData.capacity}
+
+                  </p>
+
                 </div>
+
+
+                {/* PROJECTS */}
+                <div className="group rounded-lg border border-white/10 bg-black/20 p-2 transition-all duration-300 hover:scale-[1.03] hover:border-cyan-400/40 sm:rounded-2xl sm:p-3 lg:p-4">
+
+                  <p className="text-[6px] font-bold uppercase tracking-tight text-slate-500 sm:text-[8px] sm:tracking-widest lg:text-[9px]">
+
+                    Projects
+
+                  </p>
+
+                  <p className="mt-1 text-xs font-black text-cyan-400 sm:text-lg lg:mt-2 lg:text-2xl">
+
+                    {currentCityData.projects}+
+
+                  </p>
+
+                </div>
+
+
+                {/* CO2 */}
+                <div className="group rounded-lg border border-white/10 bg-black/20 p-2 transition-all duration-300 hover:scale-[1.03] hover:border-emerald-400/40 sm:rounded-2xl sm:p-3 lg:p-4">
+
+                  <p className="text-[6px] font-bold uppercase tracking-tight text-slate-500 sm:text-[8px] sm:tracking-widest lg:text-[9px]">
+
+                    CO₂ Saved
+
+                  </p>
+
+                  <p className="mt-1 text-xs font-black text-emerald-400 sm:text-lg lg:mt-2 lg:text-2xl">
+
+                    {currentCityData.co2}
+
+                  </p>
+
+                </div>
+
               </div>
+
+
+              {/* BUTTON */}
+<button
+  type="button"
+  onClick={() => {
+    window.location.href = "/contact";
+  }}
+  className="group mt-3 flex w-full cursor-pointer items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-yellow-400 via-orange-400 to-amber-500 px-2 py-2 text-[6px] font-black text-slate-950 shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:mt-6 sm:gap-2 sm:rounded-2xl sm:px-3 sm:py-3 sm:text-[10px] lg:mt-8 lg:gap-3 lg:px-5 lg:py-4 lg:text-sm lg:hover:shadow-2xl"
+>
+  <span className="hidden sm:inline">
+    Contact Us
+  </span>
+
+  <span className="sm:hidden">
+    Contact
+  </span>
+
+  <span className="transition-transform duration-300 group-hover:translate-x-1 lg:group-hover:translate-x-2">
+    →
+  </span>
+</button>
+
             </div>
 
-            {/* Right Side: Performance Stats Overlay cards */}
-            <div className="col-span-5 grid grid-cols-2 gap-2 sm:gap-4">
-              {[
-                { title: "CO₂ Saved", value: "14,250 T", desc: "Lifetime offsets", icon: CloudLightning, color: "text-emerald-400" },
-                { title: "Trees Saved", value: "57,000", desc: "Afforestation value", icon: TreePine, color: "text-emerald-500" },
-                { title: "Solar Installations", value: "200+", desc: "Across residential & commercial projects", icon: TrendingUp, color: "text-cyan-400" },
-                { title: "Uptime", value: "99.8%", desc: "Direct rating", icon: Activity, color: "text-amber-400" }
-              ].map((dash, idx) => {
-                const Icon = dash.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="rounded-xl sm:rounded-3xl bg-white border border-slate-100 shadow-lg p-2.5 sm:p-5 flex flex-col justify-between text-left group hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
-                  >
-                    <div className={`p-1.5 bg-slate-50 rounded-lg sm:rounded-2xl w-max ${dash.color}`}>
-                      <Icon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
-                    </div>
+          </motion.div>
 
-                    <div className="mt-2 sm:mt-4">
-                      <p className="text-[7px] sm:text-[10px] text-slate-400 font-bold uppercase leading-none mb-1">{dash.title}</p>
-                      <p className="text-xs sm:text-2xl font-extrabold text-slate-900 font-display tracking-tight leading-none">{dash.value}</p>
-                      <p className="text-[6px] sm:text-[10px] text-slate-400 font-medium leading-none mt-1 sm:mt-2 opacity-0 xs:opacity-100">{dash.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+        </AnimatePresence>
 
-          </div>
-        </div>
-      </section>
+      </div>
+
+    </div>
+
+
+
+    </div>
+
+  
+
+</section>
+    
 
       {/* =========================================
          SECTION 12: FINAL CTA
