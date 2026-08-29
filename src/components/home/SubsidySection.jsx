@@ -1,115 +1,246 @@
-
+// src/components/home/SubsidySection.jsx
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Sun,
   Zap,
   ShieldCheck,
-  CheckCircle2,
-  ArrowRight,
-  TrendingDown,
   Coins,
   Sparkles,
+  ArrowRight,
+  Landmark,
+  Star
 } from "lucide-react";
+import { images } from "../../data/images";
 import { staggerContainer, fadeInUp } from "../../animations/variants";
+import "./SubsidySection.css";
+
+const subsidyPlans = [
+  {
+    id: "1kw",
+    title: "1KW",
+    subtitle: "CAPACITY",
+    icon: Sun,
+    image: images.img1,
+    accentColor: "#F5A000",
+    accentBg: "rgba(245, 160, 0, 0.1)",
+    footerBg: "#FFF7E5",
+    amount: "₹30,000",
+  },
+  {
+    id: "2kw",
+    title: "2KW",
+    subtitle: "CAPACITY",
+    icon: Zap,
+    image: images.img2,
+    accentColor: "#2563C7",
+    accentBg: "rgba(37, 99, 199, 0.1)",
+    footerBg: "#EEF5FF",
+    amount: "₹60,000",
+  },
+  {
+    id: "3kw",
+    title: "3KW",
+    subtitle: "& ABOVE",
+    icon: ShieldCheck,
+    image: images.Residential_Solar_Systems, // matches the high spec card image
+    accentColor: "#249447",
+    accentBg: "rgba(36, 148, 71, 0.1)",
+    footerBg: "#EAF8EE",
+    amount: "₹78,000",
+    highlighted: true,
+  }
+];
+
+const benefits = [
+  {
+    id: "dbt",
+    title: "Direct Bank\nTransfer",
+    icon: Landmark,
+    color: "#249447",
+    bg: "#EAF8EE",
+  },
+  {
+    id: "secure",
+    title: "100% Secure\nProcess",
+    icon: ShieldCheck,
+    color: "#2563C7",
+    bg: "#EEF5FF",
+  },
+  {
+    id: "save",
+    title: "Save More on\nElectricity",
+    icon: Coins,
+    color: "#F5A000",
+    bg: "#FFF7E5",
+  },
+  {
+    id: "easy",
+    title: "Easy & Hassle\nFree Process",
+    icon: Sparkles,
+    color: "#8B5CF6", // Purple
+    bg: "#F5EEFF",
+  }
+];
 
 export default function SubsidySection() {
   return (
-    <section className="relative py-28 md:py-36 bg-slate-50 overflow-hidden">
-      {/* Structural layout backgrounds */}
-      <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-40" />
-      <div className="absolute top-0 right-1/4 w-[800px] h-[800px] bg-sky-200/40 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[700px] h-[700px] bg-emerald-200/30 rounded-full blur-[160px] pointer-events-none" />
+    <section className="subsidy-section">
+      {/* Decorative Dots */}
+      <div className="subsidy-dots subsidy-dots-top-left" />
+      <div className="subsidy-dots subsidy-dots-bottom-left" />
+      <div className="subsidy-dots subsidy-dots-bottom-right" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      {/* Upper-right Hero House */}
+      <div className="subsidy-hero-image-wrapper">
+        <div className="subsidy-sun-circle" />
+        <img
+          src={images.On1} // distinct visual house image
+          alt="Premium Residential Solar Installation"
+          className="subsidy-hero-house-img"
+        />
+      </div>
+
+      <div className="subsidy-container">
         
-        {/* HEADER AREA: Bigger typography hierarchy */}
-        <div className="text-center max-w-4xl mx-auto mb-24">
-          <span className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-sky-200 bg-sky-100/60 text-sky-800 font-extrabold text-sm uppercase tracking-widest shadow-sm mb-4">
-            <Sparkles className="h-4 w-4 text-sky-600 animate-pulse" /> National Rooftop Solar Program
-          </span>
+        {/* Header Area */}
+        <div className="subsidy-header">
+          {/* Top Badge */}
+          <div className="subsidy-badge">
+            <Sun />
+            <span>National Rooftop Solar Program</span>
+          </div>
 
-          <h2 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-none">
-            Scale Down Bills. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-600 drop-shadow-sm">
-              Claim Your Subsidy.
-            </span>
+          {/* Heading */}
+          <h2 className="subsidy-heading">
+            Scale Down Bills.<br />
+            <span className="highlight-blue">Claim Your </span>
+            <span className="highlight-green">Subsidy.</span>
           </h2>
 
-          <p className="mt-8 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">
-            Secure up to <span className="font-black text-emerald-700 bg-emerald-100/80 px-3 py-1 rounded-xl border border-emerald-200 shadow-inner">78,000 Cash Support</span> directly into your bank account and start saving on electricity from day one.
-          </p>
+          {/* Yellow underline */}
+          <div className="subsidy-underline" />
+
+          {/* Intro Text */}
+          <div className="subsidy-intro">
+            <div className="subsidy-intro-line">
+              <span>Secure up to </span>
+              <span className="subsidy-cash-pill">
+                <Coins /> ₹78,000 Cash Support
+              </span>
+              <span> directly into your bank account</span>
+            </div>
+            <div>and start saving on electricity from day one.</div>
+          </div>
         </div>
 
-        {/* 3-COLUMN METRIC CARDS: Enlarged font configurations */}
+        {/* Three Cards Horizontal Layout */}
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-28"
+          className="subsidy-cards-grid"
         >
-          {/* Card 1 */}
-          <motion.div 
-            variants={fadeInUp}
-            className="group relative bg-white rounded-[36px] border-2 border-slate-200/80 p-8 lg:p-10 shadow-md hover:shadow-2xl hover:border-sky-400/80 transition-all duration-400 flex flex-col justify-between"
-          >
-            <div>
-              <div className="h-14 w-14 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-inner">
-                <Sun className="h-6 w-6" />
-              </div>
-              <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mt-8 tracking-tight">1 KW Capacity</h3>
-              <p className="text-sm lg:text-base text-slate-500 mt-2 font-medium leading-relaxed">Engineered for smaller compact houses and light essential appliances.</p>
-            </div>
-            <div className="mt-12 pt-8 border-t-2 border-slate-100">
-              <div className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">₹30,000</div>
-              <p className="text-xs lg:text-sm text-emerald-600 font-extrabold uppercase tracking-wider mt-2">Direct DBT Subsidy</p>
-            </div>
-          </motion.div>
+          {subsidyPlans.map((plan) => {
+            const Icon = plan.icon;
+            return (
+              <motion.div 
+                key={plan.id}
+                variants={fadeInUp}
+                className={`subsidy-card ${plan.highlighted ? "subsidy-card-highlighted" : ""}`}
+              >
+                {/* Most Popular Badge on highlighted card (absolute overlay) */}
+                {plan.highlighted && (
+                  <div className="subsidy-popular-badge">
+                    <Star />
+                    <span>Most Popular</span>
+                  </div>
+                )}
 
-          {/* Card 2 - 2 KW Capacity */}
-          <motion.div 
-            variants={fadeInUp}
-            className="group relative bg-white rounded-[36px] border-2 border-slate-200/80 p-8 lg:p-10 shadow-md hover:shadow-2xl hover:border-sky-400/80 transition-all duration-400 flex flex-col justify-between overflow-hidden"
-          >
-            <div>
-              <div className="h-14 w-14 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-inner">
-                <Zap className="h-6 w-6" />
-              </div>
-              <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mt-8 tracking-tight">2 KW Capacity</h3>
-              <p className="text-sm lg:text-base text-slate-500 mt-2 font-medium leading-relaxed">The optimal balanced installation setup for active modern families.</p>
-            </div>
-            <div className="mt-12 pt-8 border-t-2 border-slate-100">
-              <div className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">₹60,000</div>
-              <p className="text-xs lg:text-sm text-emerald-600 font-extrabold uppercase tracking-wider mt-2">Direct DBT Subsidy</p>
-            </div>
-          </motion.div>
+                {/* 1. Top Full-Bleed Image */}
+                <div className="subsidy-card-image-wrapper">
+                  <img 
+                    src={plan.image}
+                    alt={`${plan.title} Capacity House`}
+                    className="subsidy-card-img"
+                  />
+                </div>
 
-          {/* Card 3 - Most Popular High Spec */}
-          <motion.div 
-            variants={fadeInUp}
-            className="group relative bg-slate-900 rounded-[36px] p-8 lg:p-10 shadow-2xl hover:shadow-sky-950/40 transition-all duration-400 flex flex-col justify-between overflow-hidden text-white"
-          >
-            <div className="absolute top-0 right-0 w-48 h-48 bg-sky-500/10 blur-3xl pointer-events-none" />
-            <div className="absolute top-8 right-8 bg-gradient-to-r from-sky-500 to-blue-500 text-white px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase shadow-md">
-              Most Popular
-            </div>
-            
-            <div>
-              <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3 className="text-2xl lg:text-3xl font-black text-white mt-8 tracking-tight">3 KW & Above</h3>
-              <p className="text-sm lg:text-base text-slate-300 mt-2 font-medium leading-relaxed">Unlocks maximum legal government reimbursement metrics.</p>
-            </div>
-            <div className="mt-12 pt-8 border-t-2 border-white/10">
-              <div className="text-4xl lg:text-5xl font-black text-white tracking-tight">₹78,000</div>
-              <p className="text-xs lg:text-sm text-sky-400 font-extrabold uppercase tracking-wider mt-2">Direct DBT Subsidy</p>
-            </div>
-          </motion.div>
+                {/* 2. Middle Content Area (Compact, no description) */}
+                <div className="subsidy-card-content">
+                  <div 
+                    className="subsidy-card-icon-circle"
+                    style={{ backgroundColor: plan.accentBg, color: plan.accentColor }}
+                  >
+                    <Icon />
+                  </div>
+                  
+                  <div className="subsidy-card-text-group">
+                    <div className="subsidy-card-title" style={{ color: plan.accentColor }}>
+                      {plan.title}
+                    </div>
+                    <div className="subsidy-card-subtitle">
+                      {plan.subtitle}
+                    </div>
+                  </div>
+                </div>
+
+                {/* 3. Card DBT Strip Footer */}
+                <div className="subsidy-card-footer" style={{ backgroundColor: plan.footerBg }}>
+                  <div className="subsidy-card-footer-left">
+                    <span className="subsidy-card-dbt-tag" style={{ color: plan.accentColor }}>
+                      Direct DBT Subsidy
+                    </span>
+                    <span className="subsidy-card-amount">
+                      {plan.amount}
+                    </span>
+                  </div>
+
+                  <Link 
+                    to="/contact" 
+                    className="subsidy-card-arrow-btn"
+                    style={{ backgroundColor: plan.accentColor }}
+                    aria-label={`Get started with ${plan.title} capacity subsidy`}
+                  >
+                    <ArrowRight />
+                  </Link>
+                </div>
+
+              </motion.div>
+            );
+          })}
         </motion.div>
 
-        
+        {/* Bottom Benefit Bar */}
+        <div className="subsidy-benefit-bar">
+          {benefits.map((benefit, i) => {
+            const Icon = benefit.icon;
+            const textLines = benefit.title.split('\n');
+            return (
+              <div key={benefit.id} style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+                <div className="subsidy-benefit-item">
+                  <div 
+                    className="subsidy-benefit-icon-wrapper"
+                    style={{ backgroundColor: benefit.bg, color: benefit.color }}
+                  >
+                    <Icon />
+                  </div>
+                  <span className="subsidy-benefit-text">
+                    {textLines.map((line, idx) => (
+                      <span key={idx} style={{ display: 'block' }}>
+                        {line}
+                      </span>
+                    ))}
+                  </span>
+                </div>
+                {i < benefits.length - 1 && (
+                  <div className="subsidy-benefit-separator" />
+                )}
+              </div>
+            );
+          })}
+        </div>
 
       </div>
     </section>

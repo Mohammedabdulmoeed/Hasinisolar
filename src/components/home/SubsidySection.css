@@ -1,0 +1,445 @@
+/* src/components/home/SubsidySection.css */
+
+.subsidy-section {
+  background-color: #FFFFFF;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative Dots Pattern */
+.subsidy-dots {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+  background-size: 12px 12px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.subsidy-dots-top-left {
+  top: 40px;
+  left: 40px;
+}
+
+.subsidy-dots-bottom-left {
+  bottom: 40px;
+  left: 40px;
+}
+
+.subsidy-dots-bottom-right {
+  bottom: 40px;
+  right: 40px;
+}
+
+.subsidy-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header Area styling */
+.subsidy-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* Top Pill Badge */
+.subsidy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #D1E2FF;
+  border-radius: 9999px;
+  padding: 0.45rem 1.25rem;
+  color: #1557B0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  box-shadow: 0 2px 8px rgba(21, 87, 176, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.subsidy-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Main Heading */
+.subsidy-heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0D1F3C;
+  margin-bottom: 1rem;
+}
+
+.subsidy-heading span.highlight-blue {
+  color: #1557B0;
+}
+
+.subsidy-heading span.highlight-green {
+  color: #249447;
+}
+
+@media (min-width: 768px) {
+  .subsidy-heading {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .subsidy-heading {
+    font-size: 3.5rem;
+  }
+}
+
+/* Yellow Underline */
+.subsidy-underline {
+  width: 95px;
+  height: 4px;
+  background-color: #F8C62A;
+  border-radius: 9999px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Subsidy Introduction */
+.subsidy-intro {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4B5563;
+  font-weight: 500;
+}
+
+.subsidy-intro-line {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Green pill badge containing the ₹78,000 amount */
+.subsidy-cash-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #EAF8EE;
+  border: 1.5px solid #249447;
+  color: #249447;
+  border-radius: 9999px;
+  padding: 0.2rem 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.subsidy-cash-pill svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Upper Right Hero House Area */
+.subsidy-hero-image-wrapper {
+  position: absolute;
+  top: 30px;
+  right: 1.5rem;
+  width: 290px;
+  height: 220px;
+  z-index: 1;
+  pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .subsidy-hero-image-wrapper {
+    display: block;
+  }
+}
+
+.subsidy-sun-circle {
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  background-color: #F8C62A;
+  border-radius: 50%;
+  top: -15px;
+  left: 20px;
+  z-index: -1;
+}
+
+.subsidy-hero-house-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Three Cards Grid */
+.subsidy-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .subsidy-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .subsidy-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+/* Subsidy Cards */
+.subsidy-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid #E5EAF0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subsidy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Highlight Card Style */
+.subsidy-card-highlighted {
+  border: 2px solid #249447;
+}
+
+/* Most Popular Badge top-right of highlighted card */
+.subsidy-popular-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #249447;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.subsidy-popular-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: #FFFFFF;
+}
+
+/* 1. Card Image Wrapper (Top Full-Bleed Image) */
+.subsidy-card-image-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.subsidy-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 2. Card Content Area (Icon & Titles) */
+.subsidy-card-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.subsidy-card-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subsidy-card-icon-circle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.subsidy-card-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.subsidy-card-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.subsidy-card-subtitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0D1F3C;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* 3. Card DBT Strip Footer */
+.subsidy-card-footer {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #E5EAF0;
+}
+
+.subsidy-card-footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.subsidy-card-dbt-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.subsidy-card-amount {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #0D1F3C;
+  line-height: 1;
+}
+
+/* Arrow circle button */
+.subsidy-card-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: transform 0.2s ease;
+}
+
+.subsidy-card-arrow-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.subsidy-card:hover .subsidy-card-arrow-btn {
+  transform: translateX(3px);
+}
+
+/* Bottom Benefit Bar */
+.subsidy-benefit-bar {
+  background-color: #FFFFFF;
+  border: 1px solid #E5EAF0;
+  border-radius: 24px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .subsidy-benefit-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem 1rem;
+    padding: 1.75rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .subsidy-benefit-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.subsidy-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .subsidy-benefit-item {
+    justify-content: center;
+  }
+}
+
+.subsidy-benefit-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subsidy-benefit-icon-wrapper svg {
+  width: 18px;
+  height: 18px;
+}
+
+.subsidy-benefit-text {
+  font-size: 1 rem;
+  font-weight: 900;
+  color: #0D1F3C;
+  line-height: 1.35;
+}
+
+.subsidy-benefit-separator {
+  display: none;
+  width: 1px;
+  height: 30px;
+  background-color: #E5EAF0;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .subsidy-benefit-separator {
+    display: block;
+  }
+}
