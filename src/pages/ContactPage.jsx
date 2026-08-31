@@ -122,7 +122,7 @@ export default function ContactPage() {
       />
 <PageHero
               title="Contact"
-              subtitle="Build your future with a team that values excellence, growth, and innovation."
+              subtitle="Powering a sustainable future with innovative solar solutions, reliable energy, and lasting savings."
               image="https://images.unsplash.com/photo-1663321508309-4ceb96a3c791?q=80&w=1119&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               breadcrumb="Home / Contact "
             />

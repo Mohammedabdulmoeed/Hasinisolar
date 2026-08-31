@@ -267,7 +267,7 @@ export default function ProjectsPage() {
       <SEO {...pageSeo.projects} />
       <PageHero
         title="Project"
-        subtitle="Hasini Solar Enterprises & Solutions Energies helps homeowners and businesses reduce electricity costs through high-performance rooftop solar solutions."
+        subtitle="Delivering high-performance solar solutions that help homes and businesses reduce electricity costs and embrace clean, reliable energy"
         image="https://images.unsplash.com/photo-1698752821934-28bd5ce6fd42?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         breadcrumb="Home / project"
       />

@@ -21,7 +21,7 @@ const subsidyPlans = [
     title: "1KW",
     subtitle: "CAPACITY",
     icon: Sun,
-    image: images.img1,
+    image: images.img2,
     accentColor: "#F5A000",
     accentBg: "rgba(245, 160, 0, 0.1)",
     footerBg: "#FFF7E5",
@@ -32,7 +32,7 @@ const subsidyPlans = [
     title: "2KW",
     subtitle: "CAPACITY",
     icon: Zap,
-    image: images.img2,
+    image: images.On1,
     accentColor: "#2563C7",
     accentBg: "rgba(37, 99, 199, 0.1)",
     footerBg: "#EEF5FF",
@@ -43,7 +43,7 @@ const subsidyPlans = [
     title: "3KW",
     subtitle: "& ABOVE",
     icon: ShieldCheck,
-    image: images.Residential_Solar_Systems, // matches the high spec card image
+    image: images.img3,
     accentColor: "#249447",
     accentBg: "rgba(36, 148, 71, 0.1)",
     footerBg: "#EAF8EE",
@@ -93,12 +93,8 @@ export default function SubsidySection() {
 
       {/* Upper-right Hero House */}
       <div className="subsidy-hero-image-wrapper">
-        <div className="subsidy-sun-circle" />
-        <img
-          src={images.On1} // distinct visual house image
-          alt="Premium Residential Solar Installation"
-          className="subsidy-hero-house-img"
-        />
+        
+        
       </div>
 
       <div className="subsidy-container">
@@ -150,7 +146,7 @@ export default function SubsidySection() {
                 variants={fadeInUp}
                 className={`subsidy-card ${plan.highlighted ? "subsidy-card-highlighted" : ""}`}
               >
-                {/* Most Popular Badge on highlighted card (absolute overlay) */}
+                {/* Most Popular Badge on highlighted card */}
                 {plan.highlighted && (
                   <div className="subsidy-popular-badge">
                     <Star />
@@ -158,7 +154,7 @@ export default function SubsidySection() {
                   </div>
                 )}
 
-                {/* 1. Top Full-Bleed Image */}
+                {/* 1. FULL SOLAR HOUSE IMAGE (Top full-bleed) */}
                 <div className="subsidy-card-image-wrapper">
                   <img 
                     src={plan.image}
@@ -167,7 +163,7 @@ export default function SubsidySection() {
                   />
                 </div>
 
-                {/* 2. Middle Content Area (Compact, no description) */}
+                {/* 2. KW CAPACITY CONTENT AREA */}
                 <div className="subsidy-card-content">
                   <div 
                     className="subsidy-card-icon-circle"
@@ -186,7 +182,7 @@ export default function SubsidySection() {
                   </div>
                 </div>
 
-                {/* 3. Card DBT Strip Footer */}
+                {/* 3. DIRECT DBT SUBSIDY FOOTER */}
                 <div className="subsidy-card-footer" style={{ backgroundColor: plan.footerBg }}>
                   <div className="subsidy-card-footer-left">
                     <span className="subsidy-card-dbt-tag" style={{ color: plan.accentColor }}>
